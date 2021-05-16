@@ -1,2 +1,3 @@
-# FarmFrenzyGameRepository
+# FarmFrenzyGame
+
 The real project repository
