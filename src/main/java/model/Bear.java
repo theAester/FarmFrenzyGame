@@ -15,6 +15,5 @@ class Bear extends Threat{
     }
     @Override
     public void attack() {
-
     }
 }
