@@ -53,11 +53,6 @@ public class Menu {
             {
                 Settings();
             }
-            else if(Check(input,"buy\\s[a-z]+"))
-            {
-
-                Printer.BuyAnimal(ENUM.valueOf(Split(input)[1]));
-            }
             else{
                 if(!input.equals(""))
                 {
