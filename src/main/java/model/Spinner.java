@@ -1,6 +1,7 @@
 package model;
 
 public class Spinner extends Facility {
+    public static long price;
     @Override
     public void update() {
 

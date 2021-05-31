@@ -1,6 +1,7 @@
 package model;
 
 public class SewingFactory extends Facility {
+    public static long price;
     @Override
     public void update() {
 

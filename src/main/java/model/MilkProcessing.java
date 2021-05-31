@@ -1,6 +1,7 @@
 package model;
 
 public class MilkProcessing extends Facility {
+    public static long price;
     @Override
     public void update() {
 

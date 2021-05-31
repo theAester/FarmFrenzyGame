@@ -1,7 +1,7 @@
 package model;
 import control.*;
 class Bakery extends Facility {
-    public static int price;
+    public static long price;
 
     @Override
     public void update() {
