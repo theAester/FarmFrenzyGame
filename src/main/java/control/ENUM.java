@@ -1,6 +1,6 @@
 package control;
 
-public enum Levels {
+public enum ENUM {
     iceCreamFactory,
     sewingFactory,
     spinnerFactory,

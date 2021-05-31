@@ -26,7 +26,7 @@ public class Authenticator {
             {
                 if(!Exists(Split(input)[0]+Split(input)[1]))
                 {
-                    User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,null,null,true);
+                    User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,null,true);
                     userList.add(user);
                     Printer.Signed();
                     Menu menu=new Menu(user);

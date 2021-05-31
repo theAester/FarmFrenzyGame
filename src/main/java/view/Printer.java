@@ -40,6 +40,28 @@ public class Printer {
     }
     public static void Menu()
     {
-        System.out.println("Menu:");
+        System.out.println("MENU:");
+    }
+    public static void StartLevel(int level){
+        System.out.println("Starting level:"+level);
+    }
+    public static void AccessDenied(int level)
+    {
+        System.err.println("You only got access from one to "+ level);
+    }
+    public static void LoggedOut()
+    {
+        System.out.println("You're logged out");
+    }
+    public static void Settings(){
+        System.out.println("SETTINGS:");
+    }
+    public static void HelpSettings()
+    {
+        System.out.println("kossher");
+    }
+    public static void BuyAnimal(ENUM animal)
+    {
+        System.out.println("bought "+animal.toString());
     }
 }

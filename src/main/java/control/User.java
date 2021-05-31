@@ -5,18 +5,16 @@ public class User {
     private int star;
     private long coin;
     private int levelAccomplished;
-    private HashMap<Levels,Integer> factoryLevelMap;
-    private HashMap<Levels,Integer> animalsLevelMap;
+    private HashMap<ENUM,Integer> LevelMap;
     private boolean isVoid;
-    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<Levels, Integer> factoryLevelMap, HashMap<Levels, Integer> animalsLevelMap,boolean isVoid) {
+    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<ENUM, Integer> LevelMap, boolean isVoid) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.star = star;
         this.coin = coin;
         this.levelAccomplished = levelAccomplished;
-        this.factoryLevelMap = factoryLevelMap;
-        this.animalsLevelMap = animalsLevelMap;
+        this.LevelMap = LevelMap;
         this.isVoid=isVoid;
     }
 
@@ -32,12 +30,8 @@ public class User {
         return levelAccomplished;
     }
 
-    public HashMap<Levels, Integer> getFactoryLevelMap() {
-        return factoryLevelMap;
-    }
-
-    public HashMap<Levels, Integer> getAnimalsLevelMap() {
-        return animalsLevelMap;
+    public HashMap<ENUM, Integer> getLevelMap() {
+        return LevelMap;
     }
 
     public boolean isVoid() {
@@ -80,12 +74,9 @@ public class User {
         this.levelAccomplished = levelAccomplished;
     }
 
-    public void setFactoryLevelMap(HashMap<Levels, Integer> factoryLevelMap) {
-        this.factoryLevelMap = factoryLevelMap;
-    }
 
-    public void setAnimalsLevelMap(HashMap<Levels, Integer> animalsLevelMap) {
-        this.animalsLevelMap = animalsLevelMap;
+    public void setLevelMap(HashMap<ENUM, Integer> LevelMap) {
+        this.LevelMap = LevelMap;
     }
 
     public void setVoid(boolean aVoid) {
