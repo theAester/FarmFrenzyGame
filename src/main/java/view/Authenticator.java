@@ -50,8 +50,10 @@ public class Authenticator {
             else
             {
                 //Check if input is a blank RETURN
-                if(!input.equals(""))
-                Printer.WrongInput();
+                if(!input.equals("")) {
+                    Printer.WrongInput();
+                    LogAppender.WrongInput();
+                }
             }
 
         }
@@ -66,7 +68,7 @@ public class Authenticator {
     {
         return string.split("\\s");
     }
-    private User Find(String username,String password) {
+    private User Find(String username,String password) throws IOException {
         boolean matchedUsername=false;
         boolean matchedPassword=false;
         User temp = null;
@@ -81,9 +83,12 @@ public class Authenticator {
             }
         }
         if(!matchedUsername){
+            LogAppender.WrongUsername(username);
             Printer.UserNotFound();}
+
         else{
         if(!matchedPassword)
+            LogAppender.WrongPassword(username,password);
             Printer.WrongPassword();}
         return temp;
     }

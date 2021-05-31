@@ -45,6 +45,7 @@ public class Menu {
             else if(Check(input,"log out"))
             {
                 Printer.LoggedOut();
+                LogAppender.Logout(fullName);
                 Authenticator authenticator=new Authenticator();
                 authenticator.Do();
                 break;
@@ -57,6 +58,7 @@ public class Menu {
                 if(!input.equals(""))
                 {
                     Printer.WrongInput();
+                    LogAppender.WrongInput();
                 }
             }
         }
