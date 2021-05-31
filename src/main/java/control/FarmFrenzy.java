@@ -1,5 +1,7 @@
 package control;
 
 public class FarmFrenzy {
-//hi
+    public static void main(String[] args) {
+        System.out.println(1);
+    }
 }
