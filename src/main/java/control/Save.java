@@ -15,7 +15,7 @@ static Gson gson=new Gson();
     public static void UserList(ArrayList<User> userList) {
         String UserArrayList=gson.toJson(userList,new TypeToken<ArrayList<User>>(){}.getType());
         try {
-            FileWriter userArrayListWriter = new FileWriter("../UserArrayList.json");
+            FileWriter userArrayListWriter = new FileWriter("UserArrayList.json");
             userArrayListWriter.write(UserArrayList);
             userArrayListWriter.close();
         } catch (IOException e) {

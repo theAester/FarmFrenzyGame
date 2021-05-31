@@ -12,8 +12,9 @@ public class Authenticator {
     private ArrayList<User> userList;
     private Scanner scanner=new Scanner(System.in);
     private Printer printer=new Printer();
-    public Authenticator(ArrayList userList) {
+    public Authenticator() {
         this.userList = new ArrayList<>();
+        if(Load.UserList()!=null)
         userList=Load.UserList();
     }
     public void Do() throws IOException {

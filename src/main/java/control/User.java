@@ -19,6 +19,30 @@ public class User {
         this.isVoid=isVoid;
     }
 
+    public long getStar() {
+        return star;
+    }
+
+    public long getCoin() {
+        return coin;
+    }
+
+    public int getLevelAccomplished() {
+        return levelAccomplished;
+    }
+
+    public HashMap<Levels, Integer> getFactoryLevelMap() {
+        return factoryLevelMap;
+    }
+
+    public HashMap<Levels, Integer> getAnimalsLevelMap() {
+        return animalsLevelMap;
+    }
+
+    public boolean isVoid() {
+        return isVoid;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -29,5 +53,41 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setStar(long star) {
+        this.star = star;
+    }
+
+    public void setCoin(long coin) {
+        this.coin = coin;
+    }
+
+    public void setLevelAccomplished(int levelAccomplished) {
+        this.levelAccomplished = levelAccomplished;
+    }
+
+    public void setFactoryLevelMap(HashMap<Levels, Integer> factoryLevelMap) {
+        this.factoryLevelMap = factoryLevelMap;
+    }
+
+    public void setAnimalsLevelMap(HashMap<Levels, Integer> animalsLevelMap) {
+        this.animalsLevelMap = animalsLevelMap;
+    }
+
+    public void setVoid(boolean aVoid) {
+        isVoid = aVoid;
     }
 }

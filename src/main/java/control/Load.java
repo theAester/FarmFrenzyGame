@@ -5,6 +5,8 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import control.*;
 import view.Printer;
 public class Load {
@@ -15,15 +17,17 @@ public class Load {
     public static ArrayList<User> UserList()
     {
             try {
-                Reader reader= Files.newBufferedReader(Paths.get("../UserArrayList.json"));
-            } catch (IOException e) {
-                Printer.DamagedFile("UserArrayList.json");
+                String Read = "";
+                File ReadUserList = new File("UserArrayList.json");
+                Scanner scanner = new Scanner(ReadUserList);
+                while (scanner.hasNextLine()) {
+                    Read += scanner.nextLine();
+                }
+                scanner.close();
+                gson = new Gson();
+                userList= gson.fromJson(Read,new TypeToken<ArrayList<User>>(){}.getType());
             }
-            try {
-                userList= gson.fromJson(Reader.nullReader(),new TypeToken<ArrayList<User>>(){}.getType());
-            }
-            catch (Exception gsonException)
-            {
+            catch (IOException ioException){
                 Printer.DamagedFile("UserArrayList.json");
             }
             return userList;
