@@ -12,7 +12,8 @@ public class Menu {
     private User user;
     public Menu(User user) {
         this.user = user;
-        this.levelAccomplished=user.g
+        this.levelAccomplished=user.getLevelAccomplished();
+        this.star=user.getStar();
     }
     public void Run()
     {
