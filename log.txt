@@ -18,3 +18,8 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>>WRONG INPUT exit  Tuesday, June 1, 2021 09:44:39.428836
 >>>>>logged in with username hiraaddavari Tuesday, June 1, 2021 09:44:39.432016
 >>>>>User Exists Tuesday, June 1, 2021 09:56:27.410024
+>>>>>WRONG INPUT ff  Tuesday, June 1, 2021 10:24:58.785741
+>>>>>WRONG INPUT fff  Tuesday, June 1, 2021 10:25:00.538580
+>>>>>WRONG INPUT d  Tuesday, June 1, 2021 10:27:08.420573
+>>>>>WRONG INPUT f  Tuesday, June 1, 2021 10:27:09.989268
+>>>>>WRONG INPUT w  Tuesday, June 1, 2021 10:27:11.420546

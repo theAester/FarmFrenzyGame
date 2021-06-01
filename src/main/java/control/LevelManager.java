@@ -8,7 +8,6 @@ public class LevelManager {
         return true;
         //TODO
     }
-
     public boolean canPickup(int parseInt, int parseInt1) {
         Random random=new Random();
         int rand=random.nextInt(2);

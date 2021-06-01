@@ -59,6 +59,38 @@ public class LevelInputManager {
                     LogAppender.NullPoint();
                 }
             }
+            else if(Check(input,"well"))
+            {
+
+            }
+            else if(Check(input,"plant\\s[0-9]+\\s[0-9]+"))
+            {
+
+            }
+            else if(Check(input,"work\\s[a-z]+"))
+            {
+
+            }
+            else if(Check(input,"cage\\s[0-9]+\\s[0-9]+"))
+            {
+
+            }
+            else if(Check(input,"turn\\s[0-9]+"))
+            {
+
+            }
+            else if(Check(input,"truck\\sload\\s[a-z]+"))
+            {
+
+            }
+            else if(Check(input,"truck\\sunload\\s[a-z]+"))
+            {
+
+            }
+            else if(Check(input,"truck\\sgo"))
+            {
+
+            }
 
         }
     }

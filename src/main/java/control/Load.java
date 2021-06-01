@@ -36,7 +36,7 @@ public class Load {
     public static ArrayList<Level> LevelList() throws FileNotFoundException {
         String Read="";
 
-        File ReadLevelList=new File("LevelList.json");
+        File ReadLevelList=new File("LevelArrayList.json");
         Scanner scanner=new Scanner(ReadLevelList);
         while(scanner.hasNextLine())
         {
@@ -47,4 +47,5 @@ public class Load {
         levelList=gson.fromJson(Read,new TypeToken<ArrayList<Level>>(){}.getType());
         return  levelList;
     }
+
 }

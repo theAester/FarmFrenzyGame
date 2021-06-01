@@ -2,6 +2,7 @@ package control;
 import view.Authenticator;
 import view.Printer;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,13 +19,14 @@ public class Menu {
     private Level currentLevel;
     private User user;
     Scanner scanner= new Scanner(System.in);
-    public Menu(User user) {
+    public Menu(User user) throws FileNotFoundException {
         this.user = user;
         this.levelAccomplished=user.getLevelAccomplished();
         this.star=user.getStar();
         this.coin=user.getCoin();
         this.fullName=user.getFirstName()+user.getLastName();
         this.LevelMap=user.getLevelMap();
+        this.levelsList=Load.LevelList();
     }
     public void Run() throws IOException {
         String input = "";
