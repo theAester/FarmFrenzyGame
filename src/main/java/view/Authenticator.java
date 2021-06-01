@@ -49,8 +49,12 @@ public class Authenticator {
             {
                 Printer.Help();
             }
-            else
+            else if(Check(input,"exit"))
             {
+
+                break;
+            }
+            else {
                 //Check if input is a blank RETURN
                 if(!input.equals("")) {
                     Printer.WrongInput();

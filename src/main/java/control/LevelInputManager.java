@@ -47,7 +47,7 @@ public class LevelInputManager {
                     LogAppender.NotEnoughmoney();
                 }
             }
-            else if(check(input,"pickup\\s[0-9]+\\s[0-9]+")){
+            else if(Check(input,"pickup\\s[0-9]+\\s[0-9]+")){
                 if(manager.canPickup(Integer.parseInt(Split(input)[1]),Integer.parseInt(Split(input)[2])))
                 {
                     Printer.Pickup(Integer.parseInt(Split(input)[1]),Integer.parseInt(Split(input)[2]));

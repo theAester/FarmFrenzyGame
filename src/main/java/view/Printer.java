@@ -76,4 +76,8 @@ public class Printer {
     public static void NullPoint() {
         System.err.println("Empty point spotted to pickup");
     }
+    public static void LevelNotFound(int level)
+    {
+        System.err.println("No level found as "+level);
+    }
 }

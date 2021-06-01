@@ -49,7 +49,7 @@ public class LogAppender {
         }
         scanner.close();
         String next = load;
-        next += nextln + " " + LocalDate.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)) + ' ' + LocalTime.now();
+        next +=">>>>>"+ nextln + " " + LocalDate.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)) + ' ' + LocalTime.now();
         FileWriter writer = new FileWriter("log.txt");
         BufferedWriter Bwriter = new BufferedWriter(writer);
         Bwriter.write(next);
@@ -67,5 +67,8 @@ public class LogAppender {
 
     public static void NullPoint() throws IOException {
         Do("Empty point spotted");
+    }
+    public static void LevelNotFound(int level) throws IOException {
+        Do("level not found "+ level);
     }
 }
