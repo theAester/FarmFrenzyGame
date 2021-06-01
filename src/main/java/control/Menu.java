@@ -58,7 +58,7 @@ public class Menu {
                 if(!input.equals(""))
                 {
                     Printer.WrongInput();
-                    LogAppender.WrongInput();
+                    LogAppender.WrongInput(input);
                 }
             }
         }

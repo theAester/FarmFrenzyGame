@@ -31,6 +31,7 @@ public class Authenticator {
                     Printer.Signed();
                     Menu menu=new Menu(user);
                     Save.UserList(userList);
+                    LogAppender.Signup(Split(input)[0]+Split(input)[1]);
                 }
             }
             else if(Check(input,"[a-zA-Z]+\\s[a-zA-Z0-9]+"))
@@ -40,6 +41,7 @@ public class Authenticator {
                     Menu menu=new Menu(Find(Split(input)[0],Split(input)[1]));
                     Printer.Logged();
                     menu.Run();
+                    LogAppender.Login(Split(input)[0]);
                     break;
                 }
             }
@@ -52,7 +54,7 @@ public class Authenticator {
                 //Check if input is a blank RETURN
                 if(!input.equals("")) {
                     Printer.WrongInput();
-                    LogAppender.WrongInput();
+                    LogAppender.WrongInput(input);
                 }
             }
 
@@ -92,8 +94,7 @@ public class Authenticator {
             Printer.WrongPassword();}
         return temp;
     }
-    private boolean Exists(String username)
-    {
+    private boolean Exists(String username) throws IOException {
         boolean exists =false;
         for(User user:userList)
         {
@@ -105,6 +106,7 @@ public class Authenticator {
         if(exists)
         {
             Printer.AlreadyExists();
+            LogAppender.UserExists();
         }
         return exists;
     }

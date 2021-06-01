@@ -64,4 +64,16 @@ public class Printer {
     {
         System.out.println("bought "+animal.toString());
     }
+    public static void NotEnoughMoney()
+    {
+        System.err.println("You don't have enough coins");
+    }
+
+    public static void Pickup(int x,int y) {
+        System.out.println("Pick up from X:"+x+"Y:"+y);
+    }
+
+    public static void NullPoint() {
+        System.err.println("Empty point spotted to pickup");
+    }
 }
