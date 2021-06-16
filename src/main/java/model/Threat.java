@@ -1,7 +1,7 @@
 package model;
 import java.util.Random;
 
-public abstract class Threat /*implements Storable [hirad]*/{
+public abstract class Threat implements Storable{
     public String type;
     protected final int BoxWidth=1;
     protected final int BoxHeight=1;

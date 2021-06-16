@@ -2,7 +2,7 @@ package model;
 import control.LevelManager;
 
 import java.util.Random;
-public abstract class Animal {
+public abstract class Animal{
     public String type;
     protected final int BoxWidth=1;
     protected final int BoxHeight=1;
