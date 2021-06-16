@@ -88,7 +88,7 @@ public class CommandProcessor {
     public String getArg(int index) {
         try{
             return args.get(index);
-        }catch(IndexOutOfBoundsException){
+        }catch(IndexOutOfBoundsException e){
             return null;
         }
     }

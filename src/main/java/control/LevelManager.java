@@ -30,12 +30,12 @@ public class LevelManager {
         initialize();
     }
     public void run(){
-        ArrayList<String> outputs = new ArrayList<String>();
+        ArrayList<String> outputs;
         boolean cycle = true;
         while(cycle) { // main game cycle
 
             // input
-            //outputs = exec(sc);
+//            outputs = exec(sc);
             exec(sc);
 
             // update
@@ -61,7 +61,6 @@ public class LevelManager {
         //process command
         cp.process(sc.nextLine());
         String command = cp.getCommand().toLowerCase();
-
         //command library
         if(command.equals("buy")){
             String name = cp.getArg(0);
@@ -74,8 +73,46 @@ public class LevelManager {
             }else{
                 System.out.println("You dont have enough money");
             }
+        }else if(command.equals("pickup")){
+            int x;
+            int y;
+            try{
+                x = Integer.parseInt(cp.getArg(0));
+                y = Integer.parseInt(cp.getArg(1));
+            }catch(Exception e){
+                System.out.println("Wrong input");
+                return;
+            }
+            if(x < 0 || x> 6 || y<0 || y>6){
+                System.out.println("Wrong input");
+                return;
+            }
+            ArrayList<Commodity> temp = new ArrayList<>();
+            commodities.forEach(e -> {
+                if(e.getI() == x && e.getJ() == y){
+                    if(!collect(e)){
+                        System.out.println("Storage full!");
+                        return;
+                    }
+                    temp.add(e);
+                }
+            });
+            temp.forEach(e -> {
+               commodities.remove(e);
+            });
         }
     }
+
+    private boolean collect(Commodity e) {
+        if(storage.add(e)){
+            assertCollection(e);
+        }else return false;
+    }
+
+    private void assertCollection(Commodity e) {
+        System.out.println("> "+e.getName()+" collected!");
+    }
+
     private boolean buy(String name){
         if(name.equals("chicken")){
             if(money < 100)return false;

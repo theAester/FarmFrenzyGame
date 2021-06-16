@@ -25,6 +25,5 @@ class Lion extends Threat{
     }
     @Override
     public void attack() {
-
     }
 }
