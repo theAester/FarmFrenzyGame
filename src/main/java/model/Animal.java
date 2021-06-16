@@ -11,7 +11,7 @@ public abstract class Animal{
     protected int quota;
     protected int consumptionPortion;
     protected double C2H;
-    //x y in graphics
+    //x y (offset) in graphics
     protected int x;
     protected int y;
     //i j in 6*6
@@ -31,7 +31,9 @@ public abstract class Animal{
     public boolean alive=true;
 
     public abstract void produce();
-
+    public int getHealth(){
+        return health;
+    }
     public Animal(int i, int j) {
         this.i = i;
         this.j = j;
@@ -44,10 +46,5 @@ public abstract class Animal{
         this.j=ran.nextInt(6);
         //this.y++;
     }
-    public void removeAnimal(Animal animal)
-    {
-
-    }
-
     public abstract void update(LevelManager levelManager);
 }

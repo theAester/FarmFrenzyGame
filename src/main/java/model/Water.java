@@ -12,7 +12,7 @@ public class Water {
             return true;
         }else return false;
     }public int reFill(){
-        if(left < total){
+        if(left == 0){
             left = total;
             return refilInterval;
         }else return 0;

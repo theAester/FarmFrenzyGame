@@ -2,6 +2,7 @@ package control;
 
 import model.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,6 +50,15 @@ public class LevelManager {
         }
     }
     private void update(){
+        ArrayList<Animal> removeList = new ArrayList<>();
+        animals.forEach( x-> {
+            if(!x.alive){
+                removeList.add(x);
+            }
+        });
+        removeList.forEach(x->{
+            animals.remove(x);
+        });
         animals.forEach(x -> {
             x.update(this);
         });
@@ -73,7 +83,8 @@ public class LevelManager {
             }else{
                 System.out.println("You dont have enough money");
             }
-        }else if(command.equals("pickup")){
+        }
+        else if(command.equals("pickup")){
             int x;
             int y;
             try{
@@ -84,7 +95,7 @@ public class LevelManager {
                 return;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
-                System.out.println("Wrong input");
+                System.out.println("Wrong input range");
                 return;
             }
             ArrayList<Commodity> temp = new ArrayList<>();
@@ -100,6 +111,47 @@ public class LevelManager {
             temp.forEach(e -> {
                commodities.remove(e);
             });
+        }
+        else if(command.equals("well")){
+            if(water.reFill() !=0){
+                System.out.println("Well refilled");
+            }else System.out.println("Well in not empty yet");
+        }
+        else if(command.equals("plant")){
+            int x;
+            int y;
+            try{
+                x = Integer.parseInt(cp.getArg(0));
+                y = Integer.parseInt(cp.getArg(1));
+            }catch(Exception e){
+                System.out.println("Wrong input");
+                return;
+            }
+            if(x < 0 || x> 6 || y<0 || y>6){
+                System.out.println("Wrong input range");
+                return;
+            }
+            if(water.takeWater()){
+                grid[x][y] = 100;
+                System.out.println("Planted!");
+            }else{
+                System.out.println("Well is empty");
+            }
+        }
+        else if(command.equals("work")){
+            String facilityName = cp.getArg(0);
+            if(facilityName == null){
+                System.out.println("Please enter a name");
+                return;
+            }
+            Facility facility = facilities.stream().filter(x->x.getType().equals(facilityName)).findFirst().orElse(null);
+            if(facility == null){
+                System.out.println("counld not find "+facility);
+                return;
+            }
+            if(facility.work()){
+
+            }
         }
     }
 

@@ -21,7 +21,9 @@ protected boolean busy=false;
         this.x = x;
         this.y = y;
     }
-
+    public String getType(){
+        return type;
+    }
     public Facility() {
     }
 
