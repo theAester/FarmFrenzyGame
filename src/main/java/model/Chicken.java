@@ -1,5 +1,5 @@
 package model;
-class Chicken extends Animal{
+public class Chicken extends Animal{
     public Chicken(int x,int y)
     {
         super(x,y);

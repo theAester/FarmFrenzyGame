@@ -1,5 +1,5 @@
 package model;
-class Cat extends Animal{
+public class Cat extends Animal{
     public static int price;
     public Cat(int x,int y)
     {

@@ -1,10 +1,10 @@
 package model;
-class Sheep extends Animal{
-    public Sheep(int x,int y)
+public class Turkey extends Animal{
+    public Turkey(int x, int y)
     {
         super(x,y);
     }
-    public Sheep()
+    public Turkey()
     {
         super();
     }

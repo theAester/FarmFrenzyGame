@@ -1,5 +1,5 @@
 package model;
-class Dog extends Animal {public static int price;
+public class Dog extends Animal {public static int price;
     public Dog(int x,int y)
     {
         super(x,y);

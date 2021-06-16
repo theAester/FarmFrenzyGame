@@ -1,4 +1,6 @@
 package model;
+import control.LevelManager;
+
 import java.util.Random;
 public abstract class Animal {
     public String type;
@@ -22,7 +24,6 @@ public abstract class Animal {
     protected double v;
     protected int maxHealth;
 
-    public abstract void update();
     public abstract void produce();
     public abstract boolean consume();
 
@@ -39,4 +40,6 @@ public abstract class Animal {
         this.y++;
         //System.out.println(this.x+"   "+this.y);
     }
+
+    public abstract void update(LevelManager levelManager);
 }
