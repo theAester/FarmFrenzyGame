@@ -4,37 +4,44 @@ import control.LevelManager;
 import java.util.Random;
 
 public class Chicken extends Animal{
-    public Chicken(int x,int y)
+    public Chicken(int i,int j)
     {
-        super(x,y);
-        productionPoint=0;
-        productionRate=2;
+        super(i,j);
+        this.productionPoint=0;
+        this.productionRate=2;
+        this.type="chicken";
     }
     public Chicken()
     {
         super();
-        productionPoint=0;
-        productionRate=2;
+        this.health=this.maxHealth;
+        this.productionPoint=0;
+        this.productionRate=2;
+        this.type="chicken";
     }
     @Override
     public void update(LevelManager levelManager)
     {
-        productionPoint++;
-        if(productionPoint==productionRate)
+        this.productionPoint++;
+        if(this.productionPoint==this.productionRate)
         {
-            productionPoint=0;
-            Egg egg = new Egg(this.x,this.y);
+            this.productionPoint=0;
+            produce();
         }
-        health--;
-        if (health==maxHealth/2)
+        this.health--;
+        if (this.health<=this.maxHealth/2)
         {
-            consume=true;
+            this.consume=true;
+            if(this.health==0)
+            {
+                this.alive=false;
+            }
         }
         else
         {
-            consume=false;
+            this.consume=false;
         }
-        if(consume==false)
+        if(this.consume==false)
         {
             boolean moved=false;
             Random ran = new Random();
@@ -45,9 +52,9 @@ public class Chicken extends Animal{
             {
                 if(move==1)
                 {
-                    if(this.x<5)
+                    if(this.i<5)
                     {
-                        this.x++;
+                        this.i++;
                         moved=true;
                     }
                     else
@@ -57,9 +64,9 @@ public class Chicken extends Animal{
                 }
                 else if(move==2)
                 {
-                    if(this.x>0)
+                    if(this.i>0)
                     {
-                        this.x--;
+                        this.i--;
                         moved=true;
                     }
                     else
@@ -69,9 +76,9 @@ public class Chicken extends Animal{
                 }
                 else if(move==3)
                 {
-                    if(this.y<5)
+                    if(this.j<5)
                     {
-                        this.y++;
+                        this.j++;
                         moved=true;
                     }
                     else
@@ -81,9 +88,9 @@ public class Chicken extends Animal{
                 }
                 else if(move==4)
                 {
-                    if(this.y>0)
+                    if(this.j>0)
                     {
-                        this.y++;
+                        this.j++;
                         moved=true;
                     }
                     else
@@ -93,7 +100,7 @@ public class Chicken extends Animal{
                 }
             }
         }
-//        else if(consume=true)
+//        else if(this.consume=true)
 //        {
 //
 //        }
@@ -102,6 +109,6 @@ public class Chicken extends Animal{
     @Override
     public void produce()
     {
-        System.out.println(1);
+        Egg egg = new Egg(this.i,this.j);
     }
 }

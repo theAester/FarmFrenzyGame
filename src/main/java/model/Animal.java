@@ -11,8 +11,10 @@ public abstract class Animal{
     protected int quota;
     protected int consumptionPortion;
     protected double C2H;
+    //x y in graphics
     protected int x;
     protected int y;
+    //i j in 6*6
     protected int i;
     protected int j;
     protected int step;
@@ -22,24 +24,29 @@ public abstract class Animal{
     protected int jNew;
     protected int health;
     protected double v;
-    protected int maxHealth;
+    protected int maxHealth=10;
     protected int productionRate;
     protected int productionPoint;
     protected boolean consume=false;
+    public boolean alive=true;
 
     public abstract void produce();
 
-    public Animal(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Animal(int i, int j) {
+        this.i = i;
+        this.j = j;
     }
     public Animal()
     {
         Random ran = new Random();
-        this.x=ran.nextInt(6);
+        this.i=ran.nextInt(6);
         //this.x++;
-        this.y=ran.nextInt(6);
+        this.j=ran.nextInt(6);
         //this.y++;
+    }
+    public void removeAnimal(Animal animal)
+    {
+
     }
 
     public abstract void update(LevelManager levelManager);

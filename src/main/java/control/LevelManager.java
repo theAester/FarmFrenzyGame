@@ -109,6 +109,18 @@ public class LevelManager {
         }else return false;
     }
 
+    public void removeAnimal(Animal animal)
+    {
+        animals.remove(animal);
+    }
+    public void removeThreat(Threat threat)
+    {
+        threats.remove(threat);
+    }
+    public void removeCommodity(Commodity commodity)
+    {
+        commodities.remove(commodity);
+    }
     private void assertCollection(Commodity e) {
         System.out.println("> "+e.getName()+" collected!");
     }

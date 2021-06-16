@@ -17,12 +17,6 @@ public class Dog extends Animal {public static int price;
         System.out.println(this.x+this.y);
     }
     @Override
-    public boolean consume()
-    {
-        System.out.println(1);
-        return true;
-    }
-    @Override
     public void produce()
     {
         System.out.println(1);
