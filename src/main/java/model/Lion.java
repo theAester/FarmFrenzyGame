@@ -4,12 +4,16 @@ class Lion extends Threat{
     {
         super(x,y);
     }
-    /*
     @Override
     public int getStoringSize(){
-        return 12;
+        return storingSize;
     }
-    */
+
+    @Override
+    public int getUnitPrice() {
+        return unitPriceTag;
+    }
+
     public Lion()
     {
         super();

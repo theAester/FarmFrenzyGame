@@ -1,10 +1,12 @@
 package model;
 
+import control.LevelManager;
+
 class EggPowder extends Facility {
     public static int price;
 
     @Override
-    public void update() {
+    public void update(LevelManager levelManager) {
 
     }
 

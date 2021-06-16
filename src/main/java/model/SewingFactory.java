@@ -1,9 +1,11 @@
 package model;
 
+import control.LevelManager;
+
 public class SewingFactory extends Facility {
     public static long price;
     @Override
-    public void update() {
+    public void update(LevelManager levelManager) {
 
     }
 

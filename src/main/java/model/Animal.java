@@ -23,9 +23,11 @@ public abstract class Animal {
     protected int health;
     protected double v;
     protected int maxHealth;
+    protected int productionRate;
+    protected int productionPoint;
+    protected boolean consume=false;
 
     public abstract void produce();
-    public abstract boolean consume();
 
     public Animal(int x, int y) {
         this.x = x;
@@ -35,10 +37,9 @@ public abstract class Animal {
     {
         Random ran = new Random();
         this.x=ran.nextInt(6);
-        this.x++;
+        //this.x++;
         this.y=ran.nextInt(6);
-        this.y++;
-        //System.out.println(this.x+"   "+this.y);
+        //this.y++;
     }
 
     public abstract void update(LevelManager levelManager);

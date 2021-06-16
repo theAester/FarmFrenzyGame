@@ -1,15 +1,18 @@
 package model;
-public class Cow extends Animal{
-    public Cow(int x,int y)
+import control.LevelManager;
+
+import java.util.Random;
+public class Buffalo extends Animal{
+    public Buffalo(int x, int y)
     {
         super(x,y);
     }
-    public Cow()
+    public Buffalo()
     {
         super();
     }
     @Override
-    public void update()
+    public void update(LevelManager levelManager)
     {
         System.out.println(this.x+this.y);
     }

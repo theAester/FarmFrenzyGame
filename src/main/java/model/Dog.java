@@ -1,4 +1,7 @@
 package model;
+
+import control.LevelManager;
+
 public class Dog extends Animal {public static int price;
     public Dog(int x,int y)
     {
@@ -9,7 +12,7 @@ public class Dog extends Animal {public static int price;
         super();
     }
     @Override
-    public void update()
+    public void update(LevelManager levelManager)
     {
         System.out.println(this.x+this.y);
     }

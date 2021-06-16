@@ -82,10 +82,10 @@ public class LevelManager {
             Chicken chicken = new Chicken();
             animals.add(chicken);
             money-=100;
-        }else if(name.equals("cow")){
+        }else if(name.equals("buffalo")){
             if(money < 400)return false;
-            Cow cow = new Cow();
-            animals.add(cow);
+            Buffalo buffalo = new Buffalo();
+            animals.add(buffalo);
             money-=400;
         }else if(name.equals("cat")){
             if(money < 150)return false;
