@@ -1,6 +1,7 @@
 package control;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import model.*;
 
@@ -12,9 +13,17 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class Save {
-    static Gson gson = new Gson();
+    static Gson gson;
 
     public Save() {
+    }
+    public static void initializeSave(){
+        GsonBuilder gb = new GsonBuilder();
+        gb.registerTypeAdapter(Animal.class, new InterfaceAdapter<Animal>());
+        gb.registerTypeAdapter(Threat.class, new InterfaceAdapter<Threat>());
+        gb.registerTypeAdapter(Facility.class, new InterfaceAdapter<Facility>());
+        gb.registerTypeAdapter(Commodity.class, new InterfaceAdapter<Commodity>());
+        gson = gb.create();
     }
 
     public static void UserList(ArrayList<User> userList) {
