@@ -332,7 +332,7 @@ public class LevelManager {
 
     private void printAll() {
         System.out.println("turns: "+cycleNumber/30);
-        System.out.println("------------------------Map grin------------------------");
+        System.out.println("------------------------Map grid------------------------");
         for(int i=0;i<6;i++){
             for(int j=0;j<6;j++){
                 System.out.print(grid[i][j]+"\t");
