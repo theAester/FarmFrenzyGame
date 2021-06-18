@@ -148,7 +148,7 @@ public class Printer {
     }
 
     public static void NotEnough(String product) {
-
+        System.out.println("Not Enough "+ product);
     }
 }
 

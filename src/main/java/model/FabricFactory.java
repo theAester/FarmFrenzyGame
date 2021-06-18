@@ -69,10 +69,10 @@ public class FabricFactory extends Facility {
 
     @Override
     public void produce(LevelManager levelManager) {
-        levelManager.generatePowder();
+        levelManager.generateFabric(getCoordinateX(),getCoordinateY());
         if(this.productionCount==2)
         {
-            levelManager.generateFabric();
+            levelManager.generateFabric(getCoordinateX(),getCoordinateY());
         }
     }
 

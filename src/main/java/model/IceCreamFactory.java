@@ -1,12 +1,59 @@
 package model;
 
 import control.LevelManager;
+import view.Printer;
 
 public class IceCreamFactory extends Facility {
-    public static long price;
+    /**
+     *<h3>update function</h3>
+     * update status library:<br>
+     * 0 = idle: no action<br>
+     * 1 = is processing<br>
+     * 2 = done<br>
+     * @return update status
+     */
     @Override
-    public void update(LevelManager levelManager) {
+    public int update(LevelManager levelManager) {
+        if( outputSeq != outputTimeout && outputSeq != -1){
+            outputSeq++;
+            return 1;
+        }else if(outputSeq == outputTimeout){
+            outputSeq = -1;
+            busy = false;
+            produce(levelManager);
+            return 2;
+        }
+        return 0;
+    }
 
+    @Override
+    public boolean work(LevelManager levelManager) {
+        if (this.level == 1) {
+            BottledMilk bottledMilk = levelManager.requestBottledMilk();
+            if (bottledMilk == null) {
+                Printer.NotEnough("bottledmilk");
+                return false;
+            }
+            this.productionCount = 1;
+            this.outputSeq = 0;
+            this.busy = true;
+            return true;
+        } else {
+            BottledMilk bottledMilk = levelManager.requestBottledMilk();
+            if (bottledMilk == null) {
+                Printer.NotEnough("bottledmilk");
+                return false;
+            }
+            BottledMilk bottledMilk2 = levelManager.requestBottledMilk();
+            if (bottledMilk2 != null) {
+                this.productionCount = 2;
+            } else {
+                this.productionCount = 1;
+            }
+            this.outputSeq = 0;
+            this.busy = true;
+            return true;
+        }
     }
 
     @Override
@@ -20,8 +67,12 @@ public class IceCreamFactory extends Facility {
     }
 
     @Override
-    public void produce() {
-
+    public void produce(LevelManager levelManager) {
+        levelManager.generateIceCream(getCoordinateX(),getCoordinateY());
+        if(this.productionCount==2)
+        {
+            levelManager.generateIceCream(getCoordinateX(),getCoordinateY());
+        }
     }
 
     public IceCreamFactory(int i, int j) {

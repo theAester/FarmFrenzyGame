@@ -29,8 +29,8 @@ public class MilkProcessing extends Facility {
     @Override
     public boolean work(LevelManager levelManager) {
         if (this.level == 1) {
-            Egg egg = levelManager.requestEgg();
-            if (egg == null) {
+            Milk milk = levelManager.requestMilk();
+            if (milk == null) {
                 Printer.NotEnough("milk");
                 return false;
             }
@@ -39,13 +39,13 @@ public class MilkProcessing extends Facility {
             this.busy = true;
             return true;
         } else {
-            Egg egg = levelManager.requestEgg();
-            if (egg == null) {
+            Milk milk = levelManager.requestMilk();
+            if (milk == null) {
                 Printer.NotEnough("milk");
                 return false;
             }
-            Egg egg2 = levelManager.requestEgg();
-            if (egg2 != null) {
+            Milk milk2 = levelManager.requestMilk();
+            if (milk2 != null) {
                 this.productionCount = 2;
             } else {
                 this.productionCount = 1;
@@ -68,10 +68,10 @@ public class MilkProcessing extends Facility {
 
     @Override
     public void produce(LevelManager levelManager) {
-        levelManager.generatePowder();
+        levelManager.generateBottledMilk(getCoordinateX(),getCoordinateY());
         if(this.productionCount==2)
         {
-            levelManager.generatePowder();
+            levelManager.generateBottledMilk(getCoordinateX(),getCoordinateY());
         }
     }
 

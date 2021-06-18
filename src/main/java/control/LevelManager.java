@@ -356,6 +356,19 @@ public class LevelManager {
     public Feather requestFeather() {
     }
 
-    public void generateFabric() {
+
+    public void generateFabric(int coordinateX, int coordinateY) {
+    }
+
+    public Milk requestMilk() {
+    }
+
+    public void generateBottledMilk(int coordinateX, int coordinateY) {
+    }
+
+    public void generateIceCream(int coordinateX, int coordinateY) {
+    }
+
+    public BottledMilk requestBottledMilk() {
     }
 }
