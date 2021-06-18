@@ -32,7 +32,7 @@ public abstract class Animal{
     protected boolean consume=false;
     public boolean alive=true;
 
-    public abstract void produce();
+    public abstract void produce(LevelManager levelManager);
     public int getHealth(){
         return health;
     }
