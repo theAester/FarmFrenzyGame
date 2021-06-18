@@ -6,6 +6,7 @@ import view.Printer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class LevelManager {
     private ArrayList<Animal> animals;
     private ArrayList<Threat> threats;
@@ -23,12 +24,22 @@ public class LevelManager {
     private int bronzeTime;
     private int bronzestars;
     public int cycleNumber;
-    private CommandProcessor cp;
-    private Scanner sc ;
+    private Level currentLevel;
+    private final CommandProcessor cp;
+    private final Scanner sc ;
     public LevelManager(Level level){
+        currentLevel =level;
         sc = new Scanner(System.in);
         cp = new CommandProcessor(true);
         initialize();
+    }
+    public void initialize(){
+        currentLevel.getAnimalCycle().forEach( x->{
+            animals.add(x);
+        });
+        currentLevel.getFacilityCycle().forEach( x->{
+            facilities.add(x);
+        });
     }
     public void run(){
         ArrayList<String> outputs;
@@ -91,6 +102,7 @@ public class LevelManager {
             if(buy(name)){
                 Printer.BuyAnimal(name);
             }else{
+                LogAppender.NotEnoughMoney();
                 Printer.NotEnoughMoney();
             }
         }
@@ -271,7 +283,7 @@ public class LevelManager {
         commodities.remove(commodity);
     }
     private void assertCollection(Commodity e) {
-        System.out.println("> "+e.getName()+" collected!");
+        System.out.println(e.getName()+" collected!");
     }
 
     private boolean buy(String name){
@@ -302,8 +314,5 @@ public class LevelManager {
             money-=200;
         }else return false;
         return true;
-    }
-    public void initialize(){
-
     }
 }
