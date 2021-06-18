@@ -30,9 +30,9 @@ public class SewingFactory extends Facility {
     @Override
     public boolean work(LevelManager levelManager) {
         if (this.level == 1) {
-            Egg egg = levelManager.requestEgg();
-            if (egg == null) {
-                Printer.NotEnough("egg");
+            Fabric fabric = levelManager.requestFabric();
+            if (fabric == null) {
+                Printer.NotEnough("fabric");
                 return false;
             }
             this.productionCount = 1;
@@ -40,13 +40,13 @@ public class SewingFactory extends Facility {
             this.busy = true;
             return true;
         } else {
-            Egg egg = levelManager.requestEgg();
-            if (egg == null) {
-                Printer.NotEnough("egg");
+            Fabric fabric = levelManager.requestFabric();
+            if (fabric == null) {
+                Printer.NotEnough("fabric");
                 return false;
             }
-            Egg egg2 = levelManager.requestEgg();
-            if (egg2 != null) {
+            Fabric fabric2 = levelManager.requestFabric();
+            if (fabric2 != null) {
                 this.productionCount = 2;
             } else {
                 this.productionCount = 1;
@@ -68,8 +68,12 @@ public class SewingFactory extends Facility {
     }
 
     @Override
-    public void produce() {
-
+    public void produce(LevelManager levelManager) {
+        levelManager.generateShirt(getCoordinateX(),getCoordinateY());
+        if(this.productionCount==2)
+        {
+            levelManager.generateShirt(getCoordinateX(),getCoordinateY());
+        }
     }
 
     public SewingFactory(int i, int j) {

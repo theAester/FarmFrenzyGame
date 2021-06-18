@@ -371,4 +371,10 @@ public class LevelManager {
 
     public BottledMilk requestBottledMilk() {
     }
+
+    public Fabric requestFabric() {
+    }
+
+    public void generateShirt(int coordinateX, int coordinateY) {
+    }
 }
