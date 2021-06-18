@@ -141,5 +141,10 @@ public class Printer {
     public static void TruckHasLeft(int money) {
         System.out.println("Truck left for the market...\nthe truck is carrying $"+money+" worth of items");
     }
+
+    public static void caged(String name, int i, int j, int remaining) {
+        if(remaining != 0) System.out.printf("Caged a %s at (%d,%d). %d clicks remaining.\n",name,i,j,remaining);
+        else System.out.printf("Contained a %s at (%d,%d)\n",name , i ,j);
+    }
 }
 

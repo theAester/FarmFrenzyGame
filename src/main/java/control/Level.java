@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Level {
-    private int level,goldTime,silverTime,bronzeTime,goldStars,silverStars,bronzeStars;
+    private int level,goldTime,silverTime,bronzeTime,goldStars,silverStars,bronzeStars,initialBalance;
     private ArrayList<Animal> AnimalCycle;
     private ArrayList<Facility> FacilityCycle;
     private HashMap<Integer, Enum> ThreatCycle;
     private HashMap<Enum,Integer> LevelGoals;
     // All data of a level should be here
 
-    public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,ArrayList animalCycle,HashMap threatCycle,ArrayList facilityCycle,HashMap levelGoals) {
+    public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,ArrayList animalCycle,HashMap threatCycle,ArrayList facilityCycle,HashMap levelGoals,int initialBalance) {
         this.level = level;
         this.goldTime = goldTime;
         this.silverTime = silverTime;
@@ -27,6 +27,15 @@ public class Level {
         this.ThreatCycle=threatCycle;
         this.FacilityCycle=facilityCycle;
         this.LevelGoals=levelGoals;
+        this.initialBalance=initialBalance;
+    }
+
+    public int getInitialBalance() {
+        return initialBalance;
+    }
+
+    public void setInitialBalance(int initialBalance) {
+        this.initialBalance = initialBalance;
     }
 
     public int getLevel() {

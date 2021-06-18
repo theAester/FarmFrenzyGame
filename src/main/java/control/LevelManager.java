@@ -17,12 +17,6 @@ public class LevelManager {
     private Water water;
     private Truck truck;
     public int[][] grid;
-    private int goldTime;
-    private int goldStars;
-    private int silverTime;
-    private int silverStars;
-    private int bronzeTime;
-    private int bronzestars;
     public int cycleNumber;
     private Level currentLevel;
     private final CommandProcessor cp;
@@ -31,6 +25,10 @@ public class LevelManager {
         currentLevel =level;
         sc = new Scanner(System.in);
         cp = new CommandProcessor(true);
+        animals = new ArrayList<>();
+        threats = new ArrayList<>();
+        facilities = new ArrayList<>();
+        commodities =new ArrayList<>();
         initialize();
     }
     public void initialize(){
@@ -51,16 +49,17 @@ public class LevelManager {
             exec(sc);
 
             // update
-            update();
+            //update();
 
             //TODO: draw
 
             //output  --todo--> log
-            cycle = output(outputs);
+            //cycle = output(outputs);
 
         }
     }
     private void update(){
+        cycleNumber += 30;
         updateTruck();
         ArrayList<Animal> removeList = new ArrayList<>();
         animals.forEach( x-> {
@@ -77,7 +76,6 @@ public class LevelManager {
         facilities.forEach(x->{
             x.update(this);
         });
-        //if(cycleNumber)
     }
 
     private void updateTruck() {
@@ -96,10 +94,12 @@ public class LevelManager {
         if(command.equalsIgnoreCase("buy")){
             String name = cp.getArg(0);
             if(name == null){
+                LogAppender.InvalidInput("buy");
                 Printer.InvalidName();
                 return;
             }
             if(buy(name)){
+                LogAppender.BuyAnimal(name);
                 Printer.BuyAnimal(name);
             }else{
                 LogAppender.NotEnoughMoney();
@@ -113,10 +113,12 @@ public class LevelManager {
                 x = Integer.parseInt(cp.getArg(0));
                 y = Integer.parseInt(cp.getArg(1));
             }catch(Exception e){
+                LogAppender.InvalidInput("pickup");
                 Printer.InvalidInput();
                 return;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
+                LogAppender.InvalidInput("pickup");
                 Printer.InvalidRange();
                 return;
             }
@@ -124,6 +126,7 @@ public class LevelManager {
             commodities.forEach(e -> {
                 if(e.getI() == x && e.getJ() == y){
                     if(!collect(e)){
+                        LogAppender.StorageFull();
                         Printer.StorageFull();
                         return;
                     }
@@ -136,8 +139,12 @@ public class LevelManager {
         }
         else if(command.equalsIgnoreCase("well")){
             if(water.reFill() !=0){
+                LogAppender.WellRefill();
                 Printer.WellRefill();
-            }else Printer.wellFail();
+            }else{
+                LogAppender.wellFail();
+                Printer.wellFail();
+            }
         }
         else if(command.equalsIgnoreCase("plant")){
             int x;
@@ -146,10 +153,12 @@ public class LevelManager {
                 x = Integer.parseInt(cp.getArg(0));
                 y = Integer.parseInt(cp.getArg(1));
             }catch(Exception e){
+                LogAppender.InvalidInput("plant");
                 Printer.InvalidInput();
                 return;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
+                LogAppender.InvalidInput("plant");
                 Printer.InvalidRange();
                 return;
             }
@@ -157,6 +166,7 @@ public class LevelManager {
                 grid[x][y] = 100;
                 Printer.Planted();
             }else{
+                LogAppender.EmptyWell();
                 Printer.EmptyWell();
             }
         }
@@ -190,14 +200,17 @@ public class LevelManager {
 //                Printer.InvalidRange();
 //                return;
 //            }
-            threats.forEach(e->{
+            for (Threat e : threats) {
                 if(e.inside(x,y)){
                     e.cage();
+                    LogAppender.caged(e.getName(),e.getCoordinateX(),e.getCoordinateY(),e.getRemainingClicks());
+                    Printer.caged(e.getName(),e.getCoordinateX(),e.getCoordinateY(),e.getRemainingClicks());
                 }
-            });
+            }
         }
         else if(command.equalsIgnoreCase("truck")){
             if(cp.getArgsCount() == 0){
+                LogAppender.DariEshtebahMizaniDadash();
                 Printer.DariEshtebahMizaniDadash();
                 return;
             }
@@ -209,7 +222,10 @@ public class LevelManager {
                         Printer.ItemNotFound();
                         return;
                     }
-                    if(truck.load(item)) Printer.Loaded();
+                    if(truck.load(item)) {
+                        LogAppender.Loaded(itemName);
+                        Printer.Loaded();
+                    }
                     else {
                         Printer.NotLoaded();
                         storage.add(item);
@@ -229,13 +245,19 @@ public class LevelManager {
                         Printer.ItemNotFound();
                         return;
                     }
-                    if(truck.loadAll(items)) Printer.Loaded();
+                    if(truck.loadAll(items)) {
+                        LogAppender.Loaded(itemName,count);
+                        Printer.Loaded();
+                    }
                     else{
                         Printer.NotLoaded();
                         storage.addAll(items);
                     }
                 }
-                else Printer.DariEshtebahMizaniDadash();
+                else {
+                    LogAppender.DariEshtebahMizaniDadash();
+                    Printer.DariEshtebahMizaniDadash();
+                }
             }
             else if(cp.getArg(0).equalsIgnoreCase("unload")){
                 if(cp.getArgsCount() == 2){
@@ -245,19 +267,27 @@ public class LevelManager {
                         Printer.ItemNotFound();
                         return;
                     }
-                    if(storage.add(item)) Printer.Unloaded();
+                    if(storage.add(item)) {
+                        LogAppender.Unloaded(itemName);
+                        Printer.Unloaded();
+                    }
                     else {
                         Printer.NotUnloaded();
                         truck.load(item);
                     }
                 }
-                else Printer.DariEshtebahMizaniDadash();
+                else {
+                    LogAppender.DariEshtebahMizaniDadash();
+                    Printer.DariEshtebahMizaniDadash();
+                }
             }
             else if(cp.getArg(0).equalsIgnoreCase("go")){
                 truck.ride();
+                LogAppender.truckHasLeft(truck.carriedMoney);
                 Printer.TruckHasLeft(truck.carriedMoney);
             }
             else{
+                LogAppender.DariEshtebahMizaniDadash();
                 Printer.DariEshtebahMizaniDadash();
                 return;
             }
