@@ -8,21 +8,23 @@ public class Buffalo extends Animal{
     {
         super(i,j);
         this.productionPoint=0;
-        this.productionRate=5;
+        this.productionRate=150;
         this.type="buffalo";
+        this.unitPriceTag=400;
     }
     public Buffalo()
     {
         super();
         this.health=this.maxHealth;
         this.productionPoint=0;
-        this.productionRate=5;
+        this.productionRate=150;
         this.type="buffalo";
+        this.unitPriceTag=400;
     }
     @Override
     public void update(LevelManager levelManager)
     {
-        this.productionPoint++;
+        this.productionPoint=+30;
         if(this.productionPoint==this.productionRate)
         {
             this.productionPoint=0;

@@ -2,7 +2,8 @@ package model;
 
 import control.LevelManager;
 
-public class EggPowder extends Facility {
+public class FabricFactory extends Facility {
+    //parche bafi
     @Override
     public void update(LevelManager levelManager) {
 
@@ -23,17 +24,17 @@ public class EggPowder extends Facility {
 
     }
 
-    public EggPowder(int i, int j) {
+    public FabricFactory(int i, int j) {
         super(i, j);
-        this.type="eggpowder";
-        this.unitPriceTag=150;
-        this.outputTimeout=120;
+        this.type="fabricfactory";
+        this.unitPriceTag=250;
+        this.outputTimeout=150;
     }
-    public EggPowder() {
+
+    public FabricFactory() {
         super();
-        this.type="eggpowder";
-        this.unitPriceTag=150;
-        this.outputTimeout=120;
+        this.type="fabricfactory";
+        this.unitPriceTag=250;
+        this.outputTimeout=150;
     }
 }
-

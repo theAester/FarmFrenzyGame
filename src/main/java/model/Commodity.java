@@ -2,13 +2,13 @@ package model;
 
 public abstract class Commodity implements Storable {
     protected String type;
-    protected long price;
     protected int x;
     protected int y;
     protected int i;
     protected int j;
     protected int storingSize;
     protected int unitPriceTag;
+    protected int outputTimeout;
 
     public abstract void acquire();
 

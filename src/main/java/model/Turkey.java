@@ -8,21 +8,23 @@ public class Turkey extends Animal{
     {
         super(i,j);
         this.productionPoint=0;
-        this.productionRate=3;
+        this.productionRate=90;
         this.type="turkey";
+        this.unitPriceTag=200;
     }
     public Turkey()
     {
         super();
         this.health=this.maxHealth;
         this.productionPoint=0;
-        this.productionRate=3;
+        this.productionRate=90;
         this.type="turkey";
+        this.unitPriceTag=200;
     }
     @Override
     public void update(LevelManager levelManager)
     {
-        this.productionPoint++;
+        this.productionPoint=+30;
         if(this.productionPoint==this.productionRate)
         {
             this.productionPoint=0;

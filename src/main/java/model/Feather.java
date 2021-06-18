@@ -1,5 +1,5 @@
 package model;
-
+import control.LevelManager;
 public class Feather extends Commodity {
 
     @Override
@@ -18,6 +18,9 @@ public class Feather extends Commodity {
     public Feather(int i, int j) {
         super(i, j);
         this.type="feather";
+        this.storingSize=1;
+        this.unitPriceTag=20;
+        this.outputTimeout=120;
     }
 
     @Override

@@ -93,7 +93,7 @@ public class LevelManager {
         cp.process(sc.nextLine());
         String command = cp.getCommand().toLowerCase();
         //command library
-        if(command.equals("buy")){
+        if(command.equalsIgnoreCase("buy")){
             String name = cp.getArg(0);
             if(name == null){
                 Printer.InvalidName();
@@ -106,7 +106,7 @@ public class LevelManager {
                 Printer.NotEnoughMoney();
             }
         }
-        else if(command.equals("pickup")){
+        else if(command.equalsIgnoreCase("pickup")){
             int x;
             int y;
             try{
@@ -134,12 +134,12 @@ public class LevelManager {
                commodities.remove(e);
             });
         }
-        else if(command.equals("well")){
+        else if(command.equalsIgnoreCase("well")){
             if(water.reFill() !=0){
                 Printer.WellRefill();
             }else Printer.wellFail();
         }
-        else if(command.equals("plant")){
+        else if(command.equalsIgnoreCase("plant")){
             int x;
             int y;
             try{
@@ -175,7 +175,7 @@ public class LevelManager {
 
             }
         }
-        else if(command.equals("cage")){
+        else if(command.equalsIgnoreCase("cage")){
             //TODO: for graphics : get x y from mouse
             int x;
             int y;
@@ -196,12 +196,12 @@ public class LevelManager {
                 }
             });
         }
-        else if(command.equals("truck")){
+        else if(command.equalsIgnoreCase("truck")){
             if(cp.getArgsCount() == 0){
                 Printer.DariEshtebahMizaniDadash();
                 return;
             }
-            if(cp.getArg(0).equals("load")){
+            if(cp.getArg(0).equalsIgnoreCase("load")){
                 if(cp.getArgsCount() == 2){
                     String itemName = cp.getArg(1);
                     Storable item = storage.queryItem(itemName);
@@ -237,7 +237,7 @@ public class LevelManager {
                 }
                 else Printer.DariEshtebahMizaniDadash();
             }
-            else if(cp.getArg(0).equals("unload")){
+            else if(cp.getArg(0).equalsIgnoreCase("unload")){
                 if(cp.getArgsCount() == 2){
                     String itemName = cp.getArg(1);
                     Storable item = truck.queryItem(itemName);
@@ -253,7 +253,7 @@ public class LevelManager {
                 }
                 else Printer.DariEshtebahMizaniDadash();
             }
-            else if(cp.getArg(0).equals("go")){
+            else if(cp.getArg(0).equalsIgnoreCase("go")){
                 truck.ride();
                 Printer.TruckHasLeft(truck.carriedMoney);
             }
@@ -287,27 +287,27 @@ public class LevelManager {
     }
 
     private boolean buy(String name){
-        if(name.equals("chicken")){
+        if(name.equalsIgnoreCase("chicken")){
             if(money < 100)return false;
             Chicken chicken = new Chicken();
             animals.add(chicken);
             money-=100;
-        }else if(name.equals("buffalo")){
+        }else if(name.equalsIgnoreCase("buffalo")){
             if(money < 400)return false;
             Buffalo buffalo = new Buffalo();
             animals.add(buffalo);
             money-=400;
-        }else if(name.equals("cat")){
+        }else if(name.equalsIgnoreCase("cat")){
             if(money < 150)return false;
             Cat caet = new Cat();
             animals.add(caet);
             money-=150;
-        }else if(name.equals("dog")){
+        }else if(name.equalsIgnoreCase("dog")){
             if(money < 100)return false;
             Dog dog = new Dog();
             animals.add(dog);
             money-=100;
-        }else if(name.equals("turkey")){
+        }else if(name.equalsIgnoreCase("turkey")){
             if(money < 200)return false;
             Turkey turkey = new Turkey();
             animals.add(turkey);

@@ -22,13 +22,17 @@ class Bakery extends Facility {
     public void produce() {
 
     }
-
-
-    public Bakery(int x, int y) {
-        super(x, y);
+    public Bakery(int i, int j) {
+        super(i, j);
+        this.type="bakery";
+        this.unitPriceTag=250;
+        this.outputTimeout=150;
     }
     public Bakery()
     {
         super();
+        this.type="bakery";
+        this.unitPriceTag=250;
+        this.outputTimeout=150;
     }
 }

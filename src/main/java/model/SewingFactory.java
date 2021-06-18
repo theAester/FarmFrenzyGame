@@ -3,7 +3,7 @@ package model;
 import control.LevelManager;
 
 public class SewingFactory extends Facility {
-    public static long price;
+    //khayyati
     @Override
     public void update(LevelManager levelManager) {
 
@@ -24,11 +24,17 @@ public class SewingFactory extends Facility {
 
     }
 
-    public SewingFactory(int x, int y) {
-        super(x, y);
+    public SewingFactory(int i, int j) {
+        super(i, j);
+        this.type="sewingfactory";
+        this.unitPriceTag=400;
+        this.outputTimeout=180;
     }
 
     public SewingFactory() {
         super();
+        this.type="sewingfactory";
+        this.unitPriceTag=400;
+        this.outputTimeout=180;
     }
 }

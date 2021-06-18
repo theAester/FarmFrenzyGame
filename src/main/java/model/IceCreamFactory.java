@@ -2,7 +2,7 @@ package model;
 
 import control.LevelManager;
 
-public class MilkProcessing extends Facility {
+public class IceCreamFactory extends Facility {
     public static long price;
     @Override
     public void update(LevelManager levelManager) {
@@ -11,7 +11,7 @@ public class MilkProcessing extends Facility {
 
     @Override
     public void upgrade() {
-        this.level++;
+
     }
 
     @Override
@@ -24,17 +24,17 @@ public class MilkProcessing extends Facility {
 
     }
 
-    public MilkProcessing(int i, int j) {
+    public IceCreamFactory(int i, int j) {
         super(i, j);
-        this.type="milkprocessing";
-        this.unitPriceTag=400;
-        this.outputTimeout=180;
+        this.type="icecreamfactory";
+        this.unitPriceTag=550;
+        this.outputTimeout=210;
     }
 
-    public MilkProcessing() {
+    public IceCreamFactory() {
         super();
-        this.type="milkprocessing";
-        this.unitPriceTag=400;
-        this.outputTimeout=180;
+        this.type="icecreamfactory";
+        this.unitPriceTag=550;
+        this.outputTimeout=210;
     }
 }

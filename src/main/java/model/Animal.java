@@ -4,12 +4,14 @@ import control.LevelManager;
 import java.util.Random;
 public abstract class Animal{
     public String type;
+    protected int unitPriceTag;
     protected final int BoxWidth=1;
     protected final int BoxHeight=1;
     protected int idleSequence;
     protected int outputTimeout;
     protected int quota;
     protected int consumptionPortion;
+    //consuption to health:C2H
     protected double C2H;
     //x y (offset) in graphics
     protected int x;
@@ -42,9 +44,7 @@ public abstract class Animal{
     {
         Random ran = new Random();
         this.i=ran.nextInt(6);
-        //this.x++;
         this.j=ran.nextInt(6);
-        //this.y++;
     }
     public abstract void update(LevelManager levelManager);
 }

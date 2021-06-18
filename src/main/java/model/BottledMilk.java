@@ -1,6 +1,6 @@
 package model;
 import control.LevelManager;
-public class IceCream extends Commodity {
+public class BottledMilk extends Commodity {
 
     @Override
     public void acquire() {
@@ -15,12 +15,12 @@ public class IceCream extends Commodity {
     public int getUnitPrice() {
         return unitPriceTag;
     }
-    public IceCream(int i, int j) {
+    public BottledMilk(int i, int j) {
         super(i, j);
-        this.type="icecream";
-        this.storingSize=4;
-        this.unitPriceTag=120;
-        this.outputTimeout=180;
+        this.type="bottledmilk";
+        this.storingSize=2;
+        this.unitPriceTag=60;
+        this.outputTimeout=150;
     }
 
     @Override
@@ -38,4 +38,6 @@ public class IceCream extends Commodity {
         return this.type;
     }
 }
+
+
 

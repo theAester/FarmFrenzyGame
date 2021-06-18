@@ -1,5 +1,5 @@
 package model;
-
+import control.LevelManager;
 public class Egg extends Commodity {
 
     @Override
@@ -18,6 +18,9 @@ public class Egg extends Commodity {
     public Egg(int i, int j) {
         super(i, j);
         this.type="egg";
+        this.storingSize=1;
+        this.unitPriceTag=15;
+        this.outputTimeout=120;
     }
 
     @Override

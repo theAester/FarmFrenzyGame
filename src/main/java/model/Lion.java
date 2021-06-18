@@ -1,8 +1,15 @@
 package model;
+
+import java.util.Random;
+
 class Lion extends Threat{
-    public Lion(int x,int y)
+    public Lion(int i,int j)
     {
-        super(x,y);
+        super(i,j);
+        this.type="lion";
+        this.unitPriceTag=300;
+        this.storingSize=15;
+        this.outputTimeout=150;
     }
     @Override
     public int getStoringSize(){
@@ -10,18 +17,73 @@ class Lion extends Threat{
     }
 
     @Override
+    public boolean inside(int x, int y) {
+        return super.inside(x, y);
+    }
+
+    @Override
+    public void cage() {
+        super.cage();
+    }
+
+    @Override
+    public String getName() {
+        return this.type;
+    }
+
+    @Override
     public int getUnitPrice() {
         return unitPriceTag;
     }
 
+
     public Lion()
     {
         super();
+        this.type="lion";
+        this.unitPriceTag=300;
+        this.storingSize=15;
+        this.outputTimeout=150;
     }
     @Override
     public void update()
     {
-        System.out.println(this.x+this.y);
+        boolean moved = false;
+        Random ran = new Random();
+        int move = 0;
+        move = ran.nextInt(4);
+        move++;
+        while (moved == false) {
+            if (move == 1) {
+                if (this.i < 5) {
+                    this.i++;
+                    moved = true;
+                } else {
+                    move++;
+                }
+            } else if (move == 2) {
+                if (this.i > 0) {
+                    this.i--;
+                    moved = true;
+                } else {
+                    move++;
+                }
+            } else if (move == 3) {
+                if (this.j < 5) {
+                    this.j++;
+                    moved = true;
+                } else {
+                    move++;
+                }
+            } else if (move == 4) {
+                if (this.j > 0) {
+                    this.j++;
+                    moved = true;
+                } else {
+                    move = 1;
+                }
+            }
+        }
     }
     @Override
     public void attack() {
