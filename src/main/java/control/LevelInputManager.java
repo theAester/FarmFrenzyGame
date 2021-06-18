@@ -25,6 +25,8 @@ public class LevelInputManager {
         LevelMap = levelMap;
         this.currentLevel = currentLevel;
         inGame();
+        Save save=new Save();
+        save.GenerateLevel(10,100,100,100,100,1001,100,5,5);
     }
     public void inGame() {
         LevelManager LM=new LevelManager(currentLevel);

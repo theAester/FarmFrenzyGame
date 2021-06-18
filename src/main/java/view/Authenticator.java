@@ -41,6 +41,7 @@ public class Authenticator {
                     Menu menu=new Menu(Find(Split(input)[0],Split(input)[1]));
                     Printer.Logged();
                     menu.Run();
+
                     LogAppender.Login(Split(input)[0]);
                     break;
                 }
