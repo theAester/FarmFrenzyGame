@@ -11,6 +11,7 @@ public class Buffalo extends Animal{
         this.productionRate=150;
         this.type="buffalo";
         this.unitPriceTag=400;
+        this.consumptionPortion=20;
     }
     public Buffalo()
     {
@@ -20,6 +21,7 @@ public class Buffalo extends Animal{
         this.productionRate=150;
         this.type="buffalo";
         this.unitPriceTag=400;
+        this.consumptionPortion=20;
     }
     @Override
     public void update(LevelManager levelManager)
@@ -102,10 +104,53 @@ public class Buffalo extends Animal{
                 }
             }
         }
-//        else if(this.consume=true)
-//        {
-//
-//        }
+        else if(this.consume==true)
+        {
+            int min=100000;
+            for(int i1=0;i1<6;i1++)
+            {
+                for(int i2=0;i2<6;i2++)
+                {
+                    if(levelManager.grid[i1][i2]>=consumptionPortion)
+                    {
+                        int min2=1000000;
+                        min2=(i1-this.i)*(i1-this.i)+(i2-this.j)*(i2-this.j);
+                        if(min2<min)
+                        {
+                            min=min2;
+                            this.iNew=i1;
+                            this.jNew=i2;
+                        }
+                    }
+                }
+            }
+            if(this.iNew!=this.i)
+            {
+                if(this.iNew>this.i)
+                {
+                    this.i++;
+                }
+                if(this.iNew<this.i)
+                {
+                    this.i--;
+                }
+            }
+            else if(this.jNew!=this.j)
+            {
+                if(this.jNew>this.j)
+                {
+                    this.j++;
+                }
+                if(this.jNew<this.j)
+                {
+                    this.j--;
+                }
+            }
+            else if(this.jNew==this.j&&this.iNew==this.i)
+            {
+                eat(levelManager,this.i,this.j);
+            }
+        }
 
     }
     @Override

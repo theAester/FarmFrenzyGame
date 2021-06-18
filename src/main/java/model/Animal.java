@@ -32,6 +32,10 @@ public abstract class Animal{
     protected boolean consume=false;
     public boolean alive=true;
 
+    public void eat(LevelManager levelManager,int i,int j)
+    {
+        levelManager.grid[i][j]=levelManager.grid[i][j]-consumptionPortion;
+    }
     public abstract void produce(LevelManager levelManager);
     public int getHealth(){
         return health;
