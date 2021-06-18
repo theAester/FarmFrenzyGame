@@ -49,7 +49,7 @@ public class LogAppender {
         }
         scanner.close();
         String next = load;
-        next +=">>>>>"+ nextln + " " + LocalDate.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)) + ' ' + LocalTime.now();
+        next +=">>>>"+ nextln + " " + LocalDate.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)) + ' ' + LocalTime.now();
         FileWriter writer = new FileWriter("log.txt");
         BufferedWriter Bwriter = new BufferedWriter(writer);
         Bwriter.write(next);
