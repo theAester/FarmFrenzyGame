@@ -117,6 +117,9 @@ public class LevelManager {
     public ArrayList<Animal> queryAnimalLocation(int x,int y){
         return (ArrayList<Animal>) animals.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList());
     }
+    public ArrayList<Threat> queryThreatLocation(int x,int y){
+        return (ArrayList<Threat>) threats.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList());
+    }
     private void updateTruck() {
         int status = truck.update();
         if(status == 2){
