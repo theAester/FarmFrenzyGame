@@ -45,14 +45,14 @@ public class Save {
             SBT+=random.nextInt(2)*30;
             ArrayList<Animal> animalCycle=new ArrayList<>();
             int numChicken=random.nextInt(boundChicken);
-            for(int i=0;i<numChicken;i++) {
+            for(int j=0;j<numChicken;j++) {
                 Chicken chicken = new Chicken();
                 animalCycle.add(chicken);
             }
             ArrayList<Facility> facilityCycle=new ArrayList<>();
             HashMap<Threat,Integer> threats=new HashMap<>();
             int numThreats=random.nextInt(boundThreats);
-            for(int i=0;i<numThreats;i++)
+            for(int k=0;k<numThreats;k++)
             {
                 if(random.nextInt()%5==0)
                 {
