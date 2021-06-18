@@ -351,4 +351,11 @@ public class LevelManager {
     public void generatePowder(int i, int j) {
         commodities.add(new Powder(i,j));
     }
+
+
+    public Feather requestFeather() {
+    }
+
+    public void generateFabric() {
+    }
 }

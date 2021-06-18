@@ -2,6 +2,8 @@ package model;
 
 import control.LevelManager;
 
+import java.util.Random;
+
 public abstract class Facility {
 protected String type;
 protected int x;
@@ -26,9 +28,12 @@ protected int productionCount;
         this.j = j;
     }
     public String getType(){
-        return type;
+        return this.type;
     }
     public Facility() {
+        Random ran = new Random();
+        this.i=ran.nextInt(6);
+        this.j=ran.nextInt(6);
     }
     public int getCoordinateX(){
         //TODO: fix (graphic)
