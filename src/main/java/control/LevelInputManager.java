@@ -24,6 +24,7 @@ public class LevelInputManager {
         this.fullName = fullName;
         LevelMap = levelMap;
         this.currentLevel = currentLevel;
+        inGame();
     }
     public void inGame() {
         LevelManager LM=new LevelManager(currentLevel);
