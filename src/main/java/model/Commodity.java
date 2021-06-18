@@ -21,4 +21,12 @@ public abstract class Commodity implements Storable {
     public abstract int getJ();
 
     public abstract String getName();
+    public int getCoordinateX(){
+        //TODO:fix (graphic)
+        return i;
+    }
+    public int getCoordinateY(){
+        //TODO:fix (graphic)
+        return j;
+    }
 }

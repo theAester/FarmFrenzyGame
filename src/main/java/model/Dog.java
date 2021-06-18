@@ -56,6 +56,7 @@ public class Dog extends Animal {
                 }
             }
         }
+        levelManager.killThreatLocation(getCoordinateX(),getCoordinateY());
     }
     @Override
     public void produce(LevelManager levelManager)

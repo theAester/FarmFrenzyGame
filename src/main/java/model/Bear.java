@@ -48,7 +48,7 @@ public class Bear extends Threat{
     @Override
     public void update(LevelManager levelManager)
     {
-        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
+
         boolean moved = false;
         Random ran = new Random();
         int move = 0;
@@ -85,7 +85,7 @@ public class Bear extends Threat{
                 }
             }
         }
-        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
+        levelManager.killAnimalLocation(getCoordinateX(),getCoordinateY());
     }
     @Override
     public void attack() {

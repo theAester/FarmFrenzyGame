@@ -12,7 +12,7 @@ public class LevelManager {
     private ArrayList<Animal> animals;
     private ArrayList<Threat> threats;
     private ArrayList<Facility> facilities;
-    private ArrayList<Commodity> commodities;
+    public ArrayList<Commodity> commodities;
     private int money;
     private Storage storage;
     private Water water;
@@ -114,11 +114,11 @@ public class LevelManager {
             x.update(this);
         });
     }
-    public ArrayList<Animal> queryAnimalLocation(int x,int y){
-        return (ArrayList<Animal>) animals.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList());
+    public void killAnimalLocation(int x, int y){
+        animals.removeAll(animals.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList()));
     }
-    public ArrayList<Threat> queryThreatLocation(int x,int y){
-        return (ArrayList<Threat>) threats.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList());
+    public void killThreatLocation(int x, int y){
+        threats.remove( threats.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).findFirst().orElse(null));
     }
     private void updateTruck() {
         int status = truck.update();
@@ -393,6 +393,13 @@ public class LevelManager {
         });
     }
 
+    public boolean coolerCollect(Commodity e){
+        if(storage.add(e)){
+            commodities.remove(e);
+            assertCollection(e);
+            return true;
+        }else return false;
+    }
     private boolean collect(Commodity e) {
         if(storage.add(e)){
             assertCollection(e);
