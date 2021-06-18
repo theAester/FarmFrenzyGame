@@ -380,4 +380,7 @@ public class LevelManager {
 
     public BottledMilk requestBottledMilk() {
     }
+
+    public Powder requestPowder() {
+    }
 }
