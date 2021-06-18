@@ -35,6 +35,15 @@ protected int productionCount;
         this.i=ran.nextInt(6);
         this.j=ran.nextInt(6);
     }
+    public int getCoordinateX(){
+        //TODO: fix (graphic)
+        return i;
+    }
+
+    public int getCoordinateY(){
+        //TODO: fix (graphic)
+        return j;
+    }
 
     public abstract int update(LevelManager levelManager);
 }

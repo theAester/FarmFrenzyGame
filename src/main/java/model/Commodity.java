@@ -16,7 +16,6 @@ public abstract class Commodity implements Storable {
         this.i = i;
         this.j = j;
     }
-
     public abstract int getI();
 
     public abstract int getJ();

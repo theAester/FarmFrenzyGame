@@ -56,4 +56,8 @@ public class Storage {
         });
         return true;
     }
+
+    public Egg queryEgg() {
+        return (Egg) storedObjects.stream().filter(x -> x.getName().equals("egg")).findFirst().orElse(null);
+    }
 }

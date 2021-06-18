@@ -345,9 +345,11 @@ public class LevelManager {
     }
 
     public Egg requestEgg() {
+        return storage.queryEgg();
     }
 
-    public void generatePowder() {
+    public void generatePowder(int i, int j) {
+        commodities.add(new Powder(i,j));
     }
 
 
