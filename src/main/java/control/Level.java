@@ -12,7 +12,7 @@ public class Level {
     private ArrayList<Animal> AnimalCycle;
     private ArrayList<Facility> FacilityCycle;
     private HashMap<Integer, Enum> ThreatCycle;
-    private HashMap<Enum,Integer> LevelGoals;
+    private HashMap<String,Integer> LevelGoals;
     // All data of a level should be here
 
     public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,ArrayList animalCycle,HashMap threatCycle,ArrayList facilityCycle,HashMap levelGoals,int initialBalance) {

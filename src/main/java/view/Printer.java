@@ -148,6 +148,7 @@ public class Printer {
     }
 
     public static void NotEnough(String product) {
+
     }
 }
 

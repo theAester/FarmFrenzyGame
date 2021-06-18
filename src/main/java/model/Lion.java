@@ -2,7 +2,7 @@ package model;
 
 import java.util.Random;
 
-class Lion extends Threat{
+public class Lion extends Threat{
     public Lion(int i,int j)
     {
         super(i,j);

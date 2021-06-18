@@ -2,7 +2,7 @@ package model;
 
 import java.util.Random;
 
-class Tiger extends Threat {
+public class Tiger extends Threat {
     public Tiger(int i, int j) {
         super(i, j);
         this.type = "tiger";
