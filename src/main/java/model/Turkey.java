@@ -28,7 +28,7 @@ public class Turkey extends Animal{
         if(this.productionPoint==this.productionRate)
         {
             this.productionPoint=0;
-            produce();
+            produce(levelManager);
         }
         this.health--;
         if (this.health<=this.maxHealth/2)
@@ -109,9 +109,9 @@ public class Turkey extends Animal{
 
     }
     @Override
-    public void produce()
+    public void produce(LevelManager levelManager)
     {
-        Feather feather = new Feather(this.i,this.j);
+        levelManager.generateFeather(getCoordinateX(),getCoordinateY());
     }
 }
 

@@ -484,4 +484,19 @@ public class LevelManager {
     public Powder requestPowder() {
         return storage.queryPowder();
     }
+
+    public void generateEgg(int coordinateX, int coordinateY) {
+        commodities.add(new Egg(coordinateX,coordinateY));
+        eggCount++;
+    }
+
+    public void generateMilk(int coordinateX, int coordinateY) {
+        commodities.add(new Milk(coordinateX,coordinateY));
+        milkCount++;
+    }
+
+    public void generateFeather(int coordinateX, int coordinateY) {
+        commodities.add(new Feather(coordinateX,coordinateY));
+        featherCount++;
+    }
 }

@@ -27,7 +27,7 @@ public class Chicken extends Animal {
         this.productionPoint=+30;
         if (this.productionPoint == this.productionRate) {
             this.productionPoint = 0;
-            produce();
+            produce(levelManager);
         }
         this.health--;
         if (this.health <= this.maxHealth / 2) {
@@ -84,7 +84,7 @@ public class Chicken extends Animal {
     }
 
     @Override
-    public void produce() {
-        Egg egg = new Egg(this.i, this.j);
+    public void produce(LevelManager levelManager) {
+        levelManager.generateEgg(getCoordinateX(),getCoordinateY());
     }
 }

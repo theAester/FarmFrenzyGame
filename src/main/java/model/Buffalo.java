@@ -28,7 +28,7 @@ public class Buffalo extends Animal{
         if(this.productionPoint==this.productionRate)
         {
             this.productionPoint=0;
-            produce();
+            produce(levelManager);
         }
         this.health--;
         if (this.health<=this.maxHealth/2)
@@ -109,8 +109,8 @@ public class Buffalo extends Animal{
 
     }
     @Override
-    public void produce()
+    public void produce(LevelManager levelManager)
     {
-        Milk milk = new Milk(this.i,this.j);
+        levelManager.generateMilk(getCoordinateX(),getCoordinateY());
     }
 }
