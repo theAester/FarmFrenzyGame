@@ -76,4 +76,8 @@ public class Storage {
     public BottledMilk queryBottledMilk() {
         return (BottledMilk) storedObjects.stream().filter(x -> x.getName().equals("bottledmilk")).findFirst().orElse(null);
     }
+
+    public Powder queryPowder() {
+        return (Powder) storedObjects.stream().filter(x -> x.getName().equals("powder")).findFirst().orElse(null);
+    }
 }

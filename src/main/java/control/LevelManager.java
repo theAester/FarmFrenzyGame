@@ -445,7 +445,7 @@ public class LevelManager {
 
 
     public void generateFabric(int coordinateX, int coordinateY) {
-        commodities.add(new Fabric(coordinateX,coordinateY);
+        commodities.add(new Fabric(coordinateX,coordinateY));
         fabricCount++;
     }
     //salam
@@ -482,5 +482,6 @@ public class LevelManager {
     }
 
     public Powder requestPowder() {
+        return storage.queryPowder();
     }
 }

@@ -123,7 +123,7 @@ public class Level {
         return LevelGoals;
     }
 
-    public void setLevelGoals(HashMap<Enum, Integer> levelGoals) {
+    public void setLevelGoals(HashMap<String, Integer> levelGoals) {
         LevelGoals = levelGoals;
     }
 }
