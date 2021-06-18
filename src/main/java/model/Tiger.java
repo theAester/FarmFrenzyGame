@@ -48,7 +48,7 @@ public class Tiger extends Threat {
 
     @Override
     public void update(LevelManager levelManager) {
-        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
+
         boolean moved = false;
         boolean moved2 = false;
         Random ran = new Random();
@@ -86,7 +86,7 @@ public class Tiger extends Threat {
                 }
             }
         }
-        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
+        levelManager.killAnimalLocation(getCoordinateX(),getCoordinateY());
         if (move == 1) {
             move = 2;
         }
@@ -134,7 +134,7 @@ public class Tiger extends Threat {
                 }
             }
         }
-        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
+        levelManager.killAnimalLocation(getCoordinateX(),getCoordinateY());
     }
 
     @Override
