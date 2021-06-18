@@ -349,4 +349,11 @@ public class LevelManager {
 
     public void generatePowder() {
     }
+
+
+    public Feather requestFeather() {
+    }
+
+    public void generateFabric() {
+    }
 }

@@ -147,7 +147,7 @@ public class Printer {
         else System.out.printf("Contained a %s at (%d,%d)\n",name , i ,j);
     }
 
-    public static void NotEnough(String egg) {
+    public static void NotEnough(String product) {
     }
 }
 
