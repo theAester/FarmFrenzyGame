@@ -20,6 +20,7 @@ public class Dog extends Animal {
     @Override
     public void update(LevelManager levelManager)
     {
+        levelManager.queryThreatLocation(getCoordinateX(),getCoordinateY());
         boolean moved = false;
         Random ran = new Random();
         int move = 0;
@@ -56,6 +57,7 @@ public class Dog extends Animal {
                 }
             }
         }
+        levelManager.queryThreatLocation(getCoordinateX(),getCoordinateY());
     }
     @Override
     public void produce(LevelManager levelManager)
