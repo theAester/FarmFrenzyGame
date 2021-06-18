@@ -26,3 +26,7 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>>User Exists Friday, June 18, 2021 13:56:29.754763
 >>>>>User Exists Friday, June 18, 2021 13:56:37.661275
 >>>>>signed up with usernameminasalehani Friday, June 18, 2021 13:56:44.704790
+>>>>signed up with usernamehiraddavari 6/18/21 14:32:50.270848200
+>>>>WRONG INPUT start level 1  6/18/21 14:34:08.933591700
+>>>>WRONG INPUT buy chicken  6/18/21 14:34:34.838909500
+>>>>WRONG INPUT buy chicken  6/18/21 14:35:10.445848200

@@ -58,8 +58,8 @@ public class Cat extends Animal{
     }
 
     @Override
-    public void produce()
+    public void produce(LevelManager levelManager)
     {
-        System.out.println("cats don't produce anything ,genius.");
+        System.out.println("cats don't produce anything ,genius."); // they produce kittens. and hatred. a lot of hatred.
     }
 }
