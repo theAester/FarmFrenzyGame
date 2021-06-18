@@ -1,5 +1,4 @@
 package control;
-
 public enum ENUM {
     iceCreamFactory,
     sewingFactory,

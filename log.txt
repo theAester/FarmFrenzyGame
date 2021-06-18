@@ -23,3 +23,6 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>>WRONG INPUT d  Tuesday, June 1, 2021 10:27:08.420573
 >>>>>WRONG INPUT f  Tuesday, June 1, 2021 10:27:09.989268
 >>>>>WRONG INPUT w  Tuesday, June 1, 2021 10:27:11.420546
+>>>>>User Exists Friday, June 18, 2021 13:56:29.754763
+>>>>>User Exists Friday, June 18, 2021 13:56:37.661275
+>>>>>signed up with usernameminasalehani Friday, June 18, 2021 13:56:44.704790
