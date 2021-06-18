@@ -1,5 +1,5 @@
 package control;
-public enum ENUM {
+public enum Enum {
     iceCreamFactory,
     sewingFactory,
     spinnerFactory,

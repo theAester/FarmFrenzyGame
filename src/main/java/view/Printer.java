@@ -1,5 +1,6 @@
 package view;
-import control.*;
+import control.Enum;
+
 public class Printer {
     public static void Welcome()
     {
@@ -60,7 +61,7 @@ public class Printer {
     {
         System.out.println("kossher");
     }
-    public static void BuyAnimal(ENUM animal)
+    public static void BuyAnimal(Enum animal)
     {
         System.out.println("bought "+animal.toString());
     }

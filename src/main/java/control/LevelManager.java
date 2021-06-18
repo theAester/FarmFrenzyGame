@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class LevelManager {
 
-    public boolean CanBuyAnimal(ENUM valueOf) {
+    public boolean CanBuyAnimal(Enum valueOf) {
         return true;
         //TODO
     }

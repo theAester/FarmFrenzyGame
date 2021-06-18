@@ -2,7 +2,6 @@ package control;
 import view.Printer;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -15,10 +14,10 @@ public class LevelInputManager {
     private int levelAccomplished,star;
     private long coin;
     private String fullName;
-    private HashMap<ENUM,Integer> LevelMap;
+    private HashMap<Enum,Integer> LevelMap;
     private Level currentLevel;
     private Scanner scanner=new Scanner(System.in);
-    public LevelInputManager(User thisUser, int levelAccomplished, int star, long coin, String fullName, HashMap<ENUM, Integer> levelMap, Level currentLevel) {
+    public LevelInputManager(User thisUser, int levelAccomplished, int star, long coin, String fullName, HashMap<Enum, Integer> levelMap, Level currentLevel) {
         this.thisUser = thisUser;
         this.levelAccomplished = levelAccomplished;
         this.star = star;
@@ -35,10 +34,10 @@ public class LevelInputManager {
             input.toLowerCase();
             if(Check(input,"buy\\s[a-zA-Z]+"))
             {
-                if(manager.CanBuyAnimal(ENUM.valueOf(Split(input)[1])))
+                if(manager.CanBuyAnimal(Enum.valueOf(Split(input)[1])))
                 {
                     //TODO
-                    Printer.BuyAnimal(ENUM.valueOf(Split(input)[1]));
+                    Printer.BuyAnimal(Enum.valueOf(Split(input)[1]));
                     LogAppender.BuyAnimal(Split(input)[1],0,0);
                 }
                 else{
