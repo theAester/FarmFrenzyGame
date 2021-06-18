@@ -19,8 +19,12 @@ class Bakery extends Facility {
     }
 
     @Override
-    public void produce() {
-
+    public void produce(LevelManager levelManager) {
+        levelManager.generateBread(getCoordinateX(),getCoordinateY());
+        if(this.productionCount==2)
+        {
+            levelManager.generateBread(getCoordinateX(),getCoordinateY());
+        }
     }
     public Bakery(int i, int j) {
         super(i, j);

@@ -359,7 +359,16 @@ public class LevelManager {
 
     public void generateFabric(int coordinateX, int coordinateY) {
     }
+    //salam
+    //yoooo
+    public Fabric requestFabric() {
+    }
 
+    public void generateShirt(int coordinateX, int coordinateY) {
+    }
+
+    public void generateBread(int coordinateX, int coordinateY) {
+    }
     public Milk requestMilk() {
     }
 
@@ -370,11 +379,5 @@ public class LevelManager {
     }
 
     public BottledMilk requestBottledMilk() {
-    }
-
-    public Fabric requestFabric() {
-    }
-
-    public void generateShirt(int coordinateX, int coordinateY) {
     }
 }
