@@ -61,9 +61,9 @@ public class Printer {
     {
         System.out.println("kossher");
     }
-    public static void BuyAnimal(Enum animal)
+    public static void BuyAnimal(String animal)
     {
-        System.out.println("bought "+animal.toString());
+        System.out.println("bought "+animal);
     }
     public static void NotEnoughMoney()
     {
@@ -81,4 +81,65 @@ public class Printer {
     {
         System.err.println("No level found as "+level);
     }
+
+    public static void InvalidInput() {
+        System.out.println("Wrong input");
+    }
+
+    public static void InvalidName() {
+        System.out.println("please enter a valid name");
+    }
+
+    public static void InvalidRange() {
+        System.out.println("Wrong input range");
+    }
+
+    public static void StorageFull() {
+        System.out.println("Storage full!");
+    }
+
+    public static void WellRefill() {
+        System.out.println("Well refilled");
+    }
+
+    public static void wellFail() {
+        System.out.println("Well in not empty yet");
+    }
+
+    public static void Planted() {
+        System.out.println("Planted!");
+    }
+
+    public static void EmptyWell() {
+        System.out.println("Well is empty");
+    }
+
+    public static void DariEshtebahMizaniDadash() {
+        System.out.println("Thats not how you use this command");
+    }
+
+    public static void ItemNotFound() {
+        System.out.println("Item not found");
+    }
+
+    public static void Loaded() {
+        System.out.println("item loaded");
+    }
+
+    public static void NotLoaded() {
+        System.out.println("Not enough space in truck");
+    }
+
+    public static void Unloaded() {
+        System.out.println("Item unloaded");
+    }
+
+    public static void NotUnloaded() {
+        System.out.println("Not enough space in storage. Unloading failed.");
+    }
+
+    public static void TruckHasLeft(int money) {
+        System.out.println("Truck left for the market...\nthe truck is carrying $"+money+" worth of items");
+    }
 }
+

@@ -8,6 +8,7 @@ public abstract class Threat implements Storable{
     protected int idleSequence;
     protected int outputTimeout;
     protected int quota;
+    protected int clicks;
     protected int consumptionPortion;
     protected double C2H;
     protected int x;
@@ -39,5 +40,13 @@ public abstract class Threat implements Storable{
         this.y=ran.nextInt(6);
         this.y++;
         //System.out.println(this.x+"   "+this.y);
+    }
+
+    public boolean inside(int x, int y){
+        return true;
+    }
+
+    public void cage(){
+        quota++;
     }
 }

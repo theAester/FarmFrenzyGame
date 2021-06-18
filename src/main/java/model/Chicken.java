@@ -100,7 +100,7 @@ public class Chicken extends Animal{
                 }
             }
         }
-//        else if(this.consume=true)
+//        else if(this.consume==true)
 //        {
 //
 //        }

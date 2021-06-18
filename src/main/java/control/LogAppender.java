@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Locale;
 import java.util.Scanner;
 public  class LogAppender {
     public static void Login(String username) throws IOException {
@@ -57,15 +56,15 @@ public  class LogAppender {
 
     }
 
-    public static void NotEnoughmoney() throws IOException {
-        Do("lack of money ");
+    public static void NotEnoughMoney() throws IOException {
+        Do("I dont think you've got the facilities for that big man");
     }
 
     public static void Pickup(int x,int y) throws IOException {
-        Do("PIck up from x,y:"+x+","+y);
+        Do("Pick up from x,y:"+x+","+y);
     }
 
-    public static void NullPoint() throws IOException {
+    public static void EmptyPoint() throws IOException {
         Do("Empty point spotted");
     }
     public static void LevelNotFound(int level) throws IOException {

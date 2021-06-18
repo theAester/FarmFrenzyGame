@@ -1,10 +1,11 @@
 package control;
 
 import model.*;
+import view.Printer;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class LevelManager {
     private ArrayList<Animal> animals;
@@ -14,7 +15,7 @@ public class LevelManager {
     private int money;
     private Storage storage;
     private Water water;
-    private Bike bike;
+    private Truck truck;
     public int[][] grid;
     private int goldTime;
     private int goldStars;
@@ -23,12 +24,22 @@ public class LevelManager {
     private int bronzeTime;
     private int bronzestars;
     public int cycleNumber;
-    private CommandProcessor cp;
-    private Scanner sc ;
+    private Level currentLevel;
+    private final CommandProcessor cp;
+    private final Scanner sc ;
     public LevelManager(Level level){
+        currentLevel =level;
         sc = new Scanner(System.in);
         cp = new CommandProcessor(true);
         initialize();
+    }
+    public void initialize(){
+        currentLevel.getAnimalCycle().forEach( x->{
+            animals.add(x);
+        });
+        currentLevel.getFacilityCycle().forEach( x->{
+            facilities.add(x);
+        });
     }
     public void run(){
         ArrayList<String> outputs;
@@ -50,6 +61,7 @@ public class LevelManager {
         }
     }
     private void update(){
+        updateTruck();
         ArrayList<Animal> removeList = new ArrayList<>();
         animals.forEach( x-> {
             if(!x.alive){
@@ -67,6 +79,15 @@ public class LevelManager {
         });
         //if(cycleNumber)
     }
+
+    private void updateTruck() {
+        int status = truck.update();
+        if(status == 2){
+            money +=truck.carriedMoney;
+            truck.reset();
+        }
+    }
+
     private void exec(Scanner sc){
         //process command
         cp.process(sc.nextLine());
@@ -75,13 +96,14 @@ public class LevelManager {
         if(command.equals("buy")){
             String name = cp.getArg(0);
             if(name == null){
-                System.out.println("please enter a valid name");
+                Printer.InvalidName();
                 return;
             }
             if(buy(name)){
-                System.out.println("Successfully purchased "+name);
+                Printer.BuyAnimal(name);
             }else{
-                System.out.println("You dont have enough money");
+                LogAppender.NotEnoughMoney();
+                Printer.NotEnoughMoney();
             }
         }
         else if(command.equals("pickup")){
@@ -91,18 +113,18 @@ public class LevelManager {
                 x = Integer.parseInt(cp.getArg(0));
                 y = Integer.parseInt(cp.getArg(1));
             }catch(Exception e){
-                System.out.println("Wrong input");
+                Printer.InvalidInput();
                 return;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
-                System.out.println("Wrong input range");
+                Printer.InvalidRange();
                 return;
             }
             ArrayList<Commodity> temp = new ArrayList<>();
             commodities.forEach(e -> {
                 if(e.getI() == x && e.getJ() == y){
                     if(!collect(e)){
-                        System.out.println("Storage full!");
+                        Printer.StorageFull();
                         return;
                     }
                     temp.add(e);
@@ -114,8 +136,8 @@ public class LevelManager {
         }
         else if(command.equals("well")){
             if(water.reFill() !=0){
-                System.out.println("Well refilled");
-            }else System.out.println("Well in not empty yet");
+                Printer.WellRefill();
+            }else Printer.wellFail();
         }
         else if(command.equals("plant")){
             int x;
@@ -124,18 +146,18 @@ public class LevelManager {
                 x = Integer.parseInt(cp.getArg(0));
                 y = Integer.parseInt(cp.getArg(1));
             }catch(Exception e){
-                System.out.println("Wrong input");
+                Printer.InvalidInput();
                 return;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
-                System.out.println("Wrong input range");
+                Printer.InvalidRange();
                 return;
             }
             if(water.takeWater()){
                 grid[x][y] = 100;
-                System.out.println("Planted!");
+                Printer.Planted();
             }else{
-                System.out.println("Well is empty");
+                Printer.EmptyWell();
             }
         }
         else if(command.equals("work")){
@@ -151,6 +173,93 @@ public class LevelManager {
             }
             if(facility.work()){
 
+            }
+        }
+        else if(command.equals("cage")){
+            //TODO: for graphics : get x y from mouse
+            int x;
+            int y;
+            try{
+                x = Integer.parseInt(cp.getArg(0));
+                y = Integer.parseInt(cp.getArg(1));
+            }catch(Exception e){
+                Printer.InvalidInput();
+                return;
+            }
+//            if(x < 0 || x> 6 || y<0 || y>6){
+//                Printer.InvalidRange();
+//                return;
+//            }
+            threats.forEach(e->{
+                if(e.inside(x,y)){
+                    e.cage();
+                }
+            });
+        }
+        else if(command.equals("truck")){
+            if(cp.getArgsCount() == 0){
+                Printer.DariEshtebahMizaniDadash();
+                return;
+            }
+            if(cp.getArg(0).equals("load")){
+                if(cp.getArgsCount() == 2){
+                    String itemName = cp.getArg(1);
+                    Storable item = storage.queryItem(itemName);
+                    if(item == null){
+                        Printer.ItemNotFound();
+                        return;
+                    }
+                    if(truck.load(item)) Printer.Loaded();
+                    else {
+                        Printer.NotLoaded();
+                        storage.add(item);
+                    }
+                }
+                else if(cp.getArgsCount() == 3){
+                    String itemName = cp.getArg(1);
+                    int count =0;
+                    try{
+                        count = Integer.parseInt(cp.getArg(2));
+                    }catch(Exception e){
+                        Printer.InvalidInput();
+                        return;
+                    }
+                    ArrayList<Storable> items = storage.queryItem(itemName,count);
+                    if(items == null){
+                        Printer.ItemNotFound();
+                        return;
+                    }
+                    if(truck.loadAll(items)) Printer.Loaded();
+                    else{
+                        Printer.NotLoaded();
+                        storage.addAll(items);
+                    }
+                }
+                else Printer.DariEshtebahMizaniDadash();
+            }
+            else if(cp.getArg(0).equals("unload")){
+                if(cp.getArgsCount() == 2){
+                    String itemName = cp.getArg(1);
+                    Storable item = truck.queryItem(itemName);
+                    if(item == null){
+                        Printer.ItemNotFound();
+                        return;
+                    }
+                    if(storage.add(item)) Printer.Unloaded();
+                    else {
+                        Printer.NotUnloaded();
+                        truck.load(item);
+                    }
+                }
+                else Printer.DariEshtebahMizaniDadash();
+            }
+            else if(cp.getArg(0).equals("go")){
+                truck.ride();
+                Printer.TruckHasLeft(truck.carriedMoney);
+            }
+            else{
+                Printer.DariEshtebahMizaniDadash();
+                return;
             }
         }
     }
@@ -174,7 +283,7 @@ public class LevelManager {
         commodities.remove(commodity);
     }
     private void assertCollection(Commodity e) {
-        System.out.println("> "+e.getName()+" collected!");
+        System.out.println(e.getName()+" collected!");
     }
 
     private boolean buy(String name){
@@ -205,8 +314,5 @@ public class LevelManager {
             money-=200;
         }else return false;
         return true;
-    }
-    public void initialize(){
-
     }
 }
