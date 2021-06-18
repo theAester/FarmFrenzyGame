@@ -5,6 +5,7 @@ import view.Printer;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 
 public class LevelManager {
@@ -96,8 +97,26 @@ public class LevelManager {
         facilities.forEach(x->{
             x.update(this);
         });
+        currentLevel.getThreatCycle().forEach((k,v)->{
+            if(cycleNumber-k < 30){
+                if(v.equals("lion")){
+                    threats.add(new Lion());
+                }
+                else if(v.equals("tiger")){
+                    threats.add(new Tiger());
+                }
+                else if(v.equals("bear")){
+                    threats.add(new Bear());
+                }
+            }
+        });
+        threats.forEach(x->{
+            x.update(this);
+        });
     }
-
+    public ArrayList<Animal> queryAnimalLocation(int x,int y){
+        return (ArrayList<Animal>) animals.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList());
+    }
     private void updateTruck() {
         int status = truck.update();
         if(status == 2){
