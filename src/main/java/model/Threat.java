@@ -49,4 +49,24 @@ public abstract class Threat implements Storable{
     public void cage(){
         quota++;
     }
+
+    public int getI(){
+        return i;
+    }
+    public int getJ(){
+        return j;
+    }
+
+    public int getRemainingClicks() {
+        return quota-clicks;
+    }
+
+    public int getCoordinateX(){
+        //TODO -graphic-> fix;
+        return i;
+    }
+    public int getCoordinateY(){
+        //TODO -graphic-> fix;
+        return j;
+    }
 }

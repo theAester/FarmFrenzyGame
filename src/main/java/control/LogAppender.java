@@ -34,8 +34,8 @@ public  class LogAppender {
         Do("User Exists");
     }
 
-    public static void BuyAnimal(String animal,int price, int coins){
-     Do(animal+" bought with price "+ price + "remaining coins" + coins);
+    public static void BuyAnimal(String animal){
+     Do(animal+" bought");
     }
 
     private static void Do(String nextln) {
@@ -74,5 +74,49 @@ public  class LogAppender {
     }
     public static void LevelNotFound(int level)  {
         Do("level not found "+ level);
+    }
+
+    public static void InvalidInput(String command) {
+        Do("Invalid input while using \""+command+"\"");
+    }
+
+    public static void StorageFull() {
+        Do("couldn't collect remaining items because the soraqge was full");
+    }
+
+    public static void WellRefill() {
+        Do("Well refilled");
+    }
+
+    public static void wellFail() {
+        Do("Well filling failed");
+    }
+
+    public static void EmptyWell() {
+        Do("Well well well! Well, the well was empty.");
+    }
+
+    public static void caged(String name, int i, int j, int remaining) {
+        if(remaining != 0) Do("Caged a "+name+" at ("+i+","+j+"). "+remaining+" clicks remaining.");
+        else Do("Contained a "+name+" at ("+i+","+j+")");
+    }
+
+    public static void DariEshtebahMizaniDadash() {
+        Do("Dadashemoon eshteba zad");
+    }
+
+    public static void Loaded(String name) {
+        Do("Truck loaded with"+name);
+    }
+    public static void Loaded(String name,int count) {
+        Do("Truck loaded with "+count+" "+name+"(s)");
+    }
+
+    public static void Unloaded(String name) {
+        Do("Truck loaded with"+name);
+    }
+
+    public static void truckHasLeft(int carriedMoney) {
+        Do("Truck has left for the market with $"+carriedMoney+" worth of items");
     }
 }
