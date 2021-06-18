@@ -21,6 +21,11 @@ static Gson gson=new Gson();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+    }
+    public static void LevelList(ArrayList<Level> levelList) throws IOException {
+        String LevelArrayList=gson.toJson(levelList);
+        FileWriter levelArrayList=new FileWriter("LevelArrayList.json");
+        levelArrayList.write(LevelArrayList);
+        levelArrayList.close();
     }
 }

@@ -1,5 +1,6 @@
 package view;
-import control.*;
+import control.Enum;
+
 public class Printer {
     public static void Welcome()
     {
@@ -40,6 +41,44 @@ public class Printer {
     }
     public static void Menu()
     {
-        System.out.println("Menu:");
+        System.out.println("MENU:");
+    }
+    public static void StartLevel(int level){
+        System.out.println("Starting level:"+level);
+    }
+    public static void AccessDenied(int level)
+    {
+        System.err.println("You only got access from one to "+ level);
+    }
+    public static void LoggedOut()
+    {
+        System.out.println("You're logged out");
+    }
+    public static void Settings(){
+        System.out.println("SETTINGS:");
+    }
+    public static void HelpSettings()
+    {
+        System.out.println("kossher");
+    }
+    public static void BuyAnimal(Enum animal)
+    {
+        System.out.println("bought "+animal.toString());
+    }
+    public static void NotEnoughMoney()
+    {
+        System.err.println("You don't have enough coins");
+    }
+
+    public static void Pickup(int x,int y) {
+        System.out.println("Pick up from X:"+x+"Y:"+y);
+    }
+
+    public static void NullPoint() {
+        System.err.println("Empty point spotted to pickup");
+    }
+    public static void LevelNotFound(int level)
+    {
+        System.err.println("No level found as "+level);
     }
 }

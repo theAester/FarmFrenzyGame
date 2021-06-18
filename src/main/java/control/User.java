@@ -2,24 +2,23 @@ package control;
 import java.util.HashMap;
 public class User {
     private String firstName,lastName,password;
-    private long star,coin;
+    private int star;
+    private long coin;
     private int levelAccomplished;
-    private HashMap<Enum,Integer> factoryLevelMap;
-    private HashMap<Enum,Integer> animalsLevelMap;
+    private HashMap<Enum,Integer> LevelMap;
     private boolean isVoid;
-    public User(String firstName, String lastName, String password, long star, long coin, int levelAccomplished, HashMap<Enum, Integer> factoryLevelMap, HashMap<Enum, Integer> animalsLevelMap, boolean isVoid) {
+    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<Enum, Integer> LevelMap, boolean isVoid) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.star = star;
         this.coin = coin;
         this.levelAccomplished = levelAccomplished;
-        this.factoryLevelMap = factoryLevelMap;
-        this.animalsLevelMap = animalsLevelMap;
+        this.LevelMap = LevelMap;
         this.isVoid=isVoid;
     }
 
-    public long getStar() {
+    public int getStar() {
         return star;
     }
 
@@ -31,12 +30,8 @@ public class User {
         return levelAccomplished;
     }
 
-    public HashMap<Levels, Integer> getFactoryLevelMap() {
-        return factoryLevelMap;
-    }
-
-    public HashMap<Levels, Integer> getAnimalsLevelMap() {
-        return animalsLevelMap;
+    public HashMap<Enum, Integer> getLevelMap() {
+        return LevelMap;
     }
 
     public boolean isVoid() {
@@ -67,7 +62,7 @@ public class User {
         this.password = password;
     }
 
-    public void setStar(long star) {
+    public void setStar(int star) {
         this.star = star;
     }
 
@@ -79,12 +74,9 @@ public class User {
         this.levelAccomplished = levelAccomplished;
     }
 
-    public void setFactoryLevelMap(HashMap<Levels, Integer> factoryLevelMap) {
-        this.factoryLevelMap = factoryLevelMap;
-    }
 
-    public void setAnimalsLevelMap(HashMap<Levels, Integer> animalsLevelMap) {
-        this.animalsLevelMap = animalsLevelMap;
+    public void setLevelMap(HashMap<Enum, Integer> LevelMap) {
+        this.LevelMap = LevelMap;
     }
 
     public void setVoid(boolean aVoid) {

@@ -26,11 +26,12 @@ public class Authenticator {
             {
                 if(!Exists(Split(input)[0]+Split(input)[1]))
                 {
-                    User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,null,null,true);
+                    User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,null,true);
                     userList.add(user);
                     Printer.Signed();
                     Menu menu=new Menu(user);
                     Save.UserList(userList);
+                    LogAppender.Signup(Split(input)[0]+Split(input)[1]);
                 }
             }
             else if(Check(input,"[a-zA-Z]+\\s[a-zA-Z0-9]+"))
@@ -40,6 +41,7 @@ public class Authenticator {
                     Menu menu=new Menu(Find(Split(input)[0],Split(input)[1]));
                     Printer.Logged();
                     menu.Run();
+                    LogAppender.Login(Split(input)[0]);
                     break;
                 }
             }
@@ -47,11 +49,17 @@ public class Authenticator {
             {
                 Printer.Help();
             }
-            else
+            else if(Check(input,"exit"))
             {
+
+                break;
+            }
+            else {
                 //Check if input is a blank RETURN
-                if(!input.equals(""))
-                Printer.WrongInput();
+                if(!input.equals("")) {
+                    Printer.WrongInput();
+                    LogAppender.WrongInput(input);
+                }
             }
 
         }
@@ -66,7 +74,7 @@ public class Authenticator {
     {
         return string.split("\\s");
     }
-    private User Find(String username,String password) {
+    private User Find(String username,String password) throws IOException {
         boolean matchedUsername=false;
         boolean matchedPassword=false;
         User temp = null;
@@ -81,14 +89,16 @@ public class Authenticator {
             }
         }
         if(!matchedUsername){
+            LogAppender.WrongUsername(username);
             Printer.UserNotFound();}
+
         else{
         if(!matchedPassword)
+            LogAppender.WrongPassword(username,password);
             Printer.WrongPassword();}
         return temp;
     }
-    private boolean Exists(String username)
-    {
+    private boolean Exists(String username) throws IOException {
         boolean exists =false;
         for(User user:userList)
         {
@@ -100,6 +110,7 @@ public class Authenticator {
         if(exists)
         {
             Printer.AlreadyExists();
+            LogAppender.UserExists();
         }
         return exists;
     }

@@ -11,6 +11,7 @@ import control.*;
 import view.Printer;
 public class Load {
     static ArrayList<User> userList=new ArrayList<>();
+    static ArrayList<Level> levelList=new ArrayList<>();
     static Gson gson=new Gson();
     public Load() {
     }
@@ -32,4 +33,19 @@ public class Load {
             }
             return userList;
     }
+    public static ArrayList<Level> LevelList() throws FileNotFoundException {
+        String Read="";
+
+        File ReadLevelList=new File("LevelArrayList.json");
+        Scanner scanner=new Scanner(ReadLevelList);
+        while(scanner.hasNextLine())
+        {
+            Read+=scanner.nextLine();
+        }
+        scanner.close();
+        Gson gson=new Gson();
+        levelList=gson.fromJson(Read,new TypeToken<ArrayList<Level>>(){}.getType());
+        return  levelList;
+    }
+
 }
