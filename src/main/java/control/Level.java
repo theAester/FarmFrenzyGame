@@ -86,8 +86,29 @@ public class Level {
     }
 
 
+    public ArrayList<Animal> getAnimalCycle() {
+        return AnimalCycle;
+    }
 
+    public void setAnimalCycle(ArrayList<Animal> animalCycle) {
+        AnimalCycle = animalCycle;
+    }
 
+    public ArrayList<Facility> getFacilityCycle() {
+        return FacilityCycle;
+    }
+
+    public void setFacilityCycle(ArrayList<Facility> facilityCycle) {
+        FacilityCycle = facilityCycle;
+    }
+
+    public HashMap<Integer, Enum> getThreatCycle() {
+        return ThreatCycle;
+    }
+
+    public void setThreatCycle(HashMap<Integer, Enum> threatCycle) {
+        ThreatCycle = threatCycle;
+    }
 
     public HashMap<Enum, Integer> getLevelGoals() {
         return LevelGoals;
