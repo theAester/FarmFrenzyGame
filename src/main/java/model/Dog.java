@@ -58,7 +58,7 @@ public class Dog extends Animal {
         }
     }
     @Override
-    public void produce()
+    public void produce(LevelManager levelManager)
     {
         System.out.println("Dogs don't produce anything ,genius.");
     }

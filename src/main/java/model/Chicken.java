@@ -10,7 +10,7 @@ public class Chicken extends Animal {
         this.productionPoint = 0;
         this.productionRate = 60;
         this.type = "chicken";
-        this.unitPriceTag=100;
+        this.unitPriceTag = 100;
     }
 
     public Chicken() {
@@ -19,12 +19,12 @@ public class Chicken extends Animal {
         this.productionPoint = 0;
         this.productionRate = 60;
         this.type = "chicken";
-        this.unitPriceTag=100;
+        this.unitPriceTag = 100;
     }
 
     @Override
     public void update(LevelManager levelManager) {
-        this.productionPoint=+30;
+        this.productionPoint = +30;
         if (this.productionPoint == this.productionRate) {
             this.productionPoint = 0;
             produce(levelManager);
@@ -85,6 +85,6 @@ public class Chicken extends Animal {
 
     @Override
     public void produce(LevelManager levelManager) {
-        levelManager.generateEgg(getCoordinateX(),getCoordinateY());
+        levelManager.generateEgg(getCoordinateX(), getCoordinateY());
     }
 }
