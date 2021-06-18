@@ -19,7 +19,7 @@ protected int productionCount;
 
     public abstract void upgrade();
     public abstract void collect();
-    public abstract void produce();
+    public abstract void produce(LevelManager levelManager);
     public abstract boolean work(LevelManager levelManager);
     public Facility(int i, int j) {
         this.i = i;
@@ -29,6 +29,15 @@ protected int productionCount;
         return type;
     }
     public Facility() {
+    }
+    public int getCoordinateX(){
+        //TODO: fix (graphic)
+        return i;
+    }
+
+    public int getCoordinateY(){
+        //TODO: fix (graphic)
+        return j;
     }
 
     public abstract int update(LevelManager levelManager);

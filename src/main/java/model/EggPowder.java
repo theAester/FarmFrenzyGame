@@ -73,10 +73,10 @@ public class EggPowder extends Facility {
 
     @Override
     public void produce(LevelManager levelManager) {
-        levelManager.generatePowder();
+        levelManager.generatePowder(getCoordinateX(),getCoordinateY());
         if(this.productionCount==2)
         {
-            levelManager.generatePowder();
+            levelManager.generatePowder(getCoordinateX(),getCoordinateY());
         }
     }
 
