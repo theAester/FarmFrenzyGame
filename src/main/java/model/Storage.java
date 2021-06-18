@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Storage {
     public int level;
@@ -25,5 +26,34 @@ public class Storage {
             storedObjects.add(object);
             return true;
         }else return false;
+    }
+    public Storable queryItem(String name){
+        Storable item = storedObjects.stream().filter(e->e.getName().toLowerCase().equals(name)).findFirst().orElse(null);
+        storedObjects.remove(item);
+        return item;
+    }
+    public ArrayList<Storable> queryItem(String name, int count){
+        ArrayList<Storable> items = (ArrayList) storedObjects.stream().filter(e->e.getName().toLowerCase().equals(name)).collect(Collectors.toList());
+        if(items.size() < count) return null;
+        ArrayList<Storable> output = new ArrayList<>();
+        for(int i=0;i<count;i++){
+            Storable item = items.get(i);
+            output.add(item);
+            storedObjects.remove(item);
+        }
+        return output;
+    }
+
+    public boolean addAll(ArrayList<Storable> items) {
+        int size =0;
+        for (Storable item : items) {
+            size += item.getStoringSize();
+        }
+        if(getAvailable() < size) return false;
+        items.forEach(object ->{
+            occupied += object.getStoringSize();
+            storedObjects.add(object);
+        });
+        return true;
     }
 }
