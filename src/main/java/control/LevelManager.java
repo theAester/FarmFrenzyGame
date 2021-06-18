@@ -480,4 +480,7 @@ public class LevelManager {
     public BottledMilk requestBottledMilk() {
         return storage.queryBottledMilk();
     }
+
+    public Powder requestPowder() {
+    }
 }
