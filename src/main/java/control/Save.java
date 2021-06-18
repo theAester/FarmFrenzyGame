@@ -70,7 +70,7 @@ public class Save {
                 }
             }
             HashMap<String,Integer> goals=new HashMap<>();
-            goals.put("Money",random.nextInt(5000));
+            goals.put("money",random.nextInt(5000));
             Level level=new Level(i,SGT, SST,SBT,goldStar* random.nextInt(100)/80,silverStar*random.nextInt(100)/80,brozeStar*random.nextInt(100)/80,animalCycle,threats,facilityCycle,goals, random.nextInt(300));
         }
         try {

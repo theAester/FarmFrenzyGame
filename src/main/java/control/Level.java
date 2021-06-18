@@ -119,7 +119,7 @@ public class Level {
         ThreatCycle = threatCycle;
     }
 
-    public HashMap<Enum, Integer> getLevelGoals() {
+    public HashMap<String, Integer> getLevelGoals() {
         return LevelGoals;
     }
 

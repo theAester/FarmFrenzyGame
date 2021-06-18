@@ -47,4 +47,13 @@ public abstract class Animal{
         this.j=ran.nextInt(6);
     }
     public abstract void update(LevelManager levelManager);
+
+    public int getCoordinateX(){
+        //TODO: fix (graphic)
+        return i;
+    }
+    public int getCoordinateY(){
+        //TODO: fix (graphic)
+        return j;
+    }
 }

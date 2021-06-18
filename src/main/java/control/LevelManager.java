@@ -19,6 +19,23 @@ public class LevelManager {
     public int[][] grid;
     public int cycleNumber;
     private Level currentLevel;
+
+    public int chickenCount;
+    public int buffaloCount;
+    public int turkeyCount;
+    public int catCount;
+    public int dogCount;
+
+    public int eggCount;
+    public int icecreamCount;
+    public int featherCount;
+    public int fabricCount;
+    public int shirtCount;
+    public int milkCount;
+    public int bottledMilkCount;
+    public int powderCount;
+    public int breadCount;
+
     private final CommandProcessor cp;
     private final Scanner sc ;
     public LevelManager(Level level){
@@ -33,6 +50,11 @@ public class LevelManager {
     }
     public void initialize(){
         currentLevel.getAnimalCycle().forEach( x->{
+            if(x.type.equals("chicken")) chickenCount++;
+            if(x.type.equals("buffalo")) buffaloCount++;
+            if(x.type.equals("turkey")) turkeyCount++;
+            if(x.type.equals("cat")) catCount++;
+            if(x.type.equals("dog")) dogCount++;
             animals.add(x);
         });
         currentLevel.getFacilityCycle().forEach( x->{
@@ -206,6 +228,22 @@ public class LevelManager {
                 }
             }
         }
+        else if(command.equals("turn")){
+            int count = 1;
+            if(cp.getArgsCount() == 1){
+                try{
+                    count = Integer.parseInt(cp.getArg(0));
+                }catch(Exception e){
+                    LogAppender.InvalidInput("turn");
+                    Printer.InvalidInput();
+                    return;
+                }
+                for(int i=0;i<count;i++){
+                    update();
+                }
+                printAll();
+            }
+        }
         else if(command.equalsIgnoreCase("truck")){
             if(cp.getArgsCount() == 0){
                 LogAppender.DariEshtebahMizaniDadash();
@@ -292,9 +330,51 @@ public class LevelManager {
         }
     }
 
+    private void printAll() {
+        System.out.println("turns: "+cycleNumber/30);
+        System.out.println("------------------------Map grin------------------------");
+        for(int i=0;i<6;i++){
+            for(int j=0;j<6;j++){
+                System.out.print(grid[i][j]+"\t");
+            }
+            System.out.println();
+        }
+        System.out.println("------------------------Animals------------------------");
+        animals.forEach(x->{
+            System.out.printf("%s %d%% [%d %d]" , x.type,x.getHealth()*10,x.getCoordinateX(),x.getCoordinateY());
+        });
+        System.out.println("------------------------Threats------------------------");
+        threats.forEach(x->{
+            System.out.printf("%s %d [%d %d]" , x.type,x.getRemainingClicks(),x.getCoordinateX(),x.getCoordinateY());
+        });
+        System.out.println("-------------------------Goals-------------------------");
+        currentLevel.getLevelGoals().forEach((x,y)->{
+            int count=0;
+
+            if(x.equals("chicken")) count = chickenCount;
+            else if(x.equals("buffalo")) count = buffaloCount;
+            else if(x.equals("turkey")) count = turkeyCount;
+            else if(x.equals("cat")) count = catCount;
+            else if(x.equals("dog")) count = dogCount;
+            else if(x.equals("egg")) count = eggCount;
+            else if(x.equals("feather")) count = featherCount;
+            else if(x.equals("fabric")) count = fabricCount;
+            else if(x.equals("shirt")) count = shirtCount;
+            else if(x.equals("powder")) count = powderCount;
+            else if(x.equals("bread")) count = breadCount;
+            else if(x.equals("milk")) count = milkCount;
+            else if(x.equals("bottledmilk")) count = bottledMilkCount;
+            else if(x.equals("icecream")) count = icecreamCount;
+            else if(x.equals("money")) count = money;
+
+            System.out.printf("%s %d/%d" , x,count,y);
+        });
+    }
+
     private boolean collect(Commodity e) {
         if(storage.add(e)){
             assertCollection(e);
+            return true;
         }else return false;
     }
 
@@ -319,26 +399,31 @@ public class LevelManager {
             if(money < 100)return false;
             Chicken chicken = new Chicken();
             animals.add(chicken);
+            chickenCount++;
             money-=100;
         }else if(name.equalsIgnoreCase("buffalo")){
             if(money < 400)return false;
             Buffalo buffalo = new Buffalo();
             animals.add(buffalo);
+            buffaloCount++;
             money-=400;
         }else if(name.equalsIgnoreCase("cat")){
             if(money < 150)return false;
             Cat caet = new Cat();
             animals.add(caet);
+            catCount++;
             money-=150;
         }else if(name.equalsIgnoreCase("dog")){
             if(money < 100)return false;
             Dog dog = new Dog();
             animals.add(dog);
+            dogCount++;
             money-=100;
         }else if(name.equalsIgnoreCase("turkey")){
             if(money < 200)return false;
             Turkey turkey = new Turkey();
             animals.add(turkey);
+            turkeyCount++;
             money-=200;
         }else return false;
         return true;
@@ -350,34 +435,49 @@ public class LevelManager {
 
     public void generatePowder(int i, int j) {
         commodities.add(new Powder(i,j));
+        powderCount++;
     }
 
 
     public Feather requestFeather() {
+        return storage.queryFeather();
     }
 
 
     public void generateFabric(int coordinateX, int coordinateY) {
+        commodities.add(new Fabric(coordinateX,coordinateY);
+        fabricCount++;
     }
     //salam
     //yoooo
     public Fabric requestFabric() {
+        return storage.queryFabric();
     }
 
     public void generateShirt(int coordinateX, int coordinateY) {
+        commodities.add(new Shirt(coordinateX,coordinateY));
+        shirtCount++;
     }
 
     public void generateBread(int coordinateX, int coordinateY) {
+        commodities.add(new Bread(coordinateX,coordinateY));
+        breadCount++;
     }
     public Milk requestMilk() {
+        return storage.queryMilk();
     }
 
     public void generateBottledMilk(int coordinateX, int coordinateY) {
+        commodities.add(new BottledMilk(coordinateX,coordinateY));
+        bottledMilkCount++;
     }
 
     public void generateIceCream(int coordinateX, int coordinateY) {
+        commodities.add(new IceCream(coordinateX,coordinateY));
+        icecreamCount++;
     }
 
     public BottledMilk requestBottledMilk() {
+        return storage.queryBottledMilk();
     }
 }

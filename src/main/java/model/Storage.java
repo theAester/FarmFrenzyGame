@@ -60,4 +60,20 @@ public class Storage {
     public Egg queryEgg() {
         return (Egg) storedObjects.stream().filter(x -> x.getName().equals("egg")).findFirst().orElse(null);
     }
+
+    public Feather queryFeather() {
+        return (Feather) storedObjects.stream().filter(x -> x.getName().equals("feather")).findFirst().orElse(null);
+    }
+
+    public Fabric queryFabric() {
+        return (Fabric) storedObjects.stream().filter(x -> x.getName().equals("fabric")).findFirst().orElse(null);
+    }
+
+    public Milk queryMilk() {
+        return (Milk) storedObjects.stream().filter(x -> x.getName().equals("milk")).findFirst().orElse(null);
+    }
+
+    public BottledMilk queryBottledMilk() {
+        return (BottledMilk) storedObjects.stream().filter(x -> x.getName().equals("bottledmilk")).findFirst().orElse(null);
+    }
 }
