@@ -1,5 +1,7 @@
 package model;
 
+import control.LevelManager;
+
 import java.util.Random;
 
 public class Lion extends Threat{
@@ -46,8 +48,9 @@ public class Lion extends Threat{
         this.outputTimeout=150;
     }
     @Override
-    public void update()
+    public void update(LevelManager levelManager)
     {
+        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
         boolean moved = false;
         Random ran = new Random();
         int move = 0;
@@ -84,6 +87,7 @@ public class Lion extends Threat{
                 }
             }
         }
+        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
     }
     @Override
     public void attack() {

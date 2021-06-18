@@ -1,5 +1,7 @@
 package model;
 
+import control.LevelManager;
+
 import java.util.Random;
 
 public class Bear extends Threat{
@@ -44,8 +46,9 @@ public class Bear extends Threat{
         return unitPriceTag;
     }
     @Override
-    public void update()
+    public void update(LevelManager levelManager)
     {
+        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
         boolean moved = false;
         Random ran = new Random();
         int move = 0;
@@ -82,7 +85,7 @@ public class Bear extends Threat{
                 }
             }
         }
-        //System.out.println(this.x+this.y);
+        levelManager.queryAnimalLocation(getCoordinateX(),getCoordinateY());
     }
     @Override
     public void attack() {

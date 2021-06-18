@@ -1,4 +1,6 @@
 package model;
+import control.LevelManager;
+
 import java.util.Random;
 
 public abstract class Threat implements Storable{
@@ -22,7 +24,7 @@ public abstract class Threat implements Storable{
     protected int storingSize;
     protected int unitPriceTag;
 
-    public abstract void update();
+    public abstract void update(LevelManager levelManager);
     public abstract void attack();
     public Threat(int i, int j) {
         this.i = i;
@@ -36,6 +38,7 @@ public abstract class Threat implements Storable{
         this.j=ran.nextInt(6);
         this.j++;
     }
+
 
     public boolean inside(int x, int y){
         return true;
