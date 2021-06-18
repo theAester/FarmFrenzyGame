@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.Scanner;
-public class LogAppender {
+public  class LogAppender {
     public static void Login(String username) throws IOException {
         Do("logged in with username " + username);
     }
