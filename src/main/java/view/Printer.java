@@ -146,5 +146,8 @@ public class Printer {
         if(remaining != 0) System.out.printf("Caged a %s at (%d,%d). %d clicks remaining.\n",name,i,j,remaining);
         else System.out.printf("Contained a %s at (%d,%d)\n",name , i ,j);
     }
+
+    public static void NotEnough(String egg) {
+    }
 }
 

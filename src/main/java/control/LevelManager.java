@@ -52,8 +52,6 @@ public class LevelManager {
             //update();
 
             //TODO: draw
-
-            //output  --todo--> log
             //cycle = output(outputs);
 
         }
@@ -181,7 +179,7 @@ public class LevelManager {
                 System.out.println("counld not find "+facility);
                 return;
             }
-            if(facility.work()){
+            if(facility.work(this)){
 
             }
         }
@@ -344,5 +342,11 @@ public class LevelManager {
             money-=200;
         }else return false;
         return true;
+    }
+
+    public Egg requestEgg() {
+    }
+
+    public void generatePowder() {
     }
 }

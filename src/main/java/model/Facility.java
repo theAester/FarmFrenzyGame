@@ -15,11 +15,12 @@ protected boolean produced;
 protected boolean isReady=true;
 protected boolean busy=false;
 protected int unitPriceTag;
+protected int productionCount;
 
     public abstract void upgrade();
     public abstract void collect();
     public abstract void produce();
-
+    public abstract boolean work(LevelManager levelManager);
     public Facility(int i, int j) {
         this.i = i;
         this.j = j;
@@ -30,5 +31,5 @@ protected int unitPriceTag;
     public Facility() {
     }
 
-    public abstract void update(LevelManager levelManager);
+    public abstract int update(LevelManager levelManager);
 }
