@@ -11,9 +11,10 @@ public class Level {
     private HashMap<Integer,Animal> AnimalCycle;
     private HashMap<Integer, Threat> ThreatCycle;
     private HashMap<Integer, Facility> FacilityCycle;
+    private HashMap<Enum,Integer> LevelGoals;
     // All data of a level should be here
 
-    public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,HashMap animalCycle,HashMap threatCycle,HashMap facilityCycle) {
+    public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,HashMap animalCycle,HashMap threatCycle,HashMap facilityCycle,HashMap levelGoals) {
         this.level = level;
         this.goldTime = goldTime;
         this.silverTime = silverTime;
@@ -24,6 +25,7 @@ public class Level {
         this.AnimalCycle=animalCycle;
         this.ThreatCycle=threatCycle;
         this.FacilityCycle=facilityCycle;
+        this.LevelGoals=levelGoals;
     }
 
     public int getLevel() {
@@ -104,5 +106,13 @@ public class Level {
 
     public void setFacilityCycle(HashMap<Integer, Facility> facilityCycle) {
         FacilityCycle = facilityCycle;
+    }
+
+    public HashMap<Enum, Integer> getLevelGoals() {
+        return LevelGoals;
+    }
+
+    public void setLevelGoals(HashMap<Enum, Integer> levelGoals) {
+        LevelGoals = levelGoals;
     }
 }
