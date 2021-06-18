@@ -3,21 +3,21 @@ package model;
 import control.LevelManager;
 import java.util.Random;
 
-public class Chicken extends Animal{
-    public Chicken(int i,int j)
+public class Buffalo extends Animal{
+    public Buffalo(int i,int j)
     {
         super(i,j);
         this.productionPoint=0;
-        this.productionRate=2;
-        this.type="chicken";
+        this.productionRate=5;
+        this.type="buffalo";
     }
-    public Chicken()
+    public Buffalo()
     {
         super();
         this.health=this.maxHealth;
         this.productionPoint=0;
-        this.productionRate=2;
-        this.type="chicken";
+        this.productionRate=5;
+        this.type="buffalo";
     }
     @Override
     public void update(LevelManager levelManager)
@@ -109,6 +109,6 @@ public class Chicken extends Animal{
     @Override
     public void produce()
     {
-        Egg egg = new Egg(this.i,this.j);
+        Milk milk = new Milk(this.i,this.j);
     }
 }

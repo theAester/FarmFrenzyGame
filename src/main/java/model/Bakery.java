@@ -4,7 +4,7 @@ class Bakery extends Facility {
     public static long price;
 
     @Override
-    public void update() {
+    public void update(LevelManager levelManager) {
 
     }
 
@@ -22,6 +22,7 @@ class Bakery extends Facility {
     public void produce() {
 
     }
+
 
     public Bakery(int x, int y) {
         super(x, y);

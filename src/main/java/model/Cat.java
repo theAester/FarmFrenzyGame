@@ -1,5 +1,8 @@
 package model;
-class Cat extends Animal{
+
+import control.LevelManager;
+
+public class Cat extends Animal{
     public static int price;
     public Cat(int x,int y)
     {
@@ -10,16 +13,10 @@ class Cat extends Animal{
         super();
     }
     @Override
-    public void update()
-    {
-        System.out.println(this.x+this.y);
+    public void update(LevelManager levelManager) {
+        System.out.println(this.x + this.y);
     }
-    @Override
-    public boolean consume()
-    {
-        System.out.println(1);
-        return true;
-    }
+
     @Override
     public void produce()
     {

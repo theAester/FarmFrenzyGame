@@ -1,6 +1,6 @@
 package model;
 
-public class Egg extends Commodity {
+public class Feather extends Commodity {
 
     @Override
     public void acquire() {
@@ -15,9 +15,9 @@ public class Egg extends Commodity {
     public int getUnitPrice() {
         return unitPriceTag;
     }
-    public Egg(int i, int j) {
+    public Feather(int i, int j) {
         super(i, j);
-        this.type="egg";
+        this.type="feather";
     }
 
     @Override
@@ -35,3 +35,4 @@ public class Egg extends Commodity {
         return this.type;
     }
 }
+

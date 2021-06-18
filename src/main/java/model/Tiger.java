@@ -1,20 +1,22 @@
 package model;
-class Bear extends Threat{
-    public Bear(int x,int y)
+class Tiger extends Threat{
+    public Tiger(int x,int y)
     {
         super(x,y);
-    }
-    public Bear()
-    {
-        super();
     }
     @Override
     public int getStoringSize(){
         return storingSize;
     }
+
     @Override
     public int getUnitPrice() {
         return unitPriceTag;
+    }
+
+    public Tiger()
+    {
+        super();
     }
     @Override
     public void update()
@@ -23,5 +25,6 @@ class Bear extends Threat{
     }
     @Override
     public void attack() {
+
     }
 }

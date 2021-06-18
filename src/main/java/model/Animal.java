@@ -1,6 +1,8 @@
 package model;
+import control.LevelManager;
+
 import java.util.Random;
-public abstract class Animal {
+public abstract class Animal{
     public String type;
     protected final int BoxWidth=1;
     protected final int BoxHeight=1;
@@ -9,8 +11,10 @@ public abstract class Animal {
     protected int quota;
     protected int consumptionPortion;
     protected double C2H;
+    //x y (offset) in graphics
     protected int x;
     protected int y;
+    //i j in 6*6
     protected int i;
     protected int j;
     protected int step;
@@ -20,23 +24,27 @@ public abstract class Animal {
     protected int jNew;
     protected int health;
     protected double v;
-    protected int maxHealth;
+    protected int maxHealth=10;
+    protected int productionRate;
+    protected int productionPoint;
+    protected boolean consume=false;
+    public boolean alive=true;
 
-    public abstract void update();
     public abstract void produce();
-    public abstract boolean consume();
-
-    public Animal(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public int getHealth(){
+        return health;
+    }
+    public Animal(int i, int j) {
+        this.i = i;
+        this.j = j;
     }
     public Animal()
     {
         Random ran = new Random();
-        this.x=ran.nextInt(6);
-        this.x++;
-        this.y=ran.nextInt(6);
-        this.y++;
-        //System.out.println(this.x+"   "+this.y);
+        this.i=ran.nextInt(6);
+        //this.x++;
+        this.j=ran.nextInt(6);
+        //this.y++;
     }
+    public abstract void update(LevelManager levelManager);
 }
