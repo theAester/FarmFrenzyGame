@@ -1,5 +1,5 @@
 package view;
-import control.Enum;
+
 
 public class Printer {
     public static void Welcome()
@@ -48,7 +48,7 @@ public class Printer {
     }
     public static void AccessDenied(int level)
     {
-        System.err.println("You only got access from one to "+ level);
+        System.err.println("You don't have access to "+level);
     }
     public static void LoggedOut()
     {
@@ -59,7 +59,7 @@ public class Printer {
     }
     public static void HelpSettings()
     {
-        System.out.println("kossher");
+        System.out.println("blah blah blah");
     }
     public static void BuyAnimal(String animal)
     {

@@ -50,8 +50,8 @@ public class Save {
         Random random =new Random();
         for (int i = numLevel; i >=1; i--){
             SGT+=random.nextInt(2)*30;
-            SST+=random.nextInt(2)*30;
-            SBT+=random.nextInt(2)*30;
+            SST=SGT+random.nextInt(2)*30+1;
+            SBT=SST+random.nextInt(2)*30+2;
             ArrayList<Animal> animalCycle=new ArrayList<>();
             int numChicken=random.nextInt(boundChicken);
             for(int j=0;j<numChicken;j++) {
@@ -79,7 +79,10 @@ public class Save {
             }
             HashMap<String,Integer> goals=new HashMap<>();
             goals.put("money",random.nextInt(5000));
-            Level level=new Level(i,SGT, SST,SBT,goldStar* random.nextInt(100)/80,silverStar*random.nextInt(100)/80,brozeStar*random.nextInt(100)/80,animalCycle,threats,facilityCycle,goals, random.nextInt(300));
+            goldStar*=random.nextInt(100)/40;
+            silverStar=goldStar* random.nextInt(40)/40;
+            brozeStar=silverStar*random.nextInt(40)/40;
+            Level level=new Level(i,SGT, SST,SBT,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
             levels.add(level);
         }
         try {

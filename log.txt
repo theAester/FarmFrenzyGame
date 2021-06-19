@@ -37,3 +37,8 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>No user found as:alinikhhah 6/19/21 14:45:06.523377
 >>>>WRONG INPUT buy chicken  6/19/21 02:52:18.340770100
 >>>>WRONG INPUT buy chicken  6/19/21 02:52:59.183411700
+>>>>WRONG INPUT help  6/19/21 14:51:57.543751
+>>>>WRONG INPUT    6/19/21 14:52:15.933271
+>>>>signed up with usernameparisatumari 6/19/21 14:54:11.713512
+>>>>User Exists 6/19/21 14:54:21.992710
+>>>>Invalid password parisatumari(1245) 6/19/21 14:54:31.107670
