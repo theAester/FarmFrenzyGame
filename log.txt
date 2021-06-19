@@ -151,3 +151,5 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>turkey bought 6/19/21 06:16:00.155220900
 >>>>WRONG INPUT exit  6/19/21 18:00:00.767832
 >>>>logged in with username alinikkhah 6/19/21 18:00:00.779334
+>>>>WRONG INPUT exit  6/19/21 18:06:38.805254
+>>>>logged in with username alinikkhah 6/19/21 18:06:38.819454
