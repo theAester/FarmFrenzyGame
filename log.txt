@@ -287,6 +287,34 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>logged in with username alinikkhah 6/19/21 23:31:18.136941
 >>>>WRONG INPUT exit  6/19/21 23:31:33.322008
 >>>>logged in with username alinikkhah 6/19/21 23:31:33.337673
+>>>>watered an already full part of the ground 6/19/21 12:11:28.264166200
+>>>>Well refill started 6/19/21 12:11:42.311368200
+>>>>Well refilled 6/19/21 12:13:09.808168900
+>>>>Caged a bear at (4,2). 3 clicks remaining. 6/19/21 12:13:15.590342900
+>>>>Caged a bear at (4,2). 2 clicks remaining. 6/19/21 12:13:18.099200700
+>>>>Caged a bear at (4,2). 1 clicks remaining. 6/19/21 12:13:19.875464800
+>>>>Contained a bear at (4,2) 6/19/21 12:13:25.875047100
+>>>>Caged a lion at (5,2). 2 clicks remaining. 6/19/21 12:14:33.071835700
+>>>>Caged a lion at (5,2). 1 clicks remaining. 6/19/21 12:14:38.011694600
+>>>>Contained a lion at (5,2) 6/19/21 12:14:48.081479900
+>>>>Caged a lion at (2,4). 2 clicks remaining. 6/19/21 12:14:52.794005800
+>>>>Caged a lion at (2,4). 1 clicks remaining. 6/19/21 12:14:55.025090400
+>>>>Contained a lion at (2,4) 6/19/21 12:14:57.052207300
+>>>>Truck loaded withlion 6/19/21 12:15:07.270101600
+>>>>Truck loaded withbear 6/19/21 12:15:14.981140800
+>>>>Truck has left for the market with $700 worth of items 6/19/21 12:15:18.007609800
+>>>>chicken bought 6/19/21 12:15:27.607194500
+>>>>chicken bought 6/19/21 12:15:33.414779400
+>>>>Caged a lion at (3,5). 2 clicks remaining. 6/19/21 12:16:11.181559400
+>>>>Caged a lion at (3,5). 1 clicks remaining. 6/19/21 12:16:14.026972900
+>>>>Contained a lion at (3,5) 6/19/21 12:16:16.570196100
+>>>>Caged a bear at (4,5). 3 clicks remaining. 6/19/21 12:16:19.979148500
+>>>>Caged a bear at (4,5). 2 clicks remaining. 6/19/21 12:16:22.191290300
+>>>>Caged a bear at (4,5). 1 clicks remaining. 6/19/21 12:16:24.229385
+>>>>Contained a bear at (4,5) 6/19/21 12:16:34.642248400
+>>>>Truck loaded withlion 6/19/21 12:16:54.194883200
+>>>>Truck loaded with 2 egg(s) 6/19/21 12:17:28.587940700
+>>>>Truck has left for the market with $330 worth of items 6/19/21 12:17:32.246695300
 >>>>signed up with usernamenommykhodadad 6/19/21 23:39:12.343859
 >>>>chicken bought 6/19/21 23:45:21.132685
 >>>>chicken bought 6/19/21 23:45:56.719377

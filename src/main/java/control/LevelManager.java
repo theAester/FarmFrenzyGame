@@ -68,6 +68,7 @@ public class LevelManager {
         });
     }
     public void run(){
+        System.out.println("kir");
         ArrayList<String> outputs;
         boolean cycle = true;
         while(cycle) { // main game cycle
@@ -336,7 +337,7 @@ public class LevelManager {
                 }
             }
             for(int i=0;i<count;i++){
-                System.out.println("---------------------Update "+i+"--------------------");
+                System.out.println("------------------------Update "+(i+1)+"------------------------");
                 update();
             }
             printAll();
@@ -539,7 +540,7 @@ public class LevelManager {
     }
 
     public Egg requestEgg() {
-        return storage.queryEgg();
+        return (Egg) storage.queryItem("egg");
     }
 
     public void generatePowder(int i, int j) {
@@ -549,7 +550,7 @@ public class LevelManager {
 
 
     public Feather requestFeather() {
-        return storage.queryFeather();
+        return (Feather) storage.queryItem("feather");
     }
 
 
@@ -560,7 +561,7 @@ public class LevelManager {
     //salam
     //yoooo
     public Fabric requestFabric() {
-        return storage.queryFabric();
+        return (Fabric) storage.queryItem("fabric");
     }
 
     public void generateShirt(int coordinateX, int coordinateY) {
@@ -573,7 +574,7 @@ public class LevelManager {
         breadCount++;
     }
     public Milk requestMilk() {
-        return storage.queryMilk();
+        return (Milk) storage.queryItem("milk");
     }
 
     public void generateBottledMilk(int coordinateX, int coordinateY) {
@@ -587,11 +588,11 @@ public class LevelManager {
     }
 
     public BottledMilk requestBottledMilk() {
-        return storage.queryBottledMilk();
+        return (BottledMilk) storage.queryItem("bottledmilk");
     }
 
     public Powder requestPowder() {
-        return storage.queryPowder();
+        return (Powder) storage.queryItem("powder");
     }
 
     public void generateEgg(int coordinateX, int coordinateY) {
