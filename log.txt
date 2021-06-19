@@ -42,3 +42,9 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>signed up with usernameparisatumari 6/19/21 14:54:11.713512
 >>>>User Exists 6/19/21 14:54:21.992710
 >>>>Invalid password parisatumari(1245) 6/19/21 14:54:31.107670
+>>>>WRONG INPUT end  6/19/21 16:27:48.971695
+>>>>WRONG INPUT exit  6/19/21 16:27:51.614666
+>>>>logged in with username alinikkhah 6/19/21 16:27:51.617589
+>>>>WRONG INPUT end  6/19/21 16:28:46.564832
+>>>>WRONG INPUT exit  6/19/21 16:28:48.760436
+>>>>logged in with username alinikkhah 6/19/21 16:28:48.762832
