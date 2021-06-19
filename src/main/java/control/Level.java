@@ -11,8 +11,8 @@ public class Level {
     private int level,goldTime,silverTime,bronzeTime,goldStars,silverStars,bronzeStars,initialBalance;
     private ArrayList<Animal> AnimalCycle;
     private ArrayList<Facility> FacilityCycle;
-    private HashMap<String ,Integer> ThreatCycle;
-    private HashMap<String,Integer> LevelGoals;
+    private HashMap<Integer,String> ThreatCycle;
+    private HashMap<Integer,String> LevelGoals;
     // All data of a level should be here
 
     public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,ArrayList animalCycle,HashMap threatCycle,ArrayList facilityCycle,HashMap levelGoals,int initialBalance) {
@@ -111,19 +111,19 @@ public class Level {
         FacilityCycle = facilityCycle;
     }
 
-    public HashMap<String,Integer> getThreatCycle() {
+    public HashMap<Integer,String> getThreatCycle() {
         return ThreatCycle;
     }
 
-    public void setThreatCycle(HashMap<String ,Integer> threatCycle) {
+    public void setThreatCycle(HashMap<Integer,String> threatCycle) {
         ThreatCycle = threatCycle;
     }
 
-    public HashMap<String, Integer> getLevelGoals() {
+    public HashMap<Integer,String> getLevelGoals() {
         return LevelGoals;
     }
 
-    public void setLevelGoals(HashMap<String, Integer> levelGoals) {
+    public void setLevelGoals(HashMap<Integer,String> levelGoals) {
         LevelGoals = levelGoals;
     }
 }
