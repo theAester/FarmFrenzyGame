@@ -56,7 +56,10 @@ public class Dog extends Animal {
                 }
             }
         }
-        levelManager.killThreatLocation(getCoordinateX(),getCoordinateY());
+        if(levelManager.killThreatLocation(getCoordinateX(),getCoordinateY()))
+        {
+            this.alive=false;
+        }
     }
     @Override
     public void produce(LevelManager levelManager)
