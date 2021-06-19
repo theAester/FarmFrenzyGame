@@ -94,7 +94,7 @@ public class Buffalo extends Animal{
                 {
                     if(this.j>0)
                     {
-                        this.j++;
+                        this.j--;
                         moved=true;
                     }
                     else
