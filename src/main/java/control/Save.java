@@ -115,6 +115,7 @@ facilityCycle.add(iceCreamFactory);
            levels.add(level);
         }
 /*        try {
+            System.out.println("generate");
             String LevelArrayList = gson.toJson(levels);
             FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
             levelArrayList.write(LevelArrayList);
