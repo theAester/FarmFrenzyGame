@@ -83,15 +83,15 @@ public class Save {
             silverStar=goldStar* random.nextInt(40)/40;
             brozeStar=silverStar*random.nextInt(40)/40;
             Level level=new Level(i,SGT, SST,SBT,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
-            levels.add(level);
+           levels.add(level);
         }
-        try {
+/*        try {
             String LevelArrayList = gson.toJson(levels);
             FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
             levelArrayList.write(LevelArrayList);
             levelArrayList.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

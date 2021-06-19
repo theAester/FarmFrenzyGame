@@ -26,7 +26,7 @@ public class Menu {
         this.coin=user.getCoin();
         this.fullName=user.getFirstName()+user.getLastName();
         this.LevelMap=user.getLevelMap();
-        Save.GenerateLevel(10,100,100,100,100,1001,01,6,6);
+        Save.GenerateLevel(5,120,150,180,100,80,60,3,3);
         this.levelsList=Load.LevelList();
     }
     public void Run() throws IOException {
