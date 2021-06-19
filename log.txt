@@ -279,3 +279,20 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>I dont think you've got the facilities for that big man 6/19/21 23:14:05.461366
 >>>>WRONG INPUT exit  6/19/21 23:14:41.720819
 >>>>logged in with username alinikkhah 6/19/21 23:14:41.736146
+>>>>watered an already full part of the ground 6/19/21 11:56:46.815291300
+>>>>Well refill started 6/19/21 11:56:58.958024100
+>>>>Well refilled 6/19/21 11:57:02.431799400
+>>>>chicken bought 6/19/21 11:57:25.774723200
+>>>>Caged a lion at (4,1). 2 clicks remaining. 6/19/21 11:57:36.372101800
+>>>>Caged a lion at (4,1). 1 clicks remaining. 6/19/21 11:57:41.037693100
+>>>>Contained a lion at (4,1) 6/19/21 11:57:47.248750500
+>>>>Caged a bear at (6,1). 3 clicks remaining. 6/19/21 11:58:00.317051400
+>>>>Caged a bear at (6,1). 2 clicks remaining. 6/19/21 11:58:02.311268200
+>>>>Caged a bear at (6,1). 1 clicks remaining. 6/19/21 11:58:05.641927300
+>>>>Contained a bear at (6,1) 6/19/21 11:58:07.435147200
+>>>>Caged a lion at (6,3). 2 clicks remaining. 6/19/21 11:58:13.502070100
+>>>>Caged a lion at (6,3). 1 clicks remaining. 6/19/21 11:58:15.894239700
+>>>>Contained a lion at (6,3) 6/19/21 11:58:17.555807400
+>>>>Truck loaded withlion 6/19/21 11:59:12.358509300
+>>>>Truck loaded withbear 6/19/21 11:59:16.549875800
+>>>>Truck has left for the market with $700 worth of items 6/19/21 11:59:26.192825800
