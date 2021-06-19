@@ -79,7 +79,7 @@ public class Tiger extends Threat {
                 }
             } else if (move == 4) {
                 if (this.j > 0) {
-                    this.j++;
+                    this.j--;
                     moved = true;
                 } else {
                     move = 1;
@@ -127,7 +127,7 @@ public class Tiger extends Threat {
                 }
             } else if (move2 == 4) {
                 if (this.j > 0 && move2 != move) {
-                    this.j++;
+                    this.j--;
                     moved2 = true;
                 } else {
                     move2 = 1;

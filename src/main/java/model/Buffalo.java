@@ -26,7 +26,7 @@ public class Buffalo extends Animal{
     @Override
     public void update(LevelManager levelManager)
     {
-        this.productionPoint=+30;
+        this.productionPoint=this.productionPoint+30;
         if(this.productionPoint==this.productionRate)
         {
             this.productionPoint=0;

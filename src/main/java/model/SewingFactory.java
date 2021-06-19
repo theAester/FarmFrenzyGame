@@ -15,11 +15,11 @@ public class SewingFactory extends Facility {
      */
     @Override
     public int update(LevelManager levelManager) {
-        if( this.outputSeq*this.scale != this.outputTimeout && this.outputSeq != -1){
-            this.outputSeq++;
+        if( this.outputSeq*this.scale != this.outputTimeout && this.outputSeq != -30){
+            this.outputSeq+=30;
             return 1;
         }else if(this.outputSeq*this.scale == this.outputTimeout){
-            this.outputSeq = -1;
+            this.outputSeq = -30;
             this.busy = false;
             produce(levelManager);
             return 2;
