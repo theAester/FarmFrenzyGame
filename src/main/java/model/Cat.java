@@ -10,12 +10,14 @@ public class Cat extends Animal{
         super(i,j);
         this.type="cat";
         this.unitPriceTag=150;
+        this.health=10;
     }
     public Cat()
     {
         super();
         this.type="cat";
         this.unitPriceTag=150;
+        this.health=10;
     }
     @Override
     public void update(LevelManager levelManager) {
@@ -31,8 +33,8 @@ public class Cat extends Animal{
                 }
             }
             if(c.getCoordinateY() != getCoordinateY()){
-                if(c.getCoordinateY() > getCoordinateY()) this.i--;
-                else this.i++;
+                if(c.getCoordinateY() > getCoordinateY()) this.i++;
+                else this.i--;
             }
             else if(c.getCoordinateX() != getCoordinateX()){
                 if(c.getCoordinateX() > getCoordinateX()) this.j--;
