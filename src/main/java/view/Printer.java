@@ -150,5 +150,13 @@ public class Printer {
     public static void NotEnough(String product) {
         System.out.println("Not Enough "+ product);
     }
+
+    public static void WellRefillStart() {
+        System.out.println("Well refill started");
+    }
+
+    public static void wellRefilling() {
+        System.out.println("well is being refilled");
+    }
 }
 

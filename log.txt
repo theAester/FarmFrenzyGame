@@ -37,14 +37,115 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>No user found as:alinikhhah 6/19/21 14:45:06.523377
 >>>>WRONG INPUT buy chicken  6/19/21 02:52:18.340770100
 >>>>WRONG INPUT buy chicken  6/19/21 02:52:59.183411700
+>>>>I dont think you've got the facilities for that big man 6/19/21 03:20:10.521055
 >>>>WRONG INPUT help  6/19/21 14:51:57.543751
 >>>>WRONG INPUT    6/19/21 14:52:15.933271
 >>>>signed up with usernameparisatumari 6/19/21 14:54:11.713512
 >>>>User Exists 6/19/21 14:54:21.992710
 >>>>Invalid password parisatumari(1245) 6/19/21 14:54:31.107670
+>>>>Well well well! Well, the well was empty. 6/19/21 03:55:08.632351500
+>>>>Well filling failed 6/19/21 03:56:50.555945200
+>>>>Invalid password hiraddavari(1234\) 6/19/21 03:57:38.617917700
+>>>>I dont think you've got the facilities for that big man 6/19/21 03:58:10.420016200
+>>>>Well well well! Well, the well was empty. 6/19/21 04:00:32.812097700
+>>>>Well filling failed 6/19/21 04:00:49.200568200
+>>>>Well filling failed 6/19/21 04:02:19.648059200
+>>>>Invalid password hiraddavari(1234\) 6/19/21 04:15:15.905608100
+>>>>Well well well! Well, the well was empty. 6/19/21 04:15:26.813652800
+>>>>Well well well! Well, the well was empty. 6/19/21 04:16:23.312476700
+>>>>Well well well! Well, the well was empty. 6/19/21 04:22:48.512910700
+>>>>Well refill started 6/19/21 04:23:11.023164200
+>>>>Well refill started 6/19/21 04:48:38.156032400
+>>>>Well refill started 6/19/21 04:51:38.222283700
+>>>>Well refilled 6/19/21 04:52:02.812450700
+>>>>No user found as:hiraddavri 6/19/21 04:57:46.935393400
 >>>>WRONG INPUT end  6/19/21 16:27:48.971695
 >>>>WRONG INPUT exit  6/19/21 16:27:51.614666
 >>>>logged in with username alinikkhah 6/19/21 16:27:51.617589
 >>>>WRONG INPUT end  6/19/21 16:28:46.564832
 >>>>WRONG INPUT exit  6/19/21 16:28:48.760436
 >>>>logged in with username alinikkhah 6/19/21 16:28:48.762832
+>>>>Well refill started 6/19/21 05:07:38.168062200
+>>>>Well well well! Well, the well was empty. 6/19/21 05:08:02.131427900
+>>>>Well refilled 6/19/21 05:08:04.016935700
+>>>>Invalid input while using "plant" 6/19/21 05:21:22.362556
+>>>>Well well well! Well, the well was empty. 6/19/21 05:21:39.490496700
+>>>>Well well well! Well, the well was empty. 6/19/21 05:40:24.713796300
+>>>>Well refill started 6/19/21 05:40:28.031994100
+>>>>Caged a lion at (6,3). 4 clicks remaining. 6/19/21 05:40:59.378197900
+>>>>Caged a lion at (6,3). 5 clicks remaining. 6/19/21 05:41:09.618015700
+>>>>Caged a lion at (6,3). 6 clicks remaining. 6/19/21 05:41:14.064215300
+>>>>Invalid input while using "plant" 6/19/21 05:42:46.011380300
+>>>>Well well well! Well, the well was empty. 6/19/21 05:42:51.999014500
+>>>>Caged a lion at (1,5). 2 clicks remaining. 6/19/21 05:43:05.654266100
+>>>>Caged a lion at (1,5). 1 clicks remaining. 6/19/21 05:43:09.740922800
+>>>>Contained a lion at (1,5) 6/19/21 05:43:14.283357700
+>>>>Caged a lion at (1,5). -1 clicks remaining. 6/19/21 05:43:53.575520900
+>>>>Caged a lion at (2,5). 2 clicks remaining. 6/19/21 05:43:53.576517700
+>>>>Caged a bear at (4,3). 3 clicks remaining. 6/19/21 05:43:53.578512500
+>>>>Invalid input while using "plant" 6/19/21 05:46:12.518479300
+>>>>Well well well! Well, the well was empty. 6/19/21 05:46:18.760947900
+>>>>Well refill started 6/19/21 05:46:21.034391900
+>>>>Caged a lion at (5,1). 2 clicks remaining. 6/19/21 05:46:27.736157500
+>>>>Caged a lion at (5,1). 1 clicks remaining. 6/19/21 05:46:31.390959500
+>>>>Contained a lion at (5,1) 6/19/21 05:46:35.482119400
+>>>>Well well well! Well, the well was empty. 6/19/21 05:50:15.424227900
+>>>>Well refill started 6/19/21 05:50:17.759993800
+>>>>Caged a lion at (2,1). 2 clicks remaining. 6/19/21 05:50:51.708792
+>>>>Caged a lion at (2,1). 1 clicks remaining. 6/19/21 05:50:59.109172100
+>>>>Contained a lion at (2,1) 6/19/21 05:51:06.615194
+>>>>Well filling failed 6/19/21 05:52:06.361025700
+>>>>Caged a lion at (4,4). 2 clicks remaining. 6/19/21 05:52:15.708153900
+>>>>Caged a lion at (4,4). 1 clicks remaining. 6/19/21 05:52:18.686727400
+>>>>Contained a lion at (4,4) 6/19/21 05:52:25.283181700
+>>>>Caged a lion at (6,5). 2 clicks remaining. 6/19/21 05:59:46.480356400
+>>>>Caged a lion at (6,5). 1 clicks remaining. 6/19/21 05:59:50.006539900
+>>>>Contained a lion at (6,5) 6/19/21 05:59:53.616972300
+>>>>Invalid password hiraddavari(1324) 6/19/21 06:03:03.520212900
+>>>>Caged a lion at (5,1). 2 clicks remaining. 6/19/21 06:03:18.070032
+>>>>Caged a lion at (5,1). 1 clicks remaining. 6/19/21 06:03:20.068740700
+>>>>Contained a lion at (5,1) 6/19/21 06:03:24.123472600
+>>>>Truck loaded withlion 6/19/21 06:03:41.616497400
+>>>>Truck has left for the market with $300 worth of items 6/19/21 06:03:45.695149600
+>>>>Caged a lion at (4,4). 2 clicks remaining. 6/19/21 06:03:55.326085900
+>>>>Caged a lion at (4,4). 1 clicks remaining. 6/19/21 06:03:58.104185300
+>>>>Contained a lion at (4,4) 6/19/21 06:04:01.826803100
+>>>>Caged a bear at (5,4). 3 clicks remaining. 6/19/21 06:04:09.949715900
+>>>>Caged a bear at (5,4). 2 clicks remaining. 6/19/21 06:04:13.120792400
+>>>>Caged a bear at (5,4). 1 clicks remaining. 6/19/21 06:04:15.338425700
+>>>>Contained a bear at (5,4) 6/19/21 06:04:17.837277500
+>>>>Dadashemoon eshteba zad 6/19/21 06:04:40.466672800
+>>>>Caged a lion at (5,3). 2 clicks remaining. 6/19/21 06:06:36.340933700
+>>>>Caged a lion at (5,3). 1 clicks remaining. 6/19/21 06:06:38.352600900
+>>>>Contained a lion at (5,3) 6/19/21 06:06:41.372590800
+>>>>Truck loaded withlion 6/19/21 06:08:39.462698600
+>>>>Truck has left for the market with $300 worth of items 6/19/21 06:09:41.313149700
+>>>>WRONG INPUT stat 1  6/19/21 06:11:24.778346500
+>>>>Well refill started 6/19/21 06:11:45.206088400
+>>>>Caged a lion at (4,2). 2 clicks remaining. 6/19/21 06:11:52.102258400
+>>>>Caged a lion at (4,2). 1 clicks remaining. 6/19/21 06:11:57.467973600
+>>>>Contained a lion at (4,2) 6/19/21 06:12:00.147332300
+>>>>Caged a lion at (4,2). -1 clicks remaining. 6/19/21 06:12:04.927139300
+>>>>Caged a lion at (4,2). -2 clicks remaining. 6/19/21 06:12:21.651719200
+>>>>Caged a lion at (4,3). 2 clicks remaining. 6/19/21 06:12:46.352696900
+>>>>Caged a lion at (4,3). 1 clicks remaining. 6/19/21 06:12:49.634966200
+>>>>Contained a lion at (4,3) 6/19/21 06:12:51.786250300
+>>>>Caged a lion at (1,2). 2 clicks remaining. 6/19/21 06:12:56.907636300
+>>>>Caged a lion at (1,2). 1 clicks remaining. 6/19/21 06:12:59.497264700
+>>>>Contained a lion at (1,2) 6/19/21 06:13:01.471037100
+>>>>Well refilled 6/19/21 06:13:05.452925600
+>>>>Truck loaded with 2 lion(s) 6/19/21 06:13:19.235361800
+>>>>Truck has left for the market with $600 worth of items 6/19/21 06:13:25.439918400
+>>>>Caged a bear at (2,1). 3 clicks remaining. 6/19/21 06:13:47.693326600
+>>>>Caged a bear at (2,1). 2 clicks remaining. 6/19/21 06:13:50.257022100
+>>>>Caged a bear at (2,1). 1 clicks remaining. 6/19/21 06:13:53.048626900
+>>>>Contained a bear at (2,1) 6/19/21 06:13:55.974841600
+>>>>Caged a lion at (2,0). 2 clicks remaining. 6/19/21 06:14:15.529852500
+>>>>Caged a lion at (2,0). 1 clicks remaining. 6/19/21 06:14:16.578091900
+>>>>Contained a lion at (2,0) 6/19/21 06:14:18.051657100
+>>>>Truck loaded withbear 6/19/21 06:14:37.365308200
+>>>>Truck has left for the market with $400 worth of items 6/19/21 06:15:02.397242100
+>>>>Caged a lion at (2,0). -1 clicks remaining. 6/19/21 06:15:13.073846300
+>>>>chicken bought 6/19/21 06:15:31.919732300
+>>>>chicken bought 6/19/21 06:15:44.407029600
+>>>>turkey bought 6/19/21 06:16:00.155220900

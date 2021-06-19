@@ -19,10 +19,11 @@ public abstract class Threat implements Storable{
     protected int yNew;
     protected int iNew;
     protected int jNew;
-    protected int health;
+    public boolean alive;
     protected double v;
     protected int storingSize;
     protected int unitPriceTag;
+    protected int criticalSequence;
 
     public abstract void update(LevelManager levelManager);
     public abstract void attack();
@@ -33,6 +34,8 @@ public abstract class Threat implements Storable{
     public Threat()
     {
         Random ran = new Random();
+        alive = true;
+        criticalSequence = -1;
         this.i=ran.nextInt(6);
         this.i++;
         this.j=ran.nextInt(6);
@@ -41,11 +44,12 @@ public abstract class Threat implements Storable{
 
 
     public boolean inside(int x, int y){
-        return true;
+        return x==i && y==j;
     }
 
-    public void cage(){
-        quota++;
+    public void cage(int cycleNumber){
+        clicks++;
+        criticalSequence = cycleNumber;
     }
 
     public int getI(){

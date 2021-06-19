@@ -12,6 +12,17 @@ public class Truck {
     public int level;
     public int MAX_LEVEL;
     public ArrayList<Storable> objects;
+    public Truck(){
+        objects = new ArrayList<>();
+        isTraveling = false;
+        travelSequence = -1;
+        travelInterval =90;
+        carriedMoney = 0;
+        occupiedSpace =0;
+        MAX_STORAGE = 30;
+        level = 1;
+        MAX_LEVEL =2;
+    }
     public boolean load(Storable object){
         if(isTraveling) return false;
         int size = object.getStoringSize();
@@ -42,7 +53,7 @@ public class Truck {
      */
     public int update(){
         if( travelSequence != travelInterval && travelSequence != -1){
-            travelSequence++;
+            travelSequence+=30;
             return 1;
         }else if(travelSequence == travelInterval){
             travelSequence = -1;

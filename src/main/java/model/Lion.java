@@ -24,11 +24,6 @@ public class Lion extends Threat{
     }
 
     @Override
-    public void cage() {
-        super.cage();
-    }
-
-    @Override
     public String getName() {
         return this.type;
     }
@@ -42,6 +37,7 @@ public class Lion extends Threat{
     public Lion()
     {
         super();
+        this.quota = 3;
         this.type="lion";
         this.unitPriceTag=300;
         this.storingSize=15;
@@ -51,7 +47,14 @@ public class Lion extends Threat{
     @Override
     public void update(LevelManager levelManager)
     {
-
+        if(clicks == quota){
+            alive = false;
+            return;
+        }
+        if(criticalSequence != levelManager.cycleNumber && criticalSequence != -1){
+            clicks = 0;
+            criticalSequence = -1;
+        }
         boolean moved = false;
         Random ran = new Random();
         int move = 0;

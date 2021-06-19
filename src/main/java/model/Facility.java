@@ -10,7 +10,7 @@ protected int x;
 protected int y;
 protected int i;
 protected int j;
-protected int level=1;
+public int level=1;
 protected int outputSeq;
 protected int outputTimeout;
 protected boolean produced;

@@ -119,4 +119,8 @@ public  class LogAppender {
     public static void truckHasLeft(int carriedMoney) {
         Do("Truck has left for the market with $"+carriedMoney+" worth of items");
     }
+
+    public static void WellRefillStart() {
+        Do("Well refill started");
+    }
 }

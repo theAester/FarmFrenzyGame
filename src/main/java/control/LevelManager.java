@@ -43,13 +43,17 @@ public class LevelManager {
         currentLevel =level;
         sc = new Scanner(System.in);
         cp = new CommandProcessor(true);
+        initialize();
+    }
+    public void initialize(){
+        water = new Water();
+        truck = new Truck();
+        storage = new Storage();
         animals = new ArrayList<>();
         threats = new ArrayList<>();
         facilities = new ArrayList<>();
         commodities =new ArrayList<>();
-        initialize();
-    }
-    public void initialize(){
+        grid = new int[6][6];
         currentLevel.getAnimalCycle().forEach( x->{
             if(x.type.equals("chicken")) chickenCount++;
             if(x.type.equals("buffalo")) buffaloCount++;
@@ -82,15 +86,9 @@ public class LevelManager {
     private void update(){
         cycleNumber += 30;
         updateTruck();
+        updateWater();
         ArrayList<Animal> removeList = new ArrayList<>();
-        animals.forEach( x-> {
-            if(!x.alive){
-                removeList.add(x);
-            }
-        });
-        removeList.forEach(x->{
-            animals.remove(x);
-        });
+        ArrayList<Threat> removeThreatList = new ArrayList<>();
         animals.forEach(x -> {
             x.update(this);
         });
@@ -98,7 +96,7 @@ public class LevelManager {
             x.update(this);
         });
         currentLevel.getThreatCycle().forEach((k,v)->{
-            if(cycleNumber-k < 30){
+            if(cycleNumber-k < 30 && cycleNumber - k > 0){
                 if(v.equals("lion")){
                     threats.add(new Lion());
                 }
@@ -113,7 +111,34 @@ public class LevelManager {
         threats.forEach(x->{
             x.update(this);
         });
+        animals.forEach( x-> {
+            if(!x.alive){
+                removeList.add(x);
+            }
+        });
+        threats.forEach( x-> {
+            if(!x.alive){
+                if(storage.add(x)) removeThreatList.add(x);
+            }
+        });
+        removeList.forEach(x->{
+            animals.remove(x);
+        });
+        removeThreatList.forEach(x->{
+            threats.remove(x);
+        });
     }
+
+    private void updateWater() {
+        int stat = water.update();
+        if(stat == 1){
+            Printer.wellRefilling();
+        }else if(stat == 2){
+            Printer.WellRefill();
+            LogAppender.WellRefill();
+        }
+    }
+
     public void killAnimalLocation(int x, int y){
         animals.removeAll(animals.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList()));
     }
@@ -151,6 +176,10 @@ public class LevelManager {
                 Printer.NotEnoughMoney();
             }
         }
+        else if(command.equals("inquiry")){
+            printAll();
+            return;
+        }
         else if(command.equalsIgnoreCase("pickup")){
             int x;
             int y;
@@ -183,9 +212,9 @@ public class LevelManager {
             });
         }
         else if(command.equalsIgnoreCase("well")){
-            if(water.reFill() !=0){
-                LogAppender.WellRefill();
-                Printer.WellRefill();
+            if(water.reFill()){
+                LogAppender.WellRefillStart();
+                Printer.WellRefillStart();
             }else{
                 LogAppender.wellFail();
                 Printer.wellFail();
@@ -247,7 +276,7 @@ public class LevelManager {
 //            }
             for (Threat e : threats) {
                 if(e.inside(x,y)){
-                    e.cage();
+                    e.cage(cycleNumber);
                     LogAppender.caged(e.getName(),e.getCoordinateX(),e.getCoordinateY(),e.getRemainingClicks());
                     Printer.caged(e.getName(),e.getCoordinateX(),e.getCoordinateY(),e.getRemainingClicks());
                 }
@@ -366,11 +395,11 @@ public class LevelManager {
         }
         System.out.println("------------------------Animals------------------------");
         animals.forEach(x->{
-            System.out.printf("%s %d%% [%d %d]" , x.type,x.getHealth()*10,x.getCoordinateX(),x.getCoordinateY());
+            System.out.printf("%s %d%% [%d %d]\n" , x.type,x.getHealth()*10,x.getCoordinateX(),x.getCoordinateY());
         });
         System.out.println("------------------------Threats------------------------");
         threats.forEach(x->{
-            System.out.printf("%s %d [%d %d]" , x.type,x.getRemainingClicks(),x.getCoordinateX(),x.getCoordinateY());
+            System.out.printf("%s %d [%d %d]\n" , x.type,x.getRemainingClicks(),x.getCoordinateX(),x.getCoordinateY());
         });
         System.out.println("-------------------------Goals-------------------------");
         currentLevel.getLevelGoals().forEach((x,y)->{
@@ -392,7 +421,7 @@ public class LevelManager {
             else if(x.equals("icecream")) count = icecreamCount;
             else if(x.equals("money")) count = money;
 
-            System.out.printf("%s %d/%d" , x,count,y);
+            System.out.printf("%s %d/%d\n" , x,count,y);
         });
     }
 

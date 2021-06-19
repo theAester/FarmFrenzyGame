@@ -23,10 +23,6 @@ public class Tiger extends Threat {
         return super.inside(x, y);
     }
 
-    @Override
-    public void cage() {
-        super.cage();
-    }
 
     @Override
     public int getStoringSize() {
@@ -40,6 +36,7 @@ public class Tiger extends Threat {
 
     public Tiger() {
         super();
+        this.quota = 4;
         this.type="tiger";
         this.unitPriceTag=500;
         this.storingSize=15;
@@ -48,7 +45,10 @@ public class Tiger extends Threat {
 
     @Override
     public void update(LevelManager levelManager) {
-
+        if(clicks == quota){
+            alive = false;
+            return;
+        }
         boolean moved = false;
         boolean moved2 = false;
         Random ran = new Random();

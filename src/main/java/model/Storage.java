@@ -12,6 +12,13 @@ public class Storage {
     public int getAvailable(){
         return MAX_STORAGE - occupied;
     }
+    public Storage(){
+        storedObjects = new ArrayList<Storable>();
+        MAX_STORAGE = 50;
+        level =1;
+        MAX_LEVEL = 2;
+        occupied =0;
+    }
     public boolean upgrade(){
         if(level < MAX_LEVEL){
             MAX_STORAGE += (level+1)*(7-level);
