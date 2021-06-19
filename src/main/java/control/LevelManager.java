@@ -500,7 +500,7 @@ public class LevelManager {
         commodities.remove(commodity);
     }
     private void assertCollection(Commodity e) {
-        System.out.println(e.getName()+" collectexed!");
+        System.out.println(e.getName()+" collected!");
     }
 
     private boolean buy(String name){
