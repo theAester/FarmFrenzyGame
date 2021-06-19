@@ -28,6 +28,7 @@ public class CommandProcessor {
         argsCount = 0;
         flagCount = 0;
         Scanner sc = new Scanner(command);
+        if(!sc.hasNext()) return false;
         commandHeader = sc.next();
         if (sc.hasNextLine())
             command = sc.nextLine();

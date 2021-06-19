@@ -175,7 +175,7 @@ public class LevelManager {
     private void exec(Scanner sc){
         //process command
         System.out.print("> ");
-        cp.process(sc.nextLine());
+        if(!cp.process(sc.nextLine())) return;
         String command = cp.getCommand().toLowerCase();
         //command library
         if(command.equalsIgnoreCase("buy")){
@@ -426,6 +426,7 @@ public class LevelManager {
                 return;
             }
         }
+        else Printer.WrongInput();
     }
 
     private void printAll() {

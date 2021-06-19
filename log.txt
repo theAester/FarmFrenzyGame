@@ -320,3 +320,25 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>chicken bought 6/19/21 23:45:56.719377
 >>>>chicken bought 6/19/21 23:51:00.860605
 >>>>chicken bought 6/19/21 23:51:06.830071
+>>>>Well refill started 6/19/21 12:57:53.457216900
+>>>>Caged a bear at (3,4). 3 clicks remaining. 6/19/21 12:58:07.091048500
+>>>>Caged a bear at (3,4). 2 clicks remaining. 6/19/21 12:58:10.142950900
+>>>>Caged a bear at (3,4). 1 clicks remaining. 6/19/21 12:58:14.991590100
+>>>>Contained a bear at (3,4) 6/19/21 12:58:22.986841400
+>>>>Caged a bear at (2,4). 3 clicks remaining. 6/19/21 12:58:30.820070200
+>>>>Caged a bear at (2,4). 2 clicks remaining. 6/19/21 12:58:37.551187700
+>>>>Caged a bear at (2,4). 1 clicks remaining. 6/19/21 12:58:39.534413300
+>>>>Contained a bear at (2,4) 6/19/21 12:58:41.755005200
+>>>>Well refilled 6/19/21 12:58:45.032304
+>>>>Truck loaded withbear 6/19/21 12:59:40.902396400
+>>>>Truck loaded with 4 egg(s) 6/19/21 12:59:47.799054100
+>>>>Truck has left for the market with $460 worth of items 6/19/21 12:59:50.924296
+>>>>buffalo bought 6/19/21 13:00:33.346763100
+>>>>Caged a lion at (5,2). 2 clicks remaining. 6/19/21 13:00:47.326145100
+>>>>Caged a lion at (5,2). 1 clicks remaining. 6/19/21 13:00:50.361569300
+>>>>Contained a lion at (5,2) 6/19/21 13:00:54.033820600
+>>>>Truck loaded withbear 6/19/21 13:01:50.225534700
+>>>>Truck loaded withlion 6/19/21 13:01:55.055195800
+>>>>Truck has left for the market with $700 worth of items 6/19/21 13:02:14.678994200
+>>>>buffalo bought 6/19/21 13:02:35.504093500
+>>>>buffalo bought 6/19/21 13:02:42.218745800
