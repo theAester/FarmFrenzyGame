@@ -5,9 +5,9 @@ public class User {
     private int star;
     private long coin;
     private int levelAccomplished;
-    private HashMap<Enum,Integer> LevelMap;
+    private HashMap<String,Integer> LevelMap;
     private boolean isVoid;
-    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<Enum, Integer> LevelMap, boolean isVoid) {
+    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<String, Integer> LevelMap, boolean isVoid) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
@@ -30,7 +30,7 @@ public class User {
         return levelAccomplished;
     }
 
-    public HashMap<Enum, Integer> getLevelMap() {
+    public HashMap<String, Integer> getLevelMap() {
         return LevelMap;
     }
 
@@ -75,7 +75,7 @@ public class User {
     }
 
 
-    public void setLevelMap(HashMap<Enum, Integer> LevelMap) {
+    public void setLevelMap(HashMap<String, Integer> LevelMap) {
         this.LevelMap = LevelMap;
     }
 

@@ -14,7 +14,7 @@ public class Menu {
     private int levelAccomplished,star;
     private long coin;
     private String fullName;
-    private HashMap<Enum,Integer> LevelMap;
+    private HashMap<String,Integer> LevelMap;
     private ArrayList<Level> levelsList;
     private Level currentLevel;
     private User user;
