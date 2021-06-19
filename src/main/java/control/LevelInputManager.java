@@ -30,6 +30,7 @@ public class LevelInputManager {
     }
     public void inGame() {
         LevelManager LM=new LevelManager(currentLevel);
+                LM.run();
     }
 
 }

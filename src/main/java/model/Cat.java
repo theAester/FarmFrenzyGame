@@ -20,6 +20,29 @@ public class Cat extends Animal{
     @Override
     public void update(LevelManager levelManager) {
         boolean moved = false;
+        if(levelManager.commodities.size() !=0 ){
+            int min = 100000;
+            Commodity c = levelManager.commodities.get(0);
+            for (Commodity x : levelManager.commodities) {
+                int len = Math.abs(getCoordinateX() - x.getCoordinateX()) + Math.abs(getCoordinateX() - x.getCoordinateY());
+                if(len < min) {
+                    min = len;
+                    c = x;
+                }
+            }
+            if(c.getCoordinateY() != getCoordinateY()){
+                if(c.getCoordinateY() > getCoordinateY()) this.i--;
+                else this.i++;
+            }
+            else if(c.getCoordinateX() != getCoordinateX()){
+                if(c.getCoordinateX() > getCoordinateX()) this.j--;
+                else this.j++;
+            }
+            else{
+                levelManager.coolerCollect(c);
+            }
+            return;
+        }
         Random ran = new Random();
         int move = 0;
         move = ran.nextInt(4);

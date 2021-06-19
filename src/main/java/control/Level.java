@@ -1,8 +1,6 @@
 package control;
 
-import model.Animal;
-import model.Facility;
-import model.Threat;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +10,7 @@ public class Level {
     private ArrayList<Animal> AnimalCycle;
     private ArrayList<Facility> FacilityCycle;
     private HashMap<Integer,String> ThreatCycle;
-    private HashMap<Integer,String> LevelGoals;
+    private HashMap<String,Integer> LevelGoals;
     // All data of a level should be here
 
     public Level(int level, int goldTime, int silverTime, int bronzeTime, int goldStars, int silverStars, int bronzeStars,ArrayList animalCycle,HashMap threatCycle,ArrayList facilityCycle,HashMap levelGoals,int initialBalance) {
@@ -119,11 +117,11 @@ public class Level {
         ThreatCycle = threatCycle;
     }
 
-    public HashMap<Integer,String> getLevelGoals() {
+    public HashMap<String,Integer> getLevelGoals() {
         return LevelGoals;
     }
 
-    public void setLevelGoals(HashMap<Integer,String> levelGoals) {
+    public void setLevelGoals(HashMap<String,Integer> levelGoals) {
         LevelGoals = levelGoals;
     }
 }

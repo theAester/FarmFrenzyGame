@@ -56,7 +56,7 @@ public class Load {
             Read+=scanner.nextLine();
         }
         scanner.close();
-        Gson gson=new Gson();
+
         levelList=gson.fromJson(Read,new TypeToken<ArrayList<Level>>(){}.getType());
         return  levelList;
     }
