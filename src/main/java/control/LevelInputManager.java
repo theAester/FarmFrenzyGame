@@ -13,10 +13,10 @@ public class LevelInputManager {
     private int levelAccomplished,star;
     private long coin;
     private String fullName;
-    private HashMap<Enum,Integer> LevelMap;
+    private HashMap<String,Integer> LevelMap;
     private Level currentLevel;
     private Scanner scanner=new Scanner(System.in);
-    public LevelInputManager(User thisUser, int levelAccomplished, int star, long coin, String fullName, HashMap<Enum, Integer> levelMap, Level currentLevel) {
+    public LevelInputManager(User thisUser, int levelAccomplished, int star, long coin, String fullName, HashMap<String, Integer> levelMap, Level currentLevel) {
         this.thisUser = thisUser;
         this.levelAccomplished = levelAccomplished;
         this.star = star;
