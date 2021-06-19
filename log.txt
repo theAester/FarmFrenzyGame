@@ -188,3 +188,94 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>Well refill started 6/19/21 10:24:14.254384300
 >>>>WRONG INPUT exit  6/19/21 21:57:12.542707
 >>>>logged in with username alinikkhah 6/19/21 21:57:12.555907
+>>>>WRONG INPUT exit  6/19/21 22:46:17.161916
+>>>>logged in with username alinikkhah 6/19/21 22:46:17.174485
+>>>>Well refill started 6/19/21 10:48:39.855989500
+>>>>Well refilled 6/19/21 10:48:44.282215700
+>>>>eggpowder started working 6/19/21 10:50:15.397425900
+>>>>chicken bought 6/19/21 10:51:17.420215900
+>>>>chicken bought 6/19/21 10:51:21.361251500
+>>>>eggpowder started working 6/19/21 10:52:36.674625100
+>>>>bakery started working 6/19/21 10:52:50.746254
+>>>>Invalid input while using "pickup" 6/19/21 10:54:32.297306100
+>>>>Truck loaded with 10 egg(s) 6/19/21 10:55:14.726267500
+>>>>Truck loaded with 2 bread(s) 6/19/21 10:55:20.770726
+>>>>Truck has left for the market with $310 worth of items 6/19/21 10:55:24.799538200
+>>>>bakery started working 6/19/21 10:55:34.510290100
+>>>>eggpowder started working 6/19/21 10:55:39.268160
+>>>>cat bought 6/19/21 10:57:22.722261300
+>>>>cat bought 6/19/21 10:57:29.720131500
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:03:17.428575900
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:03:17.433561400
+>>>>eggpowder started working 6/19/21 11:03:43.495473300
+>>>>bakery started working 6/19/21 11:03:52.261739300
+>>>>Truck loaded with 4 powder(s) 6/19/21 11:04:25.841199100
+>>>>Truck loaded with 10 egg(s) 6/19/21 11:04:31.449803900
+>>>>Truck has left for the market with $310 worth of items 6/19/21 11:04:35.998763
+>>>>I dont think you've got the facilities for that big man 6/19/21 11:05:16.516572300
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.199670900
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.204657200
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.208646700
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.210640800
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.213633900
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.216624400
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.219616300
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.222608900
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.224603200
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.227596
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.231584300
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.235573600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.238565800
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.241557700
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:05:21.245548
+>>>>Truck loaded with 2 bread(s) 6/19/21 11:05:43.539599200
+>>>>eggpowder started working 6/19/21 11:06:01.324509100
+>>>>Truck loaded with 5 egg(s) 6/19/21 11:06:37.135553400
+>>>>Truck has left for the market with $235 worth of items 6/19/21 11:06:39.554146300
+>>>>buffalo bought 6/19/21 11:07:12.377543600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.400564700
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.403556100
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.406548600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.408543
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.410537400
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.413530
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.418516900
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.422506500
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.425497600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.428490300
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.431482
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.434474200
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.438463
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.443449600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.445445400
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.446443
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.448436600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.449433500
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.450431300
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.451428700
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.453423600
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.454420300
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.456414900
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.457412200
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.458410500
+>>>>couldn't collect remaining items because the soraqge was full 6/19/21 11:07:24.459407300
+>>>>WRONG INPUT level 1  6/19/21 22:50:51.547978
+>>>>I dont think you've got the facilities for that big man 6/19/21 22:51:15.958717
+>>>>I dont think you've got the facilities for that big man 6/19/21 22:52:32.582569
+>>>>Invalid password alinikkhah(12345) 6/19/21 23:02:56.702055
+>>>>WRONG INPUT end  6/19/21 23:03:05.439455
+>>>>WRONG INPUT exit  6/19/21 23:03:08.133709
+>>>>logged in with username alinikkhah 6/19/21 23:03:08.140789
+>>>>Invalid password alinikkhah(12345) 6/19/21 23:06:57.746093
+>>>>WRONG INPUT exit  6/19/21 23:07:07.341828
+>>>>logged in with username alinikkhah 6/19/21 23:07:07.350029
+>>>>WRONG INPUT exity  6/19/21 23:08:56.055081
+>>>>WRONG INPUT exit  6/19/21 23:08:58.696027
+>>>>logged in with username alinikkhah 6/19/21 23:08:58.706404
+>>>>WRONG INPUT exit  6/19/21 23:10:16.778025
+>>>>logged in with username alinikkhah 6/19/21 23:10:16.793569
+>>>>WRONG INPUT exit  6/19/21 23:11:17.279112
+>>>>logged in with username alinikkhah 6/19/21 23:11:17.292656
+>>>>I dont think you've got the facilities for that big man 6/19/21 23:14:05.461366
+>>>>WRONG INPUT exit  6/19/21 23:14:41.720819
+>>>>logged in with username alinikkhah 6/19/21 23:14:41.736146
