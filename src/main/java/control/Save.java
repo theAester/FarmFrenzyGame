@@ -63,30 +63,43 @@ public class Save {
             ArrayList<Facility> facilityCycle=new ArrayList<>();
             for(int f= random.nextInt(1);f<1;f++)
             {
-                goals.put("bread",random.nextInt(10));
-                Bakery bakery=new Bakery();
-                bakery.level=random.nextInt(1);
-                facilityCycle.add(bakery);
-            }
-            for(int f= random.nextInt(1);f<1;f++)
-            {
                 goals.put("powder",random.nextInt(10));
                 EggPowder eggPowder=new EggPowder();
                 eggPowder.level=random.nextInt(1);
                 facilityCycle.add(eggPowder);
+                for(int g= random.nextInt(1);g<1;g++)
+                {
+                    goals.put("bread",random.nextInt(10));
+                    Bakery bakery=new Bakery();
+                    bakery.level=random.nextInt(1);
+                    facilityCycle.add(bakery);
+                }
             }
             for(int f= random.nextInt(1);f<1;f++)
             {
-                goals.put("icecream", random.nextInt(10));
-                IceCreamFactory iceCreamFactory=new IceCreamFactory();
-                iceCreamFactory.level= random.nextInt(1);
-                facilityCycle.add(iceCreamFactory);
+                goals.put("bottledmilk", random.nextInt(10));
+                MilkProcessing milkProcessing=new MilkProcessing();
+                milkProcessing.level= random.nextInt(1);
+                facilityCycle.add(milkProcessing);
+                for(int g= random.nextInt(1);g<1;g++)
+                {
+                    goals.put("icecream", random.nextInt(10));
+                    IceCreamFactory iceCreamFactory=new IceCreamFactory();
+                    iceCreamFactory.level= random.nextInt(1);
+                    facilityCycle.add(iceCreamFactory);
+                }
             }
             for(int f= random.nextInt(1);f<1;f++)
             {
-                SewingFactory sewingFactory=new SewingFactory();
-                sewingFactory.level= random.nextInt(1);
-                facilityCycle.add(sewingFactory);
+                 FabricFactory fabricFactory=new FabricFactory();
+                fabricFactory.level= random.nextInt(1);
+                facilityCycle.add(fabricFactory);
+                for(int g= random.nextInt(1);g<1;g++)
+                {
+                    SewingFactory sewingFactory=new SewingFactory();
+                    sewingFactory.level= random.nextInt(1);
+                    facilityCycle.add(sewingFactory);
+                }
             }
 
             HashMap<Integer,String> threats=new HashMap<>();
