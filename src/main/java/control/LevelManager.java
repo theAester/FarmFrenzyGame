@@ -54,6 +54,7 @@ public class LevelManager {
         facilities = new ArrayList<>();
         commodities =new ArrayList<>();
         grid = new int[6][6];
+        money = currentLevel.getInitialBalance();
         currentLevel.getAnimalCycle().forEach( x->{
             if(x.type.equals("chicken")) chickenCount++;
             if(x.type.equals("buffalo")) buffaloCount++;
@@ -150,7 +151,11 @@ public class LevelManager {
     }
     private void updateTruck() {
         int status = truck.update();
-        if(status == 2){
+        if(status == 1){
+            Printer.TruckIsTravelling();
+        }
+        else if(status == 2){
+            Printer.TruckArrived();
             money +=truck.carriedMoney;
             truck.reset();
         }
@@ -158,6 +163,7 @@ public class LevelManager {
 
     private void exec(Scanner sc){
         //process command
+        System.out.print("> ");
         cp.process(sc.nextLine());
         String command = cp.getCommand().toLowerCase();
         //command library
@@ -179,6 +185,22 @@ public class LevelManager {
         else if(command.equals("inquiry")){
             printAll();
             return;
+        }
+        else if(command.equals("peek")){
+            if(cp.getArgsCount() == 0){
+                Printer.DariEshtebahMizaniDadash();
+                LogAppender.DariEshtebahMizaniDadash();
+                return;
+            }
+            if(cp.getArg(0).equals("storage")){
+                storage.storedObjects.forEach(x->{
+                    System.out.println("> "+x.getName());
+                });
+            }else if(cp.getArg(0).equals("truck")){
+                truck.objects.forEach(x->{
+                    System.out.println("> "+x.getName());
+                });
+            }
         }
         else if(command.equalsIgnoreCase("pickup")){
             int x;
@@ -207,6 +229,10 @@ public class LevelManager {
                     temp.add(e);
                 }
             });
+            if(temp.size() == 0){
+                Printer.EmptySpace();
+                return;
+            }
             temp.forEach(e -> {
                commodities.remove(e);
             });
@@ -234,6 +260,11 @@ public class LevelManager {
             if(x < 0 || x> 6 || y<0 || y>6){
                 LogAppender.InvalidInput("plant");
                 Printer.InvalidRange();
+                return;
+            }
+            if(grid[x][y] == 100){
+                Printer.PlaceFull(x,y);
+                LogAppender.PlaceFull();
                 return;
             }
             if(water.takeWater()){
@@ -292,11 +323,12 @@ public class LevelManager {
                     Printer.InvalidInput();
                     return;
                 }
-                for(int i=0;i<count;i++){
-                    update();
-                }
-                printAll();
             }
+            for(int i=0;i<count;i++){
+                System.out.println("---------------------Update "+i+"--------------------");
+                update();
+            }
+            printAll();
         }
         else if(command.equalsIgnoreCase("truck")){
             if(cp.getArgsCount() == 0){
@@ -385,6 +417,7 @@ public class LevelManager {
     }
 
     private void printAll() {
+        System.out.println("========================Inquiry=========================");
         System.out.println("turns: "+cycleNumber/30);
         System.out.println("------------------------Map grid------------------------");
         for(int i=0;i<6;i++){
@@ -393,6 +426,10 @@ public class LevelManager {
             }
             System.out.println();
         }
+        System.out.println("---------------Commodities on the ground---------------");
+        commodities.forEach(x->{
+            System.out.printf("%s [%d %d]\n" , x.getName(),x.getCoordinateX(),x.getCoordinateY());
+        });
         System.out.println("------------------------Animals------------------------");
         animals.forEach(x->{
             System.out.printf("%s %d%% [%d %d]\n" , x.type,x.getHealth()*10,x.getCoordinateX(),x.getCoordinateY());
@@ -452,7 +489,7 @@ public class LevelManager {
         commodities.remove(commodity);
     }
     private void assertCollection(Commodity e) {
-        System.out.println(e.getName()+" collected!");
+        System.out.println(e.getName()+" collectexed!");
     }
 
     private boolean buy(String name){
@@ -547,6 +584,7 @@ public class LevelManager {
     }
 
     public void generateEgg(int coordinateX, int coordinateY) {
+        Printer.generated("egg");
         commodities.add(new Egg(coordinateX,coordinateY));
         eggCount++;
     }

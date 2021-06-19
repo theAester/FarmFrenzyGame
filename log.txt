@@ -153,3 +153,33 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>logged in with username alinikkhah 6/19/21 18:00:00.779334
 >>>>WRONG INPUT exit  6/19/21 18:06:38.805254
 >>>>logged in with username alinikkhah 6/19/21 18:06:38.819454
+>>>>WRONG INPUT strat 1  6/19/21 09:22:49.748202800
+>>>>WRONG INPUT start1  6/19/21 09:22:53.701202900
+>>>>Well well well! Well, the well was empty. 6/19/21 09:23:19.959486700
+>>>>Well refill started 6/19/21 09:23:21.703834900
+>>>>Invalid input while using "turn" 6/19/21 09:23:23.901482200
+>>>>Well refilled 6/19/21 09:23:37.203632200
+>>>>Invalid input while using "plant" 6/19/21 09:24:00.601992600
+>>>>Well refill started 6/19/21 09:24:11.947845800
+>>>>Well refilled 6/19/21 09:24:16.041991
+>>>>Invalid input while using "pickup" 6/19/21 09:24:39.030381300
+>>>>Truck loaded with 2 egg(s) 6/19/21 09:25:02.697478900
+>>>>Truck has left for the market with $30 worth of items 6/19/21 09:25:20.747447200
+>>>>watered an already full part of the ground 6/19/21 09:33:18.468295400
+>>>>Well well well! Well, the well was empty. 6/19/21 09:33:22.784838800
+>>>>Well refill started 6/19/21 09:33:25.471675800
+>>>>Well well well! Well, the well was empty. 6/19/21 09:47:34.736280900
+>>>>Well refill started 6/19/21 09:47:36.906517500
+>>>>Well refill started 6/19/21 09:49:20.557127700
+>>>>chicken bought 6/19/21 09:49:39.034020200
+>>>>Well refilled 6/19/21 09:49:44.503990300
+>>>>watered an already full part of the ground 6/19/21 09:50:26.665968700
+>>>>watered an already full part of the ground 6/19/21 09:50:34.876171
+>>>>Well refill started 6/19/21 09:50:39.920758200
+>>>>Well refilled 6/19/21 09:50:42.989121500
+>>>>Truck loaded with 10 egg(s) 6/19/21 09:53:04.701415800
+>>>>Truck has left for the market with $150 worth of items 6/19/21 09:53:07.786728300
+>>>>I dont think you've got the facilities for that big man 6/19/21 09:53:18.601499800
+>>>>turkey bought 6/19/21 09:53:26.364372900
+>>>>Truck loaded with 2 feather(s) 6/19/21 09:54:50.950271800
+>>>>Truck has left for the market with $40 worth of items 6/19/21 09:54:58.108276700

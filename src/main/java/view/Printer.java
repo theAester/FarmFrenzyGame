@@ -158,5 +158,25 @@ public class Printer {
     public static void wellRefilling() {
         System.out.println("well is being refilled");
     }
+
+    public static void TruckIsTravelling() {
+        System.out.println("Truck is travelling...");
+    }
+
+    public static void TruckArrived() {
+        System.out.println("The mighty truck has returned");
+    }
+
+    public static void PlaceFull(int x, int y) {
+        System.out.println("location ("+x+", "+y+") is full");
+    }
+
+    public static void EmptySpace() {
+        System.out.println("empty...");
+    }
+
+    public static void generated(String string) {
+        System.out.println(string + " generated");
+    }
 }
 

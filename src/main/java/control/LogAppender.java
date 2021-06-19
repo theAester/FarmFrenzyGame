@@ -123,4 +123,8 @@ public  class LogAppender {
     public static void WellRefillStart() {
         Do("Well refill started");
     }
+
+    public static void PlaceFull() {
+        Do("watered an already full part of the ground");
+    }
 }
