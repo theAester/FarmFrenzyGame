@@ -117,8 +117,11 @@ public class LevelManager {
     public void killAnimalLocation(int x, int y){
         animals.removeAll(animals.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).collect(Collectors.toList()));
     }
-    public void killThreatLocation(int x, int y){
-        threats.remove( threats.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).findFirst().orElse(null));
+    public boolean killThreatLocation(int x, int y){
+        Threat threat = threats.stream().filter(e->(e.getCoordinateX() == x && e.getCoordinateY() == y)).findFirst().orElse(null);
+        if(threat == null) return false;
+        threats.remove( threat );
+        return true;
     }
     private void updateTruck() {
         int status = truck.update();
