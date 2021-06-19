@@ -61,13 +61,13 @@ public class Save {
                 animalCycle.add(chicken);
             }
             ArrayList<Facility> facilityCycle=new ArrayList<>();
-            for(int f= random.nextInt(1);f<1;f++)
+            for(int f= random.nextInt(10);f<2;f+=5)
             {
                 goals.put("powder",random.nextInt(10));
                 EggPowder eggPowder=new EggPowder();
                 eggPowder.level=random.nextInt(1);
                 facilityCycle.add(eggPowder);
-                for(int g= random.nextInt(1);g<1;g++)
+                for(int g= random.nextInt(10);g<2;g+=5)
                 {
                     goals.put("bread",random.nextInt(10));
                     Bakery bakery=new Bakery();
@@ -75,13 +75,13 @@ public class Save {
                     facilityCycle.add(bakery);
                 }
             }
-            for(int f= random.nextInt(1);f<1;f++)
+            for(int f= random.nextInt(10);f<2;f+=5)
             {
                 goals.put("bottledmilk", random.nextInt(10));
                 MilkProcessing milkProcessing=new MilkProcessing();
                 milkProcessing.level= random.nextInt(1);
                 facilityCycle.add(milkProcessing);
-                for(int g= random.nextInt(1);g<1;g++)
+                for(int g= random.nextInt(10);g<2;g+=5)
                 {
                     goals.put("icecream", random.nextInt(10));
                     IceCreamFactory iceCreamFactory=new IceCreamFactory();
@@ -89,12 +89,12 @@ public class Save {
                     facilityCycle.add(iceCreamFactory);
                 }
             }
-            for(int f= random.nextInt(1);f<1;f++)
+            for(int f= random.nextInt(10);f<2;f+=5)
             {
                  FabricFactory fabricFactory=new FabricFactory();
                 fabricFactory.level= random.nextInt(1);
                 facilityCycle.add(fabricFactory);
-                for(int g= random.nextInt(1);g<1;g++)
+                for(int g= random.nextInt(1);g<2;g+=5)
                 {
                     SewingFactory sewingFactory=new SewingFactory();
                     sewingFactory.level= random.nextInt(1);
@@ -103,14 +103,14 @@ public class Save {
             }
 
             HashMap<Integer,String> threats=new HashMap<>();
-            int numThreats=random.nextInt(boundThreats);
+            int numThreats=random.nextInt(boundThreats)+3;
             for(int k=0;k<numThreats;k++)
             {
-                if(random.nextInt()%5==0)
+                if(random.nextInt()%3==0)
                 {
                     threats.put(random.nextInt(SGT),"bear");
                 }
-                else if(random.nextInt()%5==1)
+                else if(random.nextInt()%3==1)
                 {
                     Tiger tiger=new Tiger();
                     threats.put( random.nextInt(SGT),"tiger");
@@ -128,7 +128,6 @@ public class Save {
            levels.add(level);
         }
         try {
-            System.out.println("generate");
             String LevelArrayList = gson.toJson(levels);
             FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
             levelArrayList.write(LevelArrayList);
