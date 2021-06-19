@@ -7,7 +7,7 @@ import java.util.Random;
 public class Chicken extends Animal {
     public Chicken(int i, int j) {
         super(i, j);
-        this.C2H = 1.4;
+        this.C2H = 0.14;
         this.productionPoint = 0;
         this.productionRate = 60;
         this.type = "chicken";
@@ -17,7 +17,7 @@ public class Chicken extends Animal {
 
     public Chicken() {
         super();
-        this.C2H = 1.4;
+        this.C2H = 0.14;
         this.health = this.maxHealth;
         this.productionPoint = 0;
         this.productionRate = 60;
