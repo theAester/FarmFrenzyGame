@@ -62,42 +62,54 @@ public class Save {
                 Chicken chicken = new Chicken();
                 animalCycle.add(chicken);
             }
+            boolean eggpowder=false;
+            boolean bread=false;
             for(int f= random.nextInt(10);f<5;f+=5)
             {
+                eggpowder=true;
                 EggPowder eggPowder=new EggPowder();
                 eggPowder.level=1;
                 facilityCycle.add(eggPowder);
                 goals.put("powder",random.nextInt(10));
                 for(int g= random.nextInt(10);g<5;g+=5)
                 {
+                    bread=true;
                     goals.put("bread",random.nextInt(10));
                     Bakery bakery=new Bakery();
                     bakery.level=1;
                     facilityCycle.add(bakery);
                 }
             }
+            boolean bottledmilk=false;
+            boolean icecream=false;
             for(int f= random.nextInt(10);f<5;f+=5)
             {
+                bottledmilk=true;
                 goals.put("bottledmilk", random.nextInt(10));
                 MilkProcessing milkProcessing=new MilkProcessing();
                 milkProcessing.level=1;
                 facilityCycle.add(milkProcessing);
                 for(int g= random.nextInt(10);g<5;g+=5)
                 {
+                    icecream=true;
                     goals.put("icecream", random.nextInt(10));
                     IceCreamFactory iceCreamFactory=new IceCreamFactory();
                     iceCreamFactory.level=1;
                     facilityCycle.add(iceCreamFactory);
                 }
             }
+            boolean fabric=false;
+            boolean shirt=false;
             for(int f= random.nextInt(10);f<5;f+=5)
             {
+                fabric=true;
                  FabricFactory fabricFactory=new FabricFactory();
                 goals.put("fabric", random.nextInt(10));
                 fabricFactory.level= 1;
                 facilityCycle.add(fabricFactory);
                 for(int g= random.nextInt(10);g<5;g+=5)
                 {
+                    shirt=true;
                     goals.put("shirt", random.nextInt(10));
                     SewingFactory sewingFactory=new SewingFactory();
                     sewingFactory.level= 1;
@@ -107,43 +119,49 @@ public class Save {
 
 
 
+if(!eggpowder) {
+    for (int f = random.nextInt(10); f < 5; f += 5) {
+        EggPowder eggPowder = new EggPowder();
+        eggPowder.level = 0;
+        facilityCycle.add(eggPowder);
+        if(!bread) {
+            for (int g = random.nextInt(10); g < 5; g += 5) {
+                Bakery bakery = new Bakery();
+                bakery.level = 0;
+                facilityCycle.add(bakery);
+            }
+        }
+    }
+}
+if(!bottledmilk) {
+    for (int f = random.nextInt(10); f < 5; f += 5) {
+        MilkProcessing milkProcessing = new MilkProcessing();
+        milkProcessing.level = 0;
+        facilityCycle.add(milkProcessing);
+        if (!icecream) {
+            for (int g = random.nextInt(10); g < 5; g += 5) {
+                IceCreamFactory iceCreamFactory = new IceCreamFactory();
+                iceCreamFactory.level = 0;
+                facilityCycle.add(iceCreamFactory);
+            }
+        }
+    }
+}
 
-            for(int f= random.nextInt(10);f<5;f+=5)
-            {
-                EggPowder eggPowder=new EggPowder();
-                eggPowder.level=0;
-                facilityCycle.add(eggPowder);
-                for(int g= random.nextInt(10);g<5;g+=5)
-                {
-                    Bakery bakery=new Bakery();
-                    bakery.level=0;
-                    facilityCycle.add(bakery);
-                }
+if(!fabric) {
+    for (int f = random.nextInt(10); f < 5; f += 5) {
+        FabricFactory fabricFactory = new FabricFactory();
+        fabricFactory.level = 0;
+        facilityCycle.add(fabricFactory);
+        if (!shirt) {
+            for (int g = random.nextInt(10); g < 5; g += 5) {
+                SewingFactory sewingFactory = new SewingFactory();
+                sewingFactory.level = 0;
+                facilityCycle.add(sewingFactory);
             }
-            for(int f= random.nextInt(10);f<5;f+=5)
-            {
-                MilkProcessing milkProcessing=new MilkProcessing();
-                milkProcessing.level=0;
-                facilityCycle.add(milkProcessing);
-                for(int g= random.nextInt(10);g<5;g+=5)
-                {
-                    IceCreamFactory iceCreamFactory=new IceCreamFactory();
-                    iceCreamFactory.level=0;
-                    facilityCycle.add(iceCreamFactory);
-                }
-            }
-            for(int f= random.nextInt(10);f<5;f+=5)
-            {
-                FabricFactory fabricFactory=new FabricFactory();
-                fabricFactory.level= 0;
-                facilityCycle.add(fabricFactory);
-                for(int g= random.nextInt(10);g<5;g+=5)
-                {
-                    SewingFactory sewingFactory=new SewingFactory();
-                    sewingFactory.level= 0;
-                    facilityCycle.add(sewingFactory);
-                }
-            }
+        }
+    }
+}
 
 
 
