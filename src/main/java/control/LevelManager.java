@@ -337,7 +337,7 @@ public class LevelManager {
                 }
             }
             for(int i=0;i<count;i++){
-                System.out.println("---------------------Update "+i+"--------------------");
+                System.out.println("------------------------Update "+(i+1)+"------------------------");
                 update();
             }
             printAll();
