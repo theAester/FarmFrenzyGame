@@ -7,6 +7,7 @@ import java.util.Random;
 public class Turkey extends Animal {
     public Turkey(int i, int j) {
         super(i, j);
+        this.C2H = 1;
         this.productionPoint = 0;
         this.productionRate = 90;
         this.type = "turkey";
@@ -16,6 +17,7 @@ public class Turkey extends Animal {
 
     public Turkey() {
         super();
+        this.C2H = 1;
         this.health = this.maxHealth;
         this.productionPoint = 0;
         this.productionRate = 90;

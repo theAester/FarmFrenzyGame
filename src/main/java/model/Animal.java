@@ -34,6 +34,7 @@ public abstract class Animal{
 
     public void eat(LevelManager levelManager,int i,int j)
     {
+        health += (int)((double)consumptionPortion * C2H);
         levelManager.grid[i][j]=levelManager.grid[i][j]-consumptionPortion;
     }
     public abstract void produce(LevelManager levelManager);
