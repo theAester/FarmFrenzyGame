@@ -41,7 +41,6 @@ public class Authenticator {
                     Menu menu=new Menu(Find(Split(input)[0],Split(input)[1]));
                     Printer.Logged();
                     menu.Run();
-
                     LogAppender.Login(Split(input)[0]);
                     break;
                 }
@@ -52,7 +51,6 @@ public class Authenticator {
             }
             else if(Check(input,"exit"))
             {
-
                 break;
             }
             else {
@@ -93,10 +91,11 @@ public class Authenticator {
             LogAppender.WrongUsername(username);
             Printer.UserNotFound();}
 
-        else{
-        if(!matchedPassword)
+        else if         (!matchedPassword){
+
             LogAppender.WrongPassword(username,password);
-            Printer.WrongPassword();}
+       Printer.WrongPassword();
+        }
         return temp;
     }
     private boolean Exists(String username) throws IOException {
