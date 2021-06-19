@@ -2,7 +2,7 @@ package model;
 import control.*;
 import view.Printer;
 
-class Bakery extends Facility {
+public class Bakery extends Facility {
     /**
      *<h3>update function</h3>
      * update status library:<br>

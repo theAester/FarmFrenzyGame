@@ -59,6 +59,37 @@ public class Save {
                 animalCycle.add(chicken);
             }
             ArrayList<Facility> facilityCycle=new ArrayList<>();
+            for(int f= random.nextInt(1);f<1;f++)
+            {
+                Bakery bakery=new Bakery();
+                bakery.level=random.nextInt(1);
+                facilityCycle.add(bakery);
+            }
+            for(int f= random.nextInt(1);f<1;f++)
+            {
+                EggPowder eggPowder=new EggPowder();
+                eggPowder.level=random.nextInt(1);
+                facilityCycle.add(eggPowder);
+            }
+            for(int f= random.nextInt(1);f<1;f++)
+            {
+IceCreamFactory iceCreamFactory=new IceCreamFactory();
+iceCreamFactory.level= random.nextInt(1);
+facilityCycle.add(iceCreamFactory);
+            }
+            for(int f= random.nextInt(1);f<1;f++)
+            {
+                SewingFactory sewingFactory=new SewingFactory();
+                sewingFactory.level= random.nextInt(1);
+                facilityCycle.add(sewingFactory);
+            }
+            for(int f= random.nextInt(1);f<1;f++)
+            {
+                IceCreamFactory iceCreamFactory=new IceCreamFactory();
+                iceCreamFactory.level= random.nextInt(1);
+                facilityCycle.add(iceCreamFactory);
+            }
+
             HashMap<Integer,String> threats=new HashMap<>();
             int numThreats=random.nextInt(boundThreats);
             for(int k=0;k<numThreats;k++)
