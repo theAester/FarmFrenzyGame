@@ -59,37 +59,34 @@ public class Save {
                 animalCycle.add(chicken);
             }
             ArrayList<Facility> facilityCycle=new ArrayList<>();
-            HashMap<Threat,Integer> threats=new HashMap<>();
+            HashMap<Integer,String> threats=new HashMap<>();
             int numThreats=random.nextInt(boundThreats);
             for(int k=0;k<numThreats;k++)
             {
                 if(random.nextInt()%5==0)
                 {
-                    Bear bear = new Bear();
-                    threats.put(bear,random.nextInt(SGT));
+                    threats.put(random.nextInt(SGT),"bear");
                 }
                 else if(random.nextInt()%5==1)
                 {
                     Tiger tiger=new Tiger();
-                    threats.put(tiger, random.nextInt(SGT));
+                    threats.put( random.nextInt(SGT),"tiger");
                 }
                 else{
                     Lion lion=new Lion();
-                    threats.put(lion, random.nextInt(SGT));
+                    threats.put( random.nextInt(SGT),"lion");
                 }
             }
-            HashMap<String,Integer> goals=new HashMap<>();
-            goals.put("money",random.nextInt(5000));
+            HashMap<Integer,String> goals=new HashMap<>();
+            goals.put(random.nextInt(5000),"money");
             Level level=new Level(i,SGT, SST,SBT,goldStar* random.nextInt(100)/80,silverStar*random.nextInt(100)/80,brozeStar*random.nextInt(100)/80,animalCycle,threats,facilityCycle,goals, random.nextInt(300));
             levels.add(level);
         }
-        System.out.println(levels.size());
         try {
             String LevelArrayList = gson.toJson(levels);
             FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
             levelArrayList.write(LevelArrayList);
             levelArrayList.close();
-            System.out.println("saved");
         } catch (IOException e) {
             e.printStackTrace();
         }

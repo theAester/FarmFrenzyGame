@@ -11,7 +11,7 @@ public class Level {
     private int level,goldTime,silverTime,bronzeTime,goldStars,silverStars,bronzeStars,initialBalance;
     private ArrayList<Animal> AnimalCycle;
     private ArrayList<Facility> FacilityCycle;
-    private HashMap<Integer, Enum> ThreatCycle;
+    private HashMap<String ,Integer> ThreatCycle;
     private HashMap<String,Integer> LevelGoals;
     // All data of a level should be here
 
@@ -111,11 +111,11 @@ public class Level {
         FacilityCycle = facilityCycle;
     }
 
-    public HashMap<Integer, Enum> getThreatCycle() {
+    public HashMap<String,Integer> getThreatCycle() {
         return ThreatCycle;
     }
 
-    public void setThreatCycle(HashMap<Integer, Enum> threatCycle) {
+    public void setThreatCycle(HashMap<String ,Integer> threatCycle) {
         ThreatCycle = threatCycle;
     }
 
