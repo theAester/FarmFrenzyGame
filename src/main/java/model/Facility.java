@@ -18,6 +18,8 @@ protected boolean isReady=true;
 protected boolean busy=false;
 protected int unitPriceTag;
 protected int productionCount;
+protected boolean halftime=false;
+protected int scale;
 
     public abstract void upgrade();
     public abstract void collect();

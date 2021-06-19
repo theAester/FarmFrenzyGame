@@ -14,12 +14,12 @@ public class EggPowder extends Facility {
      */
     @Override
     public int update(LevelManager levelManager) {
-        if( outputSeq != outputTimeout && outputSeq != -1){
-            outputSeq++;
+        if( this.outputSeq*this.scale != this.outputTimeout && this.outputSeq != -1){
+            this.outputSeq++;
             return 1;
-        }else if(outputSeq == outputTimeout){
-            outputSeq = -1;
-            busy = false;
+        }else if(this.outputSeq*this.scale == this.outputTimeout){
+            this.outputSeq = -1;
+            this.busy = false;
             produce(levelManager);
             return 2;
         }
@@ -37,6 +37,7 @@ public class EggPowder extends Facility {
             this.productionCount = 1;
             this.outputSeq = 0;
             this.busy = true;
+            this.scale=1;
             return true;
         } else {
             Egg egg = levelManager.requestEgg();
@@ -47,8 +48,10 @@ public class EggPowder extends Facility {
             Egg egg2 = levelManager.requestEgg();
             if (egg2 != null) {
                 this.productionCount = 2;
+                this.scale=1;
             } else {
                 this.productionCount = 1;
+                this.scale=2;
             }
             this.outputSeq = 0;
             this.busy = true;
