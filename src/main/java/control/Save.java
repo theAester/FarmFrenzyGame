@@ -48,6 +48,7 @@ public class Save {
         ArrayList<Level> levels = new ArrayList<>();
         int SGT=startGoldTime,SST=startSilverTime,SBT=startBronzeTime;
         Random random =new Random();
+        HashMap<String,Integer> goals=new HashMap<>();
         for (int i = numLevel; i >=1; i--){
             SGT+=random.nextInt(2)*30;
             SST=SGT+random.nextInt(2)*30+1;
@@ -55,24 +56,28 @@ public class Save {
             ArrayList<Animal> animalCycle=new ArrayList<>();
             int numChicken=random.nextInt(boundChicken);
             for(int j=0;j<numChicken;j++) {
+                goals.put("egg",random.nextInt(10));
                 Chicken chicken = new Chicken();
                 animalCycle.add(chicken);
             }
             ArrayList<Facility> facilityCycle=new ArrayList<>();
             for(int f= random.nextInt(1);f<1;f++)
             {
+                goals.put("bread",random.nextInt(10));
                 Bakery bakery=new Bakery();
                 bakery.level=random.nextInt(1);
                 facilityCycle.add(bakery);
             }
             for(int f= random.nextInt(1);f<1;f++)
             {
+                goals.put("powder",random.nextInt(10));
                 EggPowder eggPowder=new EggPowder();
                 eggPowder.level=random.nextInt(1);
                 facilityCycle.add(eggPowder);
             }
             for(int f= random.nextInt(1);f<1;f++)
             {
+                goals.put("icecream", random.nextInt(10));
 IceCreamFactory iceCreamFactory=new IceCreamFactory();
 iceCreamFactory.level= random.nextInt(1);
 facilityCycle.add(iceCreamFactory);
@@ -102,7 +107,6 @@ facilityCycle.add(iceCreamFactory);
                     threats.put( random.nextInt(SGT),"lion");
                 }
             }
-            HashMap<String,Integer> goals=new HashMap<>();
             goals.put("money",random.nextInt(5000));
             goldStar*=random.nextInt(100)/40;
             silverStar=goldStar* random.nextInt(40)/40;
@@ -110,13 +114,13 @@ facilityCycle.add(iceCreamFactory);
             Level level=new Level(i,SGT, SST,SBT,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
            levels.add(level);
         }
-        try {
-            String LevelArrayList = gson.toJson(levels);
-            FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
-            levelArrayList.write(LevelArrayList);
-            levelArrayList.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            String LevelArrayList = gson.toJson(levels);
+//            FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
+//            levelArrayList.write(LevelArrayList);
+//            levelArrayList.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
