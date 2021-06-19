@@ -65,26 +65,38 @@ public class Storage {
     }
 
     public Egg queryEgg() {
-        return (Egg) storedObjects.stream().filter(x -> x.getName().equals("egg")).findFirst().orElse(null);
+        Egg egg = (Egg) storedObjects.stream().filter(x -> x.getName().equals("egg")).findFirst().orElse(null);
+        storedObjects.remove(egg);
+        return egg;
     }
 
     public Feather queryFeather() {
-        return (Feather) storedObjects.stream().filter(x -> x.getName().equals("feather")).findFirst().orElse(null);
+        Feather feather = (Feather) storedObjects.stream().filter(x -> x.getName().equals("feather")).findFirst().orElse(null);
+        storedObjects.remove(feather);
+        return feather;
     }
 
     public Fabric queryFabric() {
-        return (Fabric) storedObjects.stream().filter(x -> x.getName().equals("fabric")).findFirst().orElse(null);
+        Fabric fabric = (Fabric) storedObjects.stream().filter(x -> x.getName().equals("fabric")).findFirst().orElse(null);
+        storedObjects.remove(fabric);
+        return fabric;
     }
 
     public Milk queryMilk() {
-        return (Milk) storedObjects.stream().filter(x -> x.getName().equals("milk")).findFirst().orElse(null);
+        Milk milk = (Milk) storedObjects.stream().filter(x -> x.getName().equals("milk")).findFirst().orElse(null);
+        storedObjects.remove(milk);
+        return milk;
     }
 
     public BottledMilk queryBottledMilk() {
-        return (BottledMilk) storedObjects.stream().filter(x -> x.getName().equals("bottledmilk")).findFirst().orElse(null);
+        BottledMilk bottledMilk = (BottledMilk) storedObjects.stream().filter(x -> x.getName().equals("bottledmilk")).findFirst().orElse(null);
+        storedObjects.remove(bottledMilk);
+        return bottledMilk;
     }
 
     public Powder queryPowder() {
-        return (Powder) storedObjects.stream().filter(x -> x.getName().equals("powder")).findFirst().orElse(null);
+        Powder powder = (Powder) storedObjects.stream().filter(x -> x.getName().equals("powder")).findFirst().orElse(null);
+        storedObjects.remove(powder);
+        return powder;
     }
 }

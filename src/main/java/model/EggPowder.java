@@ -80,7 +80,7 @@ public class EggPowder extends Facility {
         if(this.productionCount==2)
         {
         levelManager.generatePowder(getCoordinateX(),getCoordinateY());
-    }
+        }
     }
 
     public EggPowder(int i, int j) {
