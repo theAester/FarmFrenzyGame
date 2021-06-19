@@ -77,8 +77,8 @@ public class Save {
                     threats.put( random.nextInt(SGT),"lion");
                 }
             }
-            HashMap<Integer,String> goals=new HashMap<>();
-            goals.put(random.nextInt(5000),"money");
+            HashMap<String,Integer> goals=new HashMap<>();
+            goals.put("money",random.nextInt(5000));
             Level level=new Level(i,SGT, SST,SBT,goldStar* random.nextInt(100)/80,silverStar*random.nextInt(100)/80,brozeStar*random.nextInt(100)/80,animalCycle,threats,facilityCycle,goals, random.nextInt(300));
             levels.add(level);
         }
