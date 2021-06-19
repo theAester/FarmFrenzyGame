@@ -78,9 +78,9 @@ public class Save {
             for(int f= random.nextInt(1);f<1;f++)
             {
                 goals.put("icecream", random.nextInt(10));
-IceCreamFactory iceCreamFactory=new IceCreamFactory();
-iceCreamFactory.level= random.nextInt(1);
-facilityCycle.add(iceCreamFactory);
+                IceCreamFactory iceCreamFactory=new IceCreamFactory();
+                iceCreamFactory.level= random.nextInt(1);
+                facilityCycle.add(iceCreamFactory);
             }
             for(int f= random.nextInt(1);f<1;f++)
             {
@@ -114,7 +114,7 @@ facilityCycle.add(iceCreamFactory);
             Level level=new Level(i,SGT, SST,SBT,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
            levels.add(level);
         }
-/*        try {
+        try {
             System.out.println("generate");
             String LevelArrayList = gson.toJson(levels);
             FileWriter levelArrayList = new FileWriter("LevelArrayList.json");
@@ -122,6 +122,6 @@ facilityCycle.add(iceCreamFactory);
             levelArrayList.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 }
