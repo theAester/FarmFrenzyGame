@@ -178,5 +178,17 @@ public class Printer {
     public static void generated(String string) {
         System.out.println(string + " generated");
     }
+
+    public static void FacilityWorkStart(String facilityName) {
+        System.out.println(facilityName + " started working");
+    }
+
+    public static void FacilityWorking(String type) {
+        System.out.println(type + " is working...");
+    }
+
+    public static void FacilityProduced(String type) {
+        System.out.println(type+" is Done processing!");
+    }
 }
 

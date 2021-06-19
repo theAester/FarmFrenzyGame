@@ -94,7 +94,7 @@ public class LevelManager {
             x.update(this);
         });
         facilities.forEach(x->{
-            x.update(this);
+            updateFacility(x);
         });
         currentLevel.getThreatCycle().forEach((k,v)->{
             if(cycleNumber-k < 30 && cycleNumber - k > 0){
@@ -128,6 +128,16 @@ public class LevelManager {
         removeThreatList.forEach(x->{
             threats.remove(x);
         });
+    }
+
+    private void updateFacility(Facility x) {
+        int stat = x.update(this);
+        if(stat == 1){
+            Printer.FacilityWorking(x.getType());
+        }
+        else if(stat == 2){
+            Printer.FacilityProduced(x.getType());
+        }
     }
 
     private void updateWater() {
@@ -283,11 +293,12 @@ public class LevelManager {
             }
             Facility facility = facilities.stream().filter(x->x.getType().equals(facilityName)).findFirst().orElse(null);
             if(facility == null){
-                System.out.println("counld not find "+facility);
+                System.out.println("counld not find "+facilityName);
                 return;
             }
             if(facility.work(this)){
-
+                Printer.FacilityWorkStart(facilityName);
+                LogAppender.FacilityWorkStart(facilityName);
             }
         }
         else if(command.equalsIgnoreCase("cage")){

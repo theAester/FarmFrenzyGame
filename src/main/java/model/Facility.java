@@ -28,6 +28,7 @@ protected int scale;
     public Facility(int i, int j) {
         this.i = i;
         this.j = j;
+        this.outputSeq = -30;
     }
     public String getType(){
         return this.type;
@@ -36,6 +37,7 @@ protected int scale;
         Random ran = new Random();
         this.i=ran.nextInt(6);
         this.j=ran.nextInt(6);
+        this.outputSeq = -30;
     }
     public int getCoordinateX(){
         //TODO: fix (graphic)

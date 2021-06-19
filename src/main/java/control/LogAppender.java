@@ -127,4 +127,8 @@ public  class LogAppender {
     public static void PlaceFull() {
         Do("watered an already full part of the ground");
     }
+
+    public static void FacilityWorkStart(String facilityName) {
+        Do(facilityName+" started working");
+    }
 }

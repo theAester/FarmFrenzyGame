@@ -157,3 +157,32 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>logged in with username alinikkhah 6/19/21 18:08:29.318064
 >>>>WRONG INPUT exit  6/19/21 21:25:06.235954
 >>>>logged in with username alinikkhah 6/19/21 21:25:06.248701
+>>>>Well refill started 6/19/21 10:06:08.242185400
+>>>>Well refilled 6/19/21 10:06:10.620386700
+>>>>chicken bought 6/19/21 10:07:01.129012600
+>>>>Caged a lion at (5,5). 2 clicks remaining. 6/19/21 10:09:52.214292400
+>>>>Caged a lion at (5,5). 1 clicks remaining. 6/19/21 10:09:55.305078200
+>>>>Contained a lion at (5,5) 6/19/21 10:09:59.181298300
+>>>>Caged a lion at (5,5). -1 clicks remaining. 6/19/21 10:10:05.199821600
+>>>>Caged a lion at (5,1). 2 clicks remaining. 6/19/21 10:10:11.812777800
+>>>>Caged a lion at (5,1). 1 clicks remaining. 6/19/21 10:10:17.568961300
+>>>>Contained a lion at (5,1) 6/19/21 10:10:20.803849900
+>>>>Truck loaded withlion 6/19/21 10:10:55.217101900
+>>>>Truck loaded with 4 egg(s) 6/19/21 10:10:59.976974700
+>>>>Truck has left for the market with $360 worth of items 6/19/21 10:11:03.850702100
+>>>>WRONG INPUT plant 4 2  6/19/21 10:17:09.566730600
+>>>>WRONG INPUT plant 2 0  6/19/21 10:17:09.580694
+>>>>WRONG INPUT plant 3 1  6/19/21 10:17:09.586677200
+>>>>WRONG INPUT plant 4 0  6/19/21 10:17:09.590666600
+>>>>WRONG INPUT plant 2 2  6/19/21 10:17:10.193066500
+>>>>Well refill started 6/19/21 10:17:18.586210800
+>>>>Well refilled 6/19/21 10:17:21.323934500
+>>>>Caged a lion at (3,5). 2 clicks remaining. 6/19/21 10:17:29.558523200
+>>>>Caged a lion at (3,5). 1 clicks remaining. 6/19/21 10:17:32.042459300
+>>>>Contained a lion at (3,5) 6/19/21 10:17:33.959380100
+>>>>eggpowder started working 6/19/21 10:17:51.109440200
+>>>>Well refill started 6/19/21 10:20:09.801396700
+>>>>Well refilled 6/19/21 10:20:13.755398
+>>>>Well refill started 6/19/21 10:22:47.470429700
+>>>>Well refill started 6/19/21 10:23:37.825158200
+>>>>Well refill started 6/19/21 10:24:14.254384300
