@@ -83,12 +83,6 @@ facilityCycle.add(iceCreamFactory);
                 sewingFactory.level= random.nextInt(1);
                 facilityCycle.add(sewingFactory);
             }
-            for(int f= random.nextInt(1);f<1;f++)
-            {
-                IceCreamFactory iceCreamFactory=new IceCreamFactory();
-                iceCreamFactory.level= random.nextInt(1);
-                facilityCycle.add(iceCreamFactory);
-            }
 
             HashMap<Integer,String> threats=new HashMap<>();
             int numThreats=random.nextInt(boundThreats);
