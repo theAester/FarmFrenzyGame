@@ -48,61 +48,106 @@ public class Save {
         ArrayList<Level> levels = new ArrayList<>();
         int SGT=startGoldTime,SST=startSilverTime,SBT=startBronzeTime;
         Random random =new Random();
-        HashMap<String,Integer> goals=new HashMap<>();
         for (int i = numLevel; i >=1; i--){
+            ArrayList<Facility> facilityCycle=new ArrayList<>();
+            ArrayList<Animal> animalCycle=new ArrayList<>();
+            HashMap<Integer,String> threats=new HashMap<>();
+            HashMap<String,Integer> goals=new HashMap<>();
             SGT+=random.nextInt(2)*30;
             SST=SGT+random.nextInt(2)*30+1;
             SBT=SST+random.nextInt(2)*30+2;
-            ArrayList<Animal> animalCycle=new ArrayList<>();
             int numChicken=random.nextInt(boundChicken);
             for(int j=0;j<numChicken;j++) {
                 goals.put("egg",random.nextInt(10));
                 Chicken chicken = new Chicken();
                 animalCycle.add(chicken);
             }
-            ArrayList<Facility> facilityCycle=new ArrayList<>();
-            for(int f= random.nextInt(10);f<2;f+=5)
+            for(int f= random.nextInt(10);f<5;f+=5)
             {
-                goals.put("powder",random.nextInt(10));
                 EggPowder eggPowder=new EggPowder();
-                eggPowder.level=random.nextInt(1);
+                eggPowder.level=1;
                 facilityCycle.add(eggPowder);
-                for(int g= random.nextInt(10);g<2;g+=5)
+                goals.put("powder",random.nextInt(10));
+                for(int g= random.nextInt(10);g<5;g+=5)
                 {
                     goals.put("bread",random.nextInt(10));
                     Bakery bakery=new Bakery();
-                    bakery.level=random.nextInt(1);
+                    bakery.level=1;
                     facilityCycle.add(bakery);
                 }
             }
-            for(int f= random.nextInt(10);f<2;f+=5)
+            for(int f= random.nextInt(10);f<5;f+=5)
             {
                 goals.put("bottledmilk", random.nextInt(10));
                 MilkProcessing milkProcessing=new MilkProcessing();
-                milkProcessing.level= random.nextInt(1);
+                milkProcessing.level=1;
                 facilityCycle.add(milkProcessing);
-                for(int g= random.nextInt(10);g<2;g+=5)
+                for(int g= random.nextInt(10);g<5;g+=5)
                 {
                     goals.put("icecream", random.nextInt(10));
                     IceCreamFactory iceCreamFactory=new IceCreamFactory();
-                    iceCreamFactory.level= random.nextInt(1);
+                    iceCreamFactory.level=1;
                     facilityCycle.add(iceCreamFactory);
                 }
             }
-            for(int f= random.nextInt(10);f<2;f+=5)
+            for(int f= random.nextInt(10);f<5;f+=5)
             {
                  FabricFactory fabricFactory=new FabricFactory();
-                fabricFactory.level= random.nextInt(1);
+                goals.put("fabric", random.nextInt(10));
+                fabricFactory.level= 1;
                 facilityCycle.add(fabricFactory);
-                for(int g= random.nextInt(1);g<2;g+=5)
+                for(int g= random.nextInt(10);g<5;g+=5)
                 {
+                    goals.put("shirt", random.nextInt(10));
                     SewingFactory sewingFactory=new SewingFactory();
-                    sewingFactory.level= random.nextInt(1);
+                    sewingFactory.level= 1;
                     facilityCycle.add(sewingFactory);
                 }
             }
 
-            HashMap<Integer,String> threats=new HashMap<>();
+
+
+
+            for(int f= random.nextInt(10);f<5;f+=5)
+            {
+                EggPowder eggPowder=new EggPowder();
+                eggPowder.level=0;
+                facilityCycle.add(eggPowder);
+                for(int g= random.nextInt(10);g<5;g+=5)
+                {
+                    Bakery bakery=new Bakery();
+                    bakery.level=0;
+                    facilityCycle.add(bakery);
+                }
+            }
+            for(int f= random.nextInt(10);f<5;f+=5)
+            {
+                MilkProcessing milkProcessing=new MilkProcessing();
+                milkProcessing.level=0;
+                facilityCycle.add(milkProcessing);
+                for(int g= random.nextInt(10);g<5;g+=5)
+                {
+                    IceCreamFactory iceCreamFactory=new IceCreamFactory();
+                    iceCreamFactory.level=0;
+                    facilityCycle.add(iceCreamFactory);
+                }
+            }
+            for(int f= random.nextInt(10);f<5;f+=5)
+            {
+                FabricFactory fabricFactory=new FabricFactory();
+                fabricFactory.level= 0;
+                facilityCycle.add(fabricFactory);
+                for(int g= random.nextInt(10);g<5;g+=5)
+                {
+                    SewingFactory sewingFactory=new SewingFactory();
+                    sewingFactory.level= 0;
+                    facilityCycle.add(sewingFactory);
+                }
+            }
+
+
+
+
             int numThreats=random.nextInt(boundThreats)+3;
             for(int k=0;k<numThreats;k++)
             {

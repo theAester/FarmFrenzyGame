@@ -7,7 +7,7 @@ public class FarmFrenzy {
         Authenticator authenticator=new Authenticator();
         Save.initializeSave();
         Load.initializeLoad();
-        //Save.GenerateLevel(20,120,150,180,100,80,60,3,12);
+       // Save.GenerateLevel(10,120,150,180,100,80,60,5,5);
         authenticator.Do();
 
     }
