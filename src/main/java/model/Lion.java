@@ -47,6 +47,7 @@ public class Lion extends Threat{
         this.storingSize=15;
         this.outputTimeout=150;
     }
+
     @Override
     public void update(LevelManager levelManager)
     {

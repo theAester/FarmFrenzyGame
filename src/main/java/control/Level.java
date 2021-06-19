@@ -1,8 +1,6 @@
 package control;
 
-import model.Animal;
-import model.Facility;
-import model.Threat;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
