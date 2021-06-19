@@ -70,7 +70,7 @@ public class Chicken extends Animal {
                     }
                 } else if (move == 4) {
                     if (this.j > 0) {
-                        this.j++;
+                        this.j--;
                         moved = true;
                     } else {
                         move = 1;
