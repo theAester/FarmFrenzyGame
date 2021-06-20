@@ -36,32 +36,33 @@ public class LevelInputManager {
         //System.out.println("Level Starts");
         LM.run();
         //out of the level
-        thisUser.setLevelAccomplished(thisUser.getLevelAccomplished()+1);
         int stars=0;
         int GoldStars=currentLevel.getGoldStars();
         int SilverStars=currentLevel.getSilverStars();
         int BronzeStars=currentLevel.getBronzeStars();
+        System.out.println(currentLevel.getGoldTime());
+        System.out.println(LM.cycleNumber);
         if(LM.cycleNumber<=currentLevel.getGoldTime())
         {
             stars=GoldStars;
-            if(LM.cycleNumber<=currentLevel.getSilverTime())
-            {
-                stars=SilverStars;
-                if(LM.cycleNumber<=currentLevel.getBronzeTime())
-                {
-                    stars=BronzeStars;
-                }
-            }
+        }
+       else  if(LM.cycleNumber<=currentLevel.getSilverTime())
+        {
+            stars=SilverStars;
+        }
+       else
+        {
+            stars=BronzeStars;
         }
         Printer.LevelDone(currentLevel.getLevel(),stars,LM.cycleNumber);
-        thisUser.setLevelAccomplished(thisUser.getLevelAccomplished()+1);
         thisUser.setStar(thisUser.getStar()+stars);
         Printer.ShowStars(thisUser.getStar());
         for(User i:userArrayList)
         {
             if(i.getFirstName()+i.getLastName()==fullName)
             {
-                i.setLevelAccomplished(thisUser.getLevelAccomplished());
+                if(i.getLevelAccomplished()==currentLevel.getLevel()-1){
+                i.setLevelAccomplished(i.getLevelAccomplished()+1);}
                 i.setStar(thisUser.getStar());
             }
         }
