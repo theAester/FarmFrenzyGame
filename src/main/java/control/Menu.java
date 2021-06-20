@@ -38,8 +38,8 @@ public class Menu {
             {
                 //Check user access to this level
                 if(levelAccomplished+1>=Integer.parseInt(Split(input)[1])) {
-                    LevelInputManager im=new LevelInputManager(user, user.getLevelAccomplished(), user.getStar(), user.getCoin(), fullName, user.getLevelMap(),FindLevel(Integer.parseInt(Split(input)[1])) );
                     Printer.StartLevel(Integer.parseInt(Split(input)[1]));
+                    LevelInputManager im=new LevelInputManager(user, user.getLevelAccomplished(), user.getStar(), user.getCoin(), fullName, user.getLevelMap(),FindLevel(Integer.parseInt(Split(input)[1])) );
                 }
                 else {
                     Printer.AccessDenied(Integer.parseInt(Split(input)[1]));

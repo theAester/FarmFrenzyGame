@@ -475,6 +475,10 @@ public class LevelManager {
             }
             System.out.println();
         }
+        System.out.println("-----------------------Facilities-----------------------");
+        facilities.forEach(x->{
+            System.out.printf("%s level %d (%s)\n" , x.getType(),x.level, (!x.isBusy() ? "idle" : "working") );
+        });
         System.out.println("---------------Commodities on the ground---------------");
         commodities.forEach(x->{
             System.out.printf("%s [%d %d]\n" , x.getName(),x.getCoordinateX(),x.getCoordinateY());
@@ -595,8 +599,6 @@ public class LevelManager {
         commodities.add(new Fabric(coordinateX,coordinateY));
         fabricCount++;
     }
-    //salam
-    //yoooo
     public Fabric requestFabric() {
         return (Fabric) storage.queryItem("fabric");
     }

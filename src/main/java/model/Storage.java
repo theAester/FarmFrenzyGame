@@ -42,7 +42,7 @@ public class Storage {
     public Storable queryItem(String name) {
         Storable item = storedObjects.stream().filter(e -> e.getName().toLowerCase().equals(name)).findFirst().orElse(null);
         storedObjects.remove(item);
-        occupied -= item.getStoringSize();
+        if(item != null) occupied -= item.getStoringSize();
         return item;
     }
 

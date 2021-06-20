@@ -48,6 +48,8 @@ protected int scale;
         //TODO: fix (graphic)
         return j;
     }
-
+    public boolean isBusy(){
+        return busy;
+    }
     public abstract int update(LevelManager levelManager);
 }

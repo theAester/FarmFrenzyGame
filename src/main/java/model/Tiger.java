@@ -49,6 +49,10 @@ public class Tiger extends Threat {
             alive = false;
             return;
         }
+        if(criticalSequence != levelManager.cycleNumber && criticalSequence+30 != levelManager.cycleNumber && criticalSequence != -1){
+            clicks = 0;
+            criticalSequence = -1;
+        }
         boolean moved = false;
         boolean moved2 = false;
         Random ran = new Random();

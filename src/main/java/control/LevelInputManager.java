@@ -26,11 +26,11 @@ public class LevelInputManager {
         this.currentLevel = currentLevel;
         inGame();
         Save save=new Save();
-        save.GenerateLevel(100,600,900,1200,200,150,100,10,10);
+        //save.GenerateLevel(100,600,900,1200,200,150,100,10,10);
     }
     public void inGame() {
         LevelManager LM=new LevelManager(currentLevel);
-        System.out.println("Level Starts");
+        //System.out.println("Level Starts");
         LM.run();
         System.out.println("*game over*");
         //todo: stats
