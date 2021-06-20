@@ -59,10 +59,9 @@ public class LevelInputManager {
         Printer.ShowStars(thisUser.getStar());
         for(User i:userArrayList)
         {
-            if(i.getFirstName()+i.getLastName()==fullName)
+            if((i.getFirstName()+i.getLastName()).equals(fullName))
             {
-                if(i.getLevelAccomplished()==currentLevel.getLevel()-1){
-                i.setLevelAccomplished(i.getLevelAccomplished()+1);}
+                i.setLevelAccomplished(currentLevel.getLevel());
                 i.setStar(thisUser.getStar());
             }
         }
