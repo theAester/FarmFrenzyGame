@@ -190,7 +190,7 @@ if(!fabric) {
             silverStar-=5;
             brozeStar=silverStar*random.nextInt(40)/40;
             brozeStar-=10;
-            Level level=new Level(i,SGT, SST,SBT,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
+            Level level=new Level(i,SGT, SST,1000000,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
            levels.add(level);
         }
         try {

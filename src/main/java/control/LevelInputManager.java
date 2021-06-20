@@ -52,7 +52,6 @@ public class LevelInputManager {
                     stars=BronzeStars;
                 }
             }
-
         }
         Printer.LevelDone(currentLevel.getLevel(),stars,LM.cycleNumber);
         thisUser.setLevelAccomplished(thisUser.getLevelAccomplished()+1);
