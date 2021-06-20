@@ -41,13 +41,13 @@ public class LevelInputManager {
         int GoldStars=currentLevel.getGoldStars();
         int SilverStars=currentLevel.getSilverStars();
         int BronzeStars=currentLevel.getBronzeStars();
-        if(LM.cycleNumber*30<=currentLevel.getGoldTime())
+        if(LM.cycleNumber<=currentLevel.getGoldTime())
         {
             stars=GoldStars;
-            if(LM.cycleNumber*30<=currentLevel.getSilverTime())
+            if(LM.cycleNumber<=currentLevel.getSilverTime())
             {
                 stars=SilverStars;
-                if(LM.cycleNumber*30<=currentLevel.getBronzeTime())
+                if(LM.cycleNumber<=currentLevel.getBronzeTime())
                 {
                     stars=BronzeStars;
                 }
