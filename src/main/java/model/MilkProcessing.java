@@ -82,13 +82,13 @@ public class MilkProcessing extends Facility {
         super(i, j);
         this.type="milkprocessing";
         this.unitPriceTag=400;
-        this.outputTimeout=180;
+        this.outputTimeout=150;
     }
 
     public MilkProcessing() {
         super();
         this.type="milkprocessing";
         this.unitPriceTag=400;
-        this.outputTimeout=180;
+        this.outputTimeout=150;
     }
 }
