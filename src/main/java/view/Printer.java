@@ -198,5 +198,9 @@ public class Printer {
     public static void ShowStars(int star) {
         System.out.println("you have "+star+"stars");
     }
+
+    public static void TruckIsStillTravelling() {
+        System.out.println("Please wait. The truck is still travelling.");
+    }
 }
 

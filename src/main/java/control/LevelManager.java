@@ -92,7 +92,7 @@ public class LevelManager {
         updateTruck();
         updateWater();
         ArrayList<Animal> removeList = new ArrayList<>();
-        ArrayList<Threat> removeThreatList = new ArrayList<>();
+
         animals.forEach(x -> {
             x.update(this);
         });
@@ -120,18 +120,24 @@ public class LevelManager {
                 removeList.add(x);
             }
         });
+        pickupThreats();
+        removeList.forEach(x->{
+            animals.remove(x);
+        });
+
+        return true;
+    }
+
+    private void pickupThreats() {
+        ArrayList<Threat> removeThreatList = new ArrayList<>();
         threats.forEach( x-> {
             if(!x.alive){
                 if(storage.add(x)) removeThreatList.add(x);
             }
         });
-        removeList.forEach(x->{
-            animals.remove(x);
-        });
         removeThreatList.forEach(x->{
             threats.remove(x);
         });
-        return true;
     }
 
     private boolean assertWin() {
@@ -350,13 +356,17 @@ public class LevelManager {
 //                Printer.InvalidRange();
 //                return;
 //            }
+            boolean got = false;
             for (Threat e : threats) {
                 if(e.inside(x,y)){
-                    e.cage(cycleNumber);
-                    LogAppender.caged(e.getName(),e.getCoordinateX(),e.getCoordinateY(),e.getRemainingClicks());
-                    Printer.caged(e.getName(),e.getCoordinateX(),e.getCoordinateY(),e.getRemainingClicks());
+                    if(e.cage(cycleNumber)) {
+                        got = true;
+                        LogAppender.caged(e.getName(), e.getCoordinateX(), e.getCoordinateY(), e.getRemainingClicks());
+                        Printer.caged(e.getName(), e.getCoordinateX(), e.getCoordinateY(), e.getRemainingClicks());
+                    }
                 }
             }
+            if(!got)Printer.EmptySpace();
         }
         else if(command.equals("turn")){
             int count = 1;
@@ -389,6 +399,10 @@ public class LevelManager {
                     Storable item = storage.queryItem(itemName);
                     if(item == null){
                         Printer.ItemNotFound();
+                        return true;
+                    }
+                    if(truck.isTraveling){
+                        Printer.TruckIsStillTravelling();
                         return true;
                     }
                     if(truck.load(item)) {
@@ -462,6 +476,7 @@ public class LevelManager {
             }
         }
         else Printer.WrongInput();
+        pickupThreats();
         return true;
     }
 

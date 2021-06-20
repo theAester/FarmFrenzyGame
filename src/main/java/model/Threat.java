@@ -47,9 +47,11 @@ public abstract class Threat implements Storable{
         return x==i && y==j;
     }
 
-    public void cage(int cycleNumber){
+    public boolean cage(int cycleNumber){
+        if(clicks == quota) return false;
         clicks++;
         criticalSequence = cycleNumber;
+        return true;
     }
 
     public int getI(){
