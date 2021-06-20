@@ -32,8 +32,18 @@ public class LevelInputManager {
         LevelManager LM=new LevelManager(currentLevel);
         //System.out.println("Level Starts");
         LM.run();
-        System.out.println("*game over*");
-        //todo: stats
+        //out of the level
+        thisUser.setLevelAccomplished(thisUser.getLevelAccomplished()+1);
+        int stars=0;
+        int GoldStars=currentLevel.getGoldStars();
+        int SilverStars=currentLevel.getSilverStars();
+        int BronzeStars=currentLevel.getBronzeStars();
+        if(LM.cycleNumber*30<=currentLevel.getGoldTime())
+        {
+            stars=GoldStars;
+
+        }
+
     }
 
 }

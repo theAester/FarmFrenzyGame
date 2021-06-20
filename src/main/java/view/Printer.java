@@ -190,5 +190,9 @@ public class Printer {
     public static void FacilityProduced(String type) {
         System.out.println(type+" is Done processing!");
     }
+
+    public static void LevelDone(int numlevel,int stars,int cycleNumber) {
+        System.out.println("level "+numlevel +"done with " +stars+"stars within "+cycleNumber+"cycles");
+    }
 }
 
