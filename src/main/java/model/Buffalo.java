@@ -7,7 +7,7 @@ public class Buffalo extends Animal{
     public Buffalo(int i,int j)
     {
         super(i,j);
-        this.C2H = 0.1;
+        this.C2H = 0.2;
         this.productionPoint=0;
         this.productionRate=150;
         this.type="buffalo";
@@ -17,7 +17,7 @@ public class Buffalo extends Animal{
     public Buffalo()
     {
         super();
-        this.C2H = 0.1;
+        this.C2H = 0.2;
         this.health=this.maxHealth;
         this.productionPoint=0;
         this.productionRate=150;

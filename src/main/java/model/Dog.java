@@ -10,12 +10,14 @@ public class Dog extends Animal {
         super(i,j);
         this.type="dog";
         this.unitPriceTag=100;
+        this.health=10;
     }
     public Dog()
     {
         super();
         this.type="dog";
         this.unitPriceTag=100;
+        this.health=10;
     }
     @Override
     public void update(LevelManager levelManager)

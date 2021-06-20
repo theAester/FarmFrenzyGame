@@ -37,8 +37,8 @@ public class Cat extends Animal{
                 else this.i--;
             }
             else if(c.getCoordinateX() != getCoordinateX()){
-                if(c.getCoordinateX() > getCoordinateX()) this.j--;
-                else this.j++;
+                if(c.getCoordinateX() > getCoordinateX()) this.j++;
+                else this.j--;
             }
             else{
                 levelManager.coolerCollect(c);
