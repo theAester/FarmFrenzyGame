@@ -35,6 +35,7 @@ public class Menu {
         Printer.Menu();
         while(!input.equalsIgnoreCase("exit"))
         {
+            userArrayList=Load.UserList();
             input=scanner.nextLine().toLowerCase();
             if(Check(input,"start\\s[0-9]+"))
             {
