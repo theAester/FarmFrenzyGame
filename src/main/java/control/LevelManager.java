@@ -4,6 +4,8 @@ import model.*;
 import view.Printer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -68,14 +70,13 @@ public class LevelManager {
         });
     }
     public void run(){
-        System.out.println("kir");
         ArrayList<String> outputs;
         boolean cycle = true;
         while(cycle) { // main game cycle
 
             // input
 //            outputs = exec(sc);
-            exec(sc);
+            cycle = exec(sc);
 
             // update
             //update();
@@ -85,8 +86,9 @@ public class LevelManager {
 
         }
     }
-    private void update(){
+    private boolean update(){
         cycleNumber += 30;
+        if(assertWin()) return false;
         updateTruck();
         updateWater();
         ArrayList<Animal> removeList = new ArrayList<>();
@@ -129,6 +131,35 @@ public class LevelManager {
         removeThreatList.forEach(x->{
             threats.remove(x);
         });
+        return true;
+    }
+
+    private boolean assertWin() {
+        HashMap<String,Integer> temp = currentLevel.getLevelGoals();
+        boolean win = true;
+        for(Map.Entry<String,Integer> e : temp.entrySet()){
+            int count=0;
+            String x = e.getKey();
+            int y = e.getValue();
+            if(x.equals("chicken")) count = chickenCount;
+            else if(x.equals("buffalo")) count = buffaloCount;
+            else if(x.equals("turkey")) count = turkeyCount;
+            else if(x.equals("cat")) count = catCount;
+            else if(x.equals("dog")) count = dogCount;
+            else if(x.equals("egg")) count = eggCount;
+            else if(x.equals("feather")) count = featherCount;
+            else if(x.equals("fabric")) count = fabricCount;
+            else if(x.equals("shirt")) count = shirtCount;
+            else if(x.equals("powder")) count = powderCount;
+            else if(x.equals("bread")) count = breadCount;
+            else if(x.equals("milk")) count = milkCount;
+            else if(x.equals("bottledmilk")) count = bottledMilkCount;
+            else if(x.equals("icecream")) count = icecreamCount;
+            else if(x.equals("money")) count = money;
+
+            win = win && (count >= y);
+        }
+        return win;
     }
 
     private void updateFacility(Facility x) {
@@ -172,10 +203,10 @@ public class LevelManager {
         }
     }
 
-    private void exec(Scanner sc){
+    private boolean exec(Scanner sc){
         //process command
         System.out.print("> ");
-        if(!cp.process(sc.nextLine())) return;
+        if(!cp.process(sc.nextLine())) return true;
         String command = cp.getCommand().toLowerCase();
         //command library
         if(command.equalsIgnoreCase("buy")){
@@ -183,7 +214,7 @@ public class LevelManager {
             if(name == null){
                 LogAppender.InvalidInput("buy");
                 Printer.InvalidName();
-                return;
+                return true;
             }
             if(buy(name)){
                 LogAppender.BuyAnimal(name);
@@ -195,19 +226,21 @@ public class LevelManager {
         }
         else if(command.equals("inquiry")){
             printAll();
-            return;
+            return true;
         }
         else if(command.equals("peek")){
             if(cp.getArgsCount() == 0){
                 Printer.DariEshtebahMizaniDadash();
                 LogAppender.DariEshtebahMizaniDadash();
-                return;
+                return true;
             }
             if(cp.getArg(0).equals("storage")){
+                if(storage.storedObjects.size() == 0) Printer.EmptySpace();
                 storage.storedObjects.forEach(x->{
                     System.out.println("> "+x.getName());
                 });
             }else if(cp.getArg(0).equals("truck")){
+                if(truck.objects.size() == 0) Printer.EmptySpace();
                 truck.objects.forEach(x->{
                     System.out.println("> "+x.getName());
                 });
@@ -222,12 +255,12 @@ public class LevelManager {
             }catch(Exception e){
                 LogAppender.InvalidInput("pickup");
                 Printer.InvalidInput();
-                return;
+                return true;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
                 LogAppender.InvalidInput("pickup");
                 Printer.InvalidRange();
-                return;
+                return true;
             }
             ArrayList<Commodity> temp = new ArrayList<>();
             commodities.forEach(e -> {
@@ -242,7 +275,7 @@ public class LevelManager {
             });
             if(temp.size() == 0){
                 Printer.EmptySpace();
-                return;
+                return true;
             }
             temp.forEach(e -> {
                commodities.remove(e);
@@ -266,17 +299,17 @@ public class LevelManager {
             }catch(Exception e){
                 LogAppender.InvalidInput("plant");
                 Printer.InvalidInput();
-                return;
+                return true;
             }
             if(x < 0 || x> 6 || y<0 || y>6){
                 LogAppender.InvalidInput("plant");
                 Printer.InvalidRange();
-                return;
+                return true;
             }
             if(grid[x][y] == 100){
                 Printer.PlaceFull(x,y);
                 LogAppender.PlaceFull();
-                return;
+                return true;
             }
             if(water.takeWater()){
                 grid[x][y] = 100;
@@ -290,12 +323,12 @@ public class LevelManager {
             String facilityName = cp.getArg(0);
             if(facilityName == null){
                 System.out.println("Please enter a name");
-                return;
+                return true;
             }
             Facility facility = facilities.stream().filter(x->x.getType().equals(facilityName)).findFirst().orElse(null);
             if(facility == null){
                 System.out.println("counld not find "+facilityName);
-                return;
+                return true;
             }
             if(facility.work(this)){
                 Printer.FacilityWorkStart(facilityName);
@@ -311,7 +344,7 @@ public class LevelManager {
                 y = Integer.parseInt(cp.getArg(1));
             }catch(Exception e){
                 Printer.InvalidInput();
-                return;
+                return true;
             }
 //            if(x < 0 || x> 6 || y<0 || y>6){
 //                Printer.InvalidRange();
@@ -333,20 +366,22 @@ public class LevelManager {
                 }catch(Exception e){
                     LogAppender.InvalidInput("turn");
                     Printer.InvalidInput();
-                    return;
+                    return true;
                 }
             }
+            boolean cont = true;
             for(int i=0;i<count;i++){
                 System.out.println("------------------------Update "+(i+1)+"------------------------");
-                update();
+                cont = cont && update();
             }
+            if(!cont) return false;
             printAll();
         }
         else if(command.equalsIgnoreCase("truck")){
             if(cp.getArgsCount() == 0){
                 LogAppender.DariEshtebahMizaniDadash();
                 Printer.DariEshtebahMizaniDadash();
-                return;
+                return true;
             }
             if(cp.getArg(0).equalsIgnoreCase("load")){
                 if(cp.getArgsCount() == 2){
@@ -354,7 +389,7 @@ public class LevelManager {
                     Storable item = storage.queryItem(itemName);
                     if(item == null){
                         Printer.ItemNotFound();
-                        return;
+                        return true;
                     }
                     if(truck.load(item)) {
                         LogAppender.Loaded(itemName);
@@ -372,12 +407,12 @@ public class LevelManager {
                         count = Integer.parseInt(cp.getArg(2));
                     }catch(Exception e){
                         Printer.InvalidInput();
-                        return;
+                        return true;
                     }
                     ArrayList<Storable> items = storage.queryItem(itemName,count);
                     if(items == null){
                         Printer.ItemNotFound();
-                        return;
+                        return true;
                     }
                     if(truck.loadAll(items)) {
                         LogAppender.Loaded(itemName,count);
@@ -399,7 +434,7 @@ public class LevelManager {
                     Storable item = truck.queryItem(itemName);
                     if(item == null){
                         Printer.ItemNotFound();
-                        return;
+                        return true;
                     }
                     if(storage.add(item)) {
                         LogAppender.Unloaded(itemName);
@@ -423,10 +458,11 @@ public class LevelManager {
             else{
                 LogAppender.DariEshtebahMizaniDadash();
                 Printer.DariEshtebahMizaniDadash();
-                return;
+                return true;
             }
         }
         else Printer.WrongInput();
+        return true;
     }
 
     private void printAll() {

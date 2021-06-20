@@ -30,7 +30,10 @@ public class LevelInputManager {
     }
     public void inGame() {
         LevelManager LM=new LevelManager(currentLevel);
-                LM.run();
+        System.out.println("Level Starts");
+        LM.run();
+        System.out.println("*game over*");
+        //todo: stats
     }
 
 }

@@ -342,3 +342,14 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>Truck has left for the market with $700 worth of items 6/19/21 13:02:14.678994200
 >>>>buffalo bought 6/19/21 13:02:35.504093500
 >>>>buffalo bought 6/19/21 13:02:42.218745800
+>>>>No user found as:hiraddavar 6/19/21 13:48:16.544725900
+>>>>Well refill started 6/19/21 13:49:04.239730
+>>>>Well refilled 6/19/21 13:49:06.730625900
+>>>>Caged a bear at (4,4). 3 clicks remaining. 6/19/21 13:49:12.255461800
+>>>>Caged a bear at (4,4). 2 clicks remaining. 6/19/21 13:49:15.645488700
+>>>>Caged a bear at (5,0). 3 clicks remaining. 6/19/21 13:49:18.968692200
+>>>>Caged a bear at (5,0). 2 clicks remaining. 6/19/21 13:49:23.382967200
+>>>>Caged a bear at (5,0). 1 clicks remaining. 6/19/21 13:49:25.670452300
+>>>>Contained a bear at (5,0) 6/19/21 13:49:28.624624800
+>>>>Caged a bear at (4,4). 1 clicks remaining. 6/19/21 13:49:30.735044700
+>>>>Contained a bear at (4,4) 6/19/21 13:49:33.384983900
