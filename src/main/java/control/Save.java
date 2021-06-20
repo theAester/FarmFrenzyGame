@@ -182,7 +182,7 @@ if(!fabric) {
                     threats.put( random.nextInt(SGT),"lion");
                 }
             }
-            goals.put("money",random.nextInt(5000));
+            goals.put("money",random.nextInt(500));
             goldStar*=random.nextInt(100)/40;
             goldStar+=50;
             silverStar=goldStar* random.nextInt(40)/40;
