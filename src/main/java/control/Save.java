@@ -55,7 +55,6 @@ public class Save {
             HashMap<String,Integer> goals=new HashMap<>();
             SGT+=random.nextInt(2)*30;
             SST=SGT+(random.nextInt(2)+1)*30;
-            SBT=SST+(random.nextInt(2)+2)*30;
             int numChicken=random.nextInt(boundChicken);
             for(int j=0;j<numChicken;j++) {
                 goals.put("egg",random.nextInt(10));
