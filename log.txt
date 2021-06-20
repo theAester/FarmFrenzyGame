@@ -534,3 +534,33 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>bakery started working 6/20/21 23:52:10.954892
 >>>>eggpowder started working 6/20/21 23:52:50.662383
 >>>>bakery started working 6/20/21 23:53:12.938027
+>>>>turkey bought 6/21/21 00:10:20.439829
+>>>>Well refill started 6/21/21 00:11:06.763480
+>>>>Well refilled 6/21/21 00:11:20.149839
+>>>>fabricfactory started working 6/21/21 00:11:52.638076
+>>>>Caged a lion at (3,6). 2 clicks remaining. 6/21/21 00:12:19.273892
+>>>>Caged a lion at (3,6). 1 clicks remaining. 6/21/21 00:12:20.275299
+>>>>Contained a lion at (3,6) 6/21/21 00:12:21.668995
+>>>>Truck loaded withlion 6/21/21 00:12:45.453859
+>>>>Truck has left for the market with $300 worth of items 6/21/21 00:12:59.020558
+>>>>Caged a bear at (3,5). 3 clicks remaining. 6/21/21 00:13:20.050618
+>>>>Caged a bear at (3,5). 2 clicks remaining. 6/21/21 00:13:21.040309
+>>>>Caged a bear at (3,5). 1 clicks remaining. 6/21/21 00:13:22.827833
+>>>>Contained a bear at (3,5) 6/21/21 00:13:24.064884
+>>>>Caged a lion at (4,4). 2 clicks remaining. 6/21/21 00:13:36.801686
+>>>>Caged a lion at (4,4). 1 clicks remaining. 6/21/21 00:13:37.687356
+>>>>Contained a lion at (4,4) 6/21/21 00:13:38.548220
+>>>>Caged a lion at (4,2). 2 clicks remaining. 6/21/21 00:13:46.853750
+>>>>Caged a lion at (4,2). 1 clicks remaining. 6/21/21 00:13:47.698821
+>>>>Contained a lion at (4,2) 6/21/21 00:13:48.566906
+>>>>turkey bought 6/21/21 00:14:07.439316
+>>>>Truck loaded withlion 6/21/21 00:14:20.400430
+>>>>Truck loaded withlion 6/21/21 00:14:25.620457
+>>>>Truck has left for the market with $600 worth of items 6/21/21 00:14:30.248634
+>>>>Invalid input while using "pickup" 6/21/21 00:15:31.990203
+>>>>fabricfactory started working 6/21/21 00:15:40.440102
+>>>>turkey bought 6/21/21 00:16:08.638595
+>>>>turkey bought 6/21/21 00:16:12.992938
+>>>>Invalid input while using "pickup" 6/21/21 00:16:44.217138
+>>>>fabricfactory started working 6/21/21 00:16:54.913667
+>>>>fabricfactory started working 6/21/21 00:17:17.510996
