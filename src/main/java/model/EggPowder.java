@@ -87,14 +87,14 @@ public class EggPowder extends Facility {
         super(i, j);
         this.type = "eggpowder";
         this.unitPriceTag = 150;
-        this.outputTimeout = 120;
+        this.outputTimeout = 90;
     }
 
     public EggPowder() {
         super();
         this.type = "eggpowder";
         this.unitPriceTag = 150;
-        this.outputTimeout = 120;
+        this.outputTimeout = 90;
     }
 }
 

@@ -83,13 +83,13 @@ public class FabricFactory extends Facility {
         super(i, j);
         this.type="fabricfactory";
         this.unitPriceTag=250;
-        this.outputTimeout=150;
+        this.outputTimeout=120;
     }
 
     public FabricFactory() {
         super();
         this.type="fabricfactory";
         this.unitPriceTag=250;
-        this.outputTimeout=150;
+        this.outputTimeout=120;
     }
 }
