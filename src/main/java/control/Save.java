@@ -54,8 +54,8 @@ public class Save {
             HashMap<Integer,String> threats=new HashMap<>();
             HashMap<String,Integer> goals=new HashMap<>();
             SGT+=random.nextInt(2)*30;
-            SST=SGT+random.nextInt(2)*30+1;
-            SBT=SST+random.nextInt(2)*30+2;
+            SST=SGT+(random.nextInt(2)+1)*30;
+            SBT=SST+(random.nextInt(2)+2)*30;
             int numChicken=random.nextInt(boundChicken);
             for(int j=0;j<numChicken;j++) {
                 goals.put("egg",random.nextInt(10));
@@ -166,7 +166,7 @@ if(!fabric) {
 
 
 
-            int numThreats=random.nextInt(boundThreats)+3;
+            int numThreats=random.nextInt(boundThreats)+2;
             for(int k=0;k<numThreats;k++)
             {
                 if(random.nextInt()%3==0)
@@ -185,8 +185,11 @@ if(!fabric) {
             }
             goals.put("money",random.nextInt(5000));
             goldStar*=random.nextInt(100)/40;
+            goldStar+=50;
             silverStar=goldStar* random.nextInt(40)/40;
+            silverStar-=5;
             brozeStar=silverStar*random.nextInt(40)/40;
+            brozeStar-=10;
             Level level=new Level(i,SGT, SST,SBT,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
            levels.add(level);
         }

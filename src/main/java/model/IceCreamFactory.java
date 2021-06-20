@@ -83,13 +83,13 @@ public class IceCreamFactory extends Facility {
         super(i, j);
         this.type="icecreamfactory";
         this.unitPriceTag=550;
-        this.outputTimeout=210;
+        this.outputTimeout=180;
     }
 
     public IceCreamFactory() {
         super();
         this.type="icecreamfactory";
         this.unitPriceTag=550;
-        this.outputTimeout=210;
+        this.outputTimeout=180;
     }
 }

@@ -11,6 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Menu {
+    private ArrayList<User> userArrayList=new ArrayList<>();
     private int levelAccomplished,star;
     private long coin;
     private String fullName;
@@ -19,7 +20,7 @@ public class Menu {
     private Level currentLevel;
     private User user;
     Scanner scanner= new Scanner(System.in);
-    public Menu(User user) throws FileNotFoundException {
+    public Menu(User user,ArrayList<User> userArrayList) throws FileNotFoundException {
         this.user = user;
         this.levelAccomplished=user.getLevelAccomplished();
         this.star=user.getStar();
@@ -27,6 +28,7 @@ public class Menu {
         this.fullName=user.getFirstName()+user.getLastName();
         this.LevelMap=user.getLevelMap();
         this.levelsList=Load.LevelList();
+        this.userArrayList=userArrayList;
     }
     public void Run() throws IOException {
         String input = "";
@@ -39,7 +41,7 @@ public class Menu {
                 //Check user access to this level
                 if(levelAccomplished+1>=Integer.parseInt(Split(input)[1])) {
                     Printer.StartLevel(Integer.parseInt(Split(input)[1]));
-                    LevelInputManager im=new LevelInputManager(user, user.getLevelAccomplished(), user.getStar(), user.getCoin(), fullName, user.getLevelMap(),FindLevel(Integer.parseInt(Split(input)[1])) );
+                    LevelInputManager im=new LevelInputManager(user, user.getLevelAccomplished(), user.getStar(), user.getCoin(), fullName, user.getLevelMap(),FindLevel(Integer.parseInt(Split(input)[1])),userArrayList );
                 }
                 else {
                     Printer.AccessDenied(Integer.parseInt(Split(input)[1]));

@@ -17,13 +17,13 @@ public class Chicken extends Animal {
 
     public Chicken() {
         super();
-        this.C2H = 0.14;
+        this.C2H = 0.25;
         this.health = this.maxHealth;
         this.productionPoint = 0;
         this.productionRate = 60;
         this.type = "chicken";
         this.unitPriceTag=100;
-        this.consumptionPortion=5;
+        this.consumptionPortion=12;
     }
 
     @Override

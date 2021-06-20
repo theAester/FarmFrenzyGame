@@ -80,13 +80,13 @@ public class Bakery extends Facility {
         super(i, j);
         this.type="bakery";
         this.unitPriceTag=250;
-        this.outputTimeout=150;
+        this.outputTimeout=120;
     }
     public Bakery()
     {
         super();
         this.type="bakery";
         this.unitPriceTag=250;
-        this.outputTimeout=150;
+        this.outputTimeout=120;
     }
 }
