@@ -194,5 +194,9 @@ public class Printer {
     public static void LevelDone(int numlevel,int stars,int cycleNumber) {
         System.out.println("level "+numlevel +"done with " +stars+"stars within "+cycleNumber+"cycles");
     }
+
+    public static void ShowStars(int star) {
+        System.out.println("you have "+star+"stars");
+    }
 }
 

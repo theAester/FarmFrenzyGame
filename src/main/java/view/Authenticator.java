@@ -29,7 +29,7 @@ public class Authenticator {
                     User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,null,true);
                     userList.add(user);
                     Printer.Signed();
-                    Menu menu=new Menu(user);
+                    Menu menu=new Menu(user,userList);
                     Save.UserList(userList);
                     LogAppender.Signup(Split(input)[0]+Split(input)[1]);
                 }
@@ -38,7 +38,7 @@ public class Authenticator {
             {
                 if(Find(Split(input)[0],Split(input)[1])!=null)
                 {
-                    Menu menu=new Menu(Find(Split(input)[0],Split(input)[1]));
+                    Menu menu=new Menu(Find(Split(input)[0],Split(input)[1]),userList);
                     Printer.Logged();
                     menu.Run();
                     LogAppender.Login(Split(input)[0]);
