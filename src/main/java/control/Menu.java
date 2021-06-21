@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -69,12 +70,29 @@ public class Menu {
     {
         String input="";
         Printer.Settings();
-        while(!input.equalsIgnoreCase("exit"))
-        {
-            input=scanner.nextLine();
-            if(Check(input,"help"))
-            {
+        while(!input.equalsIgnoreCase("exit")) {
+            input = scanner.nextLine();
+            if (Check(input, "help")) {
                 Printer.HelpSettings();
+            }
+            if (Check(input, "unlock\\s[a-zA-Z]+")) {
+                for (Map.Entry<String, Integer> entry : user.getLevelMap().entrySet()) {
+                  //  System.out.println(entry.getKey());
+                    //System.out.println();
+                    if (entry.getKey().equals(Split(input)[1])) {
+                        if (user.getStar() >= 100) {
+                            entry.setValue(entry.getValue() + 1);
+                            user.setStar(user.getStar()-100);
+                            Printer.RemainingStars(user.getStar());
+                            Printer.SuccessfullyUpgraded();
+                        } else {
+                            Printer.NotEnough("star");
+                        }
+                    }
+
+                    Save.UserList(userArrayList);
+                    userArrayList = Load.UserList();
+                }
             }
         }
     }

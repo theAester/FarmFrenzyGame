@@ -202,5 +202,13 @@ public class Printer {
     public static void TruckIsStillTravelling() {
         System.out.println("Please wait. The truck is still travelling.");
     }
+
+    public static void SuccessfullyUpgraded() {
+        System.out.println("facility successfully upgraded ");
+    }
+
+    public static void RemainingStars(int star) {
+        System.out.println(star +" stars remaining...");
+    }
 }
 
