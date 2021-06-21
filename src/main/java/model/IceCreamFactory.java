@@ -39,7 +39,7 @@ public class IceCreamFactory extends Facility {
             this.busy = true;
             this.scale=1;
             return true;
-        } else {
+        } else if(level == 2){
             BottledMilk bottledMilk = levelManager.requestBottledMilk();
             if (bottledMilk == null) {
                 Printer.NotEnough("bottledmilk");
@@ -58,12 +58,12 @@ public class IceCreamFactory extends Facility {
             this.busy = true;
             return true;
         }
+        else{
+            Printer.HaventBought();
+            return false;
+        }
     }
 
-    @Override
-    public void upgrade() {
-
-    }
 
     @Override
     public void collect() {

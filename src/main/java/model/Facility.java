@@ -22,7 +22,13 @@ protected boolean halftime=false;
 protected int scale;
 protected int upgradeFee;
 
-    public abstract void upgrade();
+    public boolean upgrade(){
+        if(level != 2) {level ++;
+            return true;
+        }
+        return false;
+    }
+
     public abstract void collect();
     public abstract void produce(LevelManager levelManager);
     public abstract boolean work(LevelManager levelManager);

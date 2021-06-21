@@ -39,7 +39,7 @@ public class MilkProcessing extends Facility {
             this.busy = true;
             this.scale=1;
             return true;
-        } else {
+        } else if(level == 2) {
             Milk milk = levelManager.requestMilk();
             if (milk == null) {
                 Printer.NotEnough("milk");
@@ -57,11 +57,10 @@ public class MilkProcessing extends Facility {
             this.busy = true;
             return true;
         }
-    }
-
-    @Override
-    public void upgrade() {
-        this.level++;
+        else{
+            Printer.HaventBought();
+            return false;
+        }
     }
 
     @Override

@@ -39,7 +39,7 @@ public class EggPowder extends Facility {
             this.busy = true;
             this.scale=1;
             return true;
-        } else {
+        } else if(level == 2) {
             Egg egg = levelManager.requestEgg();
             if (egg == null) {
                 Printer.NotEnough("egg");
@@ -57,16 +57,15 @@ public class EggPowder extends Facility {
             this.busy = true;
             return true;
         }
+        else{
+            Printer.HaventBought();
+            return false;
+        }
     }
 
     @Override
     public String getType() {
         return this.type;
-    }
-
-    @Override
-    public void upgrade() {
-        this.level++;
     }
 
     @Override

@@ -40,7 +40,7 @@ public class SewingFactory extends Facility {
             this.busy = true;
             this.scale=1;
             return true;
-        } else {
+        } else if(level == 2) {
             Fabric fabric = levelManager.requestFabric();
             if (fabric == null) {
                 Printer.NotEnough("fabric");
@@ -57,12 +57,10 @@ public class SewingFactory extends Facility {
             this.outputSeq = 0;
             this.busy = true;
             return true;
+        }else{
+            Printer.HaventBought();
+            return false;
         }
-    }
-
-    @Override
-    public void upgrade() {
-        this.level++;
     }
 
     @Override

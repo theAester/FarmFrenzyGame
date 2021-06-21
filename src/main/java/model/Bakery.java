@@ -38,7 +38,7 @@ public class Bakery extends Facility {
             this.busy = true;
             this.scale=1;
             return true;
-        } else {
+        } else if(level == 2) {
             Powder powder = levelManager.requestPowder();
             if (powder == null) {
                 Printer.NotEnough("powder");
@@ -56,12 +56,12 @@ public class Bakery extends Facility {
             this.busy = true;
             return true;
         }
+        else{
+            Printer.HaventBought();
+            return false;
+        }
     }
 
-    @Override
-    public void upgrade() {
-        this.level++;
-    }
 
     @Override
     public void collect() {

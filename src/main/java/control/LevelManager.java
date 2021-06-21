@@ -36,10 +36,12 @@ public class LevelManager {
     public int bottledMilkCount;
     public int powderCount;
     public int breadCount;
+    private User currentUser;
     private final CommandProcessor cp;
     private final Scanner sc ;
-    public LevelManager(Level level){
+    public LevelManager(Level level, User user){
         currentLevel =level;
+        currentUser = user;
         sc = new Scanner(System.in);
         cp = new CommandProcessor(true);
         initialize();
@@ -230,6 +232,28 @@ public class LevelManager {
         else if(command.equals("inquiry")){
             printAll();
             return true;
+        }
+        else if(command.equals("upgrade")){
+            String facilityName = cp.getArg(0);
+            if(facilityName == null){
+                System.out.println("Please enter a name");
+                return true;
+            }
+            Facility facility = facilities.stream().filter(x->x.getType().equals(facilityName)).findFirst().orElse(null);
+            if(facility == null){
+                System.out.println("counld not find "+facilityName);
+                return true;
+            }
+            if(money < facility.getUpgradeFee()){
+                Printer.NotEnoughMoney();
+                LogAppender.NotEnoughMoney();
+            }
+            if(facility.upgrade()){
+                Printer.FacilityWorkStart(facilityName);
+                LogAppender.FacilityWorkStart(facilityName);
+            }else{
+                Printer.MaxLevel();
+            }
         }
         else if(command.equals("peek")){
             if(cp.getArgsCount() == 0){

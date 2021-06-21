@@ -40,7 +40,7 @@ public class FabricFactory extends Facility {
             this.busy = true;
             this.scale=1;
             return true;
-        } else {
+        } else if(level == 2){
             Feather feather = levelManager.requestFeather();
             if (feather == null) {
                 Printer.NotEnough("feather");
@@ -58,11 +58,10 @@ public class FabricFactory extends Facility {
             this.busy = true;
             return true;
         }
-    }
-
-    @Override
-    public void upgrade() {
-        this.level++;
+        else{
+            Printer.HaventBought();
+            return false;
+        }
     }
 
     @Override

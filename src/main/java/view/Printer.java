@@ -210,5 +210,13 @@ public class Printer {
     public static void RemainingStars(int star) {
         System.out.println(star +" stars remaining...");
     }
+
+    public static void MaxLevel() {
+        System.out.println("This facility is already Max level");
+    }
+
+    public static void HaventBought() {
+        System.out.println("You need to buy this facility first");
+    }
 }
 
