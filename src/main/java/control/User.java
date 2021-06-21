@@ -6,8 +6,7 @@ public class User {
     private long coin;
     private int levelAccomplished;
     private HashMap<String,Integer> LevelMap;
-    private boolean isVoid;
-    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<String, Integer> LevelMap, boolean isVoid) {
+    public User(String firstName, String lastName, String password, int star, long coin, int levelAccomplished, HashMap<String, Integer> LevelMap) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
@@ -15,7 +14,6 @@ public class User {
         this.coin = coin;
         this.levelAccomplished = levelAccomplished;
         this.LevelMap = LevelMap;
-        this.isVoid=isVoid;
     }
 
     public int getStar() {
@@ -34,9 +32,6 @@ public class User {
         return LevelMap;
     }
 
-    public boolean isVoid() {
-        return isVoid;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -79,7 +74,4 @@ public class User {
         this.LevelMap = LevelMap;
     }
 
-    public void setVoid(boolean aVoid) {
-        isVoid = aVoid;
-    }
 }

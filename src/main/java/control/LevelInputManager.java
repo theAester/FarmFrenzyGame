@@ -34,14 +34,12 @@ public class LevelInputManager {
     public void inGame() {
         LevelManager LM=new LevelManager(currentLevel);
         //System.out.println("Level Starts");
-        LM.run();
+        LM.run(thisUser);
         //out of the level
         int stars=0;
         int GoldStars=currentLevel.getGoldStars();
         int SilverStars=currentLevel.getSilverStars();
         int BronzeStars=currentLevel.getBronzeStars();
-        System.out.println(currentLevel.getGoldTime());
-        System.out.println(LM.cycleNumber);
         if(LM.cycleNumber<=currentLevel.getGoldTime())
         {
             stars=GoldStars;
@@ -61,11 +59,11 @@ public class LevelInputManager {
         {
             if((i.getFirstName()+i.getLastName()).equals(fullName))
             {
+                if(i.getLevelAccomplished()<currentLevel.getLevel())
                 i.setLevelAccomplished(currentLevel.getLevel());
                 i.setStar(thisUser.getStar());
             }
         }
         Save.UserList(userArrayList);
     }
-
 }

@@ -69,11 +69,11 @@ public class Save {
                 EggPowder eggPowder=new EggPowder();
                 eggPowder.level=1;
                 facilityCycle.add(eggPowder);
-                goals.put("powder",random.nextInt(10));
+                goals.put("powder",random.nextInt(10)+1);
                 for(int g= random.nextInt(10);g<5;g+=5)
                 {
                     bread=true;
-                    goals.put("bread",random.nextInt(10));
+                    goals.put("bread",random.nextInt(10)+1);
                     Bakery bakery=new Bakery();
                     bakery.level=1;
                     facilityCycle.add(bakery);
@@ -84,14 +84,14 @@ public class Save {
             for(int f= random.nextInt(10);f<5;f+=5)
             {
                 bottledmilk=true;
-                goals.put("bottledmilk", random.nextInt(10));
+                goals.put("bottledmilk", random.nextInt(10)+1);
                 MilkProcessing milkProcessing=new MilkProcessing();
                 milkProcessing.level=1;
                 facilityCycle.add(milkProcessing);
                 for(int g= random.nextInt(10);g<5;g+=5)
                 {
                     icecream=true;
-                    goals.put("icecream", random.nextInt(10));
+                    goals.put("icecream", random.nextInt(10)+1);
                     IceCreamFactory iceCreamFactory=new IceCreamFactory();
                     iceCreamFactory.level=1;
                     facilityCycle.add(iceCreamFactory);
@@ -103,13 +103,13 @@ public class Save {
             {
                 fabric=true;
                  FabricFactory fabricFactory=new FabricFactory();
-                goals.put("fabric", random.nextInt(10));
+                goals.put("fabric", random.nextInt(10)+1);
                 fabricFactory.level= 1;
                 facilityCycle.add(fabricFactory);
                 for(int g= random.nextInt(10);g<5;g+=5)
                 {
                     shirt=true;
-                    goals.put("shirt", random.nextInt(10));
+                    goals.put("shirt", random.nextInt(10)+1);
                     SewingFactory sewingFactory=new SewingFactory();
                     sewingFactory.level= 1;
                     facilityCycle.add(sewingFactory);
@@ -123,11 +123,13 @@ if(!eggpowder) {
         EggPowder eggPowder = new EggPowder();
         eggPowder.level = 0;
         facilityCycle.add(eggPowder);
+        goals.put("powder",random.nextInt(10)+1);
         if(!bread) {
             for (int g = random.nextInt(10); g < 5; g += 5) {
                 Bakery bakery = new Bakery();
                 bakery.level = 0;
                 facilityCycle.add(bakery);
+                goals.put("bread",random.nextInt(10)+1);
             }
         }
     }
@@ -137,11 +139,13 @@ if(!bottledmilk) {
         MilkProcessing milkProcessing = new MilkProcessing();
         milkProcessing.level = 0;
         facilityCycle.add(milkProcessing);
+        goals.put("bottledmilk", random.nextInt(10)+1);
         if (!icecream) {
             for (int g = random.nextInt(10); g < 5; g += 5) {
                 IceCreamFactory iceCreamFactory = new IceCreamFactory();
                 iceCreamFactory.level = 0;
                 facilityCycle.add(iceCreamFactory);
+                goals.put("icecream", random.nextInt(10)+1);
             }
         }
     }
@@ -152,11 +156,13 @@ if(!fabric) {
         FabricFactory fabricFactory = new FabricFactory();
         fabricFactory.level = 0;
         facilityCycle.add(fabricFactory);
+        goals.put("fabric", random.nextInt(10)+1);
         if (!shirt) {
             for (int g = random.nextInt(10); g < 5; g += 5) {
                 SewingFactory sewingFactory = new SewingFactory();
                 sewingFactory.level = 0;
                 facilityCycle.add(sewingFactory);
+                goals.put("shirt", random.nextInt(10)+1);
             }
         }
     }
@@ -182,14 +188,14 @@ if(!fabric) {
                     threats.put( random.nextInt(SGT),"lion");
                 }
             }
-            goals.put("money",random.nextInt(500)+500);
+            goals.put("money",random.nextInt(1200)+600);
             goldStar*=random.nextInt(100)/40;
             goldStar+=50;
             silverStar=goldStar* random.nextInt(40)/40;
             silverStar-=5;
             brozeStar=silverStar*random.nextInt(40)/40;
             brozeStar-=10;
-            Level level=new Level(i,SGT, SST,1000000,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 100+random.nextInt(200));
+            Level level=new Level(i,SGT, SST,3000000,goldStar+10,silverStar+10,brozeStar+10,animalCycle,threats,facilityCycle,goals, 200+random.nextInt(400));
            levels.add(level);
         }
         try {

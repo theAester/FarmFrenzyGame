@@ -22,13 +22,11 @@ public class LevelManager {
     public int[][] grid;
     public int cycleNumber;
     private Level currentLevel;
-
     public int chickenCount;
     public int buffaloCount;
     public int turkeyCount;
     public int catCount;
     public int dogCount;
-
     public int eggCount;
     public int icecreamCount;
     public int featherCount;
@@ -38,7 +36,6 @@ public class LevelManager {
     public int bottledMilkCount;
     public int powderCount;
     public int breadCount;
-
     private final CommandProcessor cp;
     private final Scanner sc ;
     public LevelManager(Level level){
@@ -69,7 +66,7 @@ public class LevelManager {
             facilities.add(x);
         });
     }
-    public void run(){
+    public void run(User user){
         ArrayList<String> outputs;
         boolean cycle = true;
         while(cycle) { // main game cycle

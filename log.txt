@@ -568,3 +568,8 @@ WRONG INPUT end  Tuesday, June 1, 2021 09:38:28.670259
 >>>>signed up with usernamealinikkhah 6/21/21 00:42:36.197107
 >>>>WRONG INPUT 1  6/21/21 00:54:44.497615
 >>>>Invalid password alinikkhah(123) 6/21/21 00:55:40.389423
+>>>>signed up with usernameminasalehani 6/21/21 09:21:13.734176
+>>>>signed up with usernamehiraaddavari 6/21/21 09:25:08.985645
+>>>>signed up with usernamenammikhodadad 6/21/21 09:26:34.703427
+>>>>signed up with usernamealinikkhah 6/21/21 09:35:30.458209
+>>>>No user found as:alinikkhhah 6/21/21 09:47:47.193454

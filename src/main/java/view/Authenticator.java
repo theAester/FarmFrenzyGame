@@ -2,6 +2,7 @@
 package view;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +27,14 @@ public class Authenticator {
             {
                 if(!Exists(Split(input)[0]+Split(input)[1]))
                 {
-                    User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,null,true);
+                    HashMap<String,Integer> levelMap=new HashMap<>();
+                    levelMap.put("eggpowder",1);
+                    levelMap.put("bakery",1);
+                    levelMap.put("fabricfactory",1);
+                    levelMap.put("sewingfactory",1);
+                    levelMap.put("milkprocessing",1);
+                    levelMap.put("icecreamfactory",1);
+                    User user=new User(Split(input)[0],Split(input)[1],Split(input)[2],0,0,0,levelMap);
                     userList.add(user);
                     Printer.Signed();
                     Menu menu=new Menu(user,userList);
