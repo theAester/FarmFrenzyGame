@@ -81,6 +81,7 @@ public class Bakery extends Facility {
         this.type="bakery";
         this.unitPriceTag=250;
         this.outputTimeout=120;
+        this.upgradeFee=500;
     }
     public Bakery()
     {
@@ -88,5 +89,6 @@ public class Bakery extends Facility {
         this.type="bakery";
         this.unitPriceTag=250;
         this.outputTimeout=120;
+        this.upgradeFee=500;
     }
 }

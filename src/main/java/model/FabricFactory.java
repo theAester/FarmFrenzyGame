@@ -84,6 +84,7 @@ public class FabricFactory extends Facility {
         this.type="fabricfactory";
         this.unitPriceTag=250;
         this.outputTimeout=120;
+        this.upgradeFee=450;
     }
 
     public FabricFactory() {
@@ -91,5 +92,6 @@ public class FabricFactory extends Facility {
         this.type="fabricfactory";
         this.unitPriceTag=250;
         this.outputTimeout=120;
+        this.upgradeFee=450;
     }
 }

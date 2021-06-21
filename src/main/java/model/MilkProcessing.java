@@ -83,6 +83,7 @@ public class MilkProcessing extends Facility {
         this.type="milkprocessing";
         this.unitPriceTag=400;
         this.outputTimeout=150;
+        this.upgradeFee=400;
     }
 
     public MilkProcessing() {
@@ -90,5 +91,6 @@ public class MilkProcessing extends Facility {
         this.type="milkprocessing";
         this.unitPriceTag=400;
         this.outputTimeout=150;
+        this.upgradeFee=400;
     }
 }

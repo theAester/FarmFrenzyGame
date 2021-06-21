@@ -84,6 +84,7 @@ public class IceCreamFactory extends Facility {
         this.type="icecreamfactory";
         this.unitPriceTag=550;
         this.outputTimeout=180;
+        this.upgradeFee=600;
     }
 
     public IceCreamFactory() {
@@ -91,5 +92,6 @@ public class IceCreamFactory extends Facility {
         this.type="icecreamfactory";
         this.unitPriceTag=550;
         this.outputTimeout=180;
+        this.upgradeFee=600;
     }
 }

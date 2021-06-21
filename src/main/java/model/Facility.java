@@ -20,6 +20,7 @@ protected int unitPriceTag;
 protected int productionCount;
 protected boolean halftime=false;
 protected int scale;
+protected int upgradeFee;
 
     public abstract void upgrade();
     public abstract void collect();
@@ -48,6 +49,11 @@ protected int scale;
         //TODO: fix (graphic)
         return j;
     }
+
+    public int getUpgradeFee() {
+        return this.upgradeFee;
+    }
+
     public boolean isBusy(){
         return busy;
     }

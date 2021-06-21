@@ -84,6 +84,7 @@ public class SewingFactory extends Facility {
         this.type="sewingfactory";
         this.unitPriceTag=400;
         this.outputTimeout=150;
+        this.upgradeFee=550;
     }
 
     public SewingFactory() {
@@ -91,5 +92,6 @@ public class SewingFactory extends Facility {
         this.type="sewingfactory";
         this.unitPriceTag=400;
         this.outputTimeout=150;
+        this.upgradeFee=550;
     }
 }
