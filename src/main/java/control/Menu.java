@@ -84,14 +84,21 @@ public class Menu {
                             entry.setValue(entry.getValue() + 1);
                             user.setStar(user.getStar()-100);
                             Printer.RemainingStars(user.getStar());
-                            Printer.SuccessfullyUpgraded();
+                            Printer.SuccessfullyUpgraded(entry.getValue());
+                            for (User i:userArrayList)
+                            {
+                                if((i.getFirstName()+i.getLastName()).equals(user.getFirstName()+user.getLastName()))
+                                {
+                                    i.setStar(user.getStar());
+                                    i.setLevelMap(user.getLevelMap());
+                                }
+                            }
+                            Save.UserList(userArrayList);
+                            userArrayList = Load.UserList();
                         } else {
                             Printer.NotEnough("star");
                         }
                     }
-
-                    Save.UserList(userArrayList);
-                    userArrayList = Load.UserList();
                 }
             }
         }

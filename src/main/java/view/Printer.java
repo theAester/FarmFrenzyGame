@@ -203,8 +203,8 @@ public class Printer {
         System.out.println("Please wait. The truck is still travelling.");
     }
 
-    public static void SuccessfullyUpgraded() {
-        System.out.println("facility successfully upgraded ");
+    public static void SuccessfullyUpgraded(Integer value) {
+        System.out.println("facility successfully upgraded to  "+ value);
     }
 
     public static void RemainingStars(int star) {
