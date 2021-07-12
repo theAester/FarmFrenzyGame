@@ -14,7 +14,7 @@ public class CommandProcessor {
     private ArrayList<String> args;
     private boolean caseInsensitive;
     public CommandProcessor(){
-
+	caseInsensitive = false;
     }
     public CommandProcessor(boolean caseInsensitive){
         this.caseInsensitive = caseInsensitive;

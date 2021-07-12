@@ -32,7 +32,7 @@ public class LevelInputManager {
         //save.GenerateLevel(100,600,900,1200,200,150,100,10,10);
     }
     public void inGame() {
-        LevelManager LM=new LevelManager(currentLevel);
+        LevelManager LM=new LevelManager(currentLevel, thisUser);
         //System.out.println("Level Starts");
         LM.run(thisUser);
         //out of the level
